@@ -1,0 +1,7 @@
+{
+  "name": "Ayen",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
