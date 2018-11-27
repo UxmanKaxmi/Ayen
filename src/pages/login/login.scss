@@ -1,0 +1,159 @@
+
+page-login {
+
+  .scroll-content {
+    background: url(../assets/imgs/backgroundImage.jpg) no-repeat center center;
+    background-size:cover;
+
+}
+
+.main-grid{
+  align-self: center;
+  height:100%;
+  width: 100%;
+
+}
+
+.MainLogo{
+  background: url(../assets/imgs/logo.png) no-repeat center center;
+  display: block;
+  width: 70%;
+  height: 30vw;
+  background-size: contain;
+  margin: auto;
+
+}
+.item-md{
+  background-color: transparent;
+}
+.item-ios{
+  background-color: transparent;
+}
+.main-row{
+  margin-top: 20vw;
+  margin-bottom: 10vw;
+
+}
+.row-form-center{
+// margin-top: 20vw
+}
+.forget-password-text{
+  text-align: center
+}
+.forget-password-row{
+
+  margin-top: 2vw;
+
+  color:#00b7e5;
+  text-decoration: underline;
+
+}
+.password-image{
+  background: url(../assets/imgs/Password.png) no-repeat center center;
+  display: block;
+  background-size: auto;
+  min-width: 32px;
+
+}
+.email-image{
+  background: url(../assets/imgs/Email.png) no-repeat center center;
+  display: block;
+  background-size: auto;
+  min-width: 32px;
+
+}
+.button-login{
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block !important;
+  color: white;
+  border-radius: 10px;
+  font-size: 2rem;
+  background-color: #4cd67f;
+  text-align: center;
+  padding-left: 60px !important;
+  padding-right: 60px !important;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  width: 100%;
+
+}
+.login-button-row{
+  margin-top: 5vw;
+
+  align-self: center;
+  width: 100%
+
+}
+.login-ion-button{
+  width: 100%
+}
+
+.dont-account-text{
+
+  overflow: initial;
+  font-weight: 500;
+
+}
+.create-account-text{
+  color:#00b7e5;
+  text-decoration: underline;
+
+}
+.dont-account-row{
+  align-self: center;
+
+
+}
+.facebook-image{
+  background: url(../assets/imgs/FB.png) no-repeat center center;
+  display: block;
+  background-size: inherit;
+  min-width: 50px;
+  min-height: 50px;
+
+}
+.twitter-image{
+  background: url(../assets/imgs/TW.png) no-repeat center center;
+  display: block;
+  background-size: inherit;
+  min-width: 50px;
+  min-height: 50px;
+
+
+}
+.googleplus-image{
+  background: url(../assets/imgs/G.png) no-repeat center center;
+  display: block;
+  background-size: inherit;
+  min-width: 50px;
+  min-height: 50px;
+
+}
+
+.inputLabel {
+  right: 1px !important;
+  background-color: transparent;
+  color: red !important;
+  text-align: end;
+  font-size: small;
+  font-weight: 700;
+}
+ .inputLabelheading {
+  right: 1px !important;
+  background-color: transparent;
+  color: red !important;
+  text-align: right;
+  font-size: small;
+  font-weight: 700;
+}
+.validation-end{
+width: 100%;
+max-width: -webkit-fill-available;
+text-align: end;
+}
+
+
+
+}
