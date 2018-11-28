@@ -1,3 +1,5 @@
+import { HomePage } from './../home/home';
+import { SignupPage } from './../signup/signup';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { AbstractControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -38,6 +40,11 @@ export class LoginPage {
   }
   loggingIn(){
     alert('Loggingin')
+    this.navCtrl.push(HomePage)
+  }
+  gotoSignupPage(){
+    this.navCtrl.push(SignupPage)
+
   }
 
   //check if tHe Enter key Pressed and move to the next input
