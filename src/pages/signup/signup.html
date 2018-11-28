@@ -67,7 +67,7 @@
                 <ion-label><ion-img class="address-image"> </ion-img></ion-label>
               <ion-input maxlength="64" #b    value=""  formControlName="address" type="text" placeholder="Address" end> </ion-input>
             </ion-item>
-            <ion-label class="inputLabel validation-text-end" *ngIf="address.hasError('required') && address.touched" end>Required*</ion-label>
+            <ion-label class="inputLabel validation-req-text-end" *ngIf="address.hasError('required') && address.touched" end>Required*</ion-label>
 
 
             <ion-item class="item">
@@ -83,13 +83,13 @@
                 <ion-label><ion-img class="location-image"> </ion-img></ion-label>
               <ion-input maxlength="44" #b formControlName="state"   value=""  type="text" placeholder="State" end> </ion-input>
             </ion-item>
-            <ion-label class="inputLabel validation-text-end" *ngIf="state.hasError('required') && state.touched" end>Required*</ion-label>
+            <ion-label class="inputLabel validation-req-text-end" *ngIf="state.hasError('required') && state.touched" end>Required*</ion-label>
 
             <ion-item class="item">
                 <ion-label><ion-img class="location-image"> </ion-img></ion-label>
               <ion-input maxlength="44" #b formControlName="country"   value=""  type="text" placeholder="Country" end> </ion-input>
             </ion-item>
-            <ion-label class="inputLabel validation-text-end" *ngIf="country.hasError('required') && country.touched" end>Required*</ion-label>
+            <ion-label class="inputLabel validation-req-text-end" *ngIf="country.hasError('required') && country.touched" end>Required*</ion-label>
 
 
           </form>
@@ -99,8 +99,8 @@
 
         <ion-row class="login-button-row">
             <ion-buttons class="login-ion-button">
-                <button class="button-login" tappable (click)="loggingIn()">
-                  Login   </button>
+                <button class="button-login" tappable (click)="gotoConfirmationCodePage()">
+                  Register</button>
               </ion-buttons>
           </ion-row>
 

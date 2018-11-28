@@ -1,3 +1,4 @@
+import { ConfirmationCodePage } from './../pages/confirmation-code/confirmation-code';
 import { LoginPage } from './../pages/login/login';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform,Keyboard } from 'ionic-angular';

@@ -1,6 +1,8 @@
+import { HomePage } from './../home/home';
 import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
+import { ConfirmationCodePage } from '../confirmation-code/confirmation-code';
 
 /**
  * Generated class for the SignupPage page.
@@ -80,5 +82,16 @@ export class SignupPage {
     this.chkCP = false
   }
   }
+
+  gotoConfirmationCodePage(){
+    this.navCtrl.push(ConfirmationCodePage)
+  }
+  gotoToLoggingButton(e,nextElement)
+  {
+    if(e.key === "Enter"){
+      this.gotoConfirmationCodePage()
+    }
+  }
+
 
 }

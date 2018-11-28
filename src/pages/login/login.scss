@@ -73,13 +73,15 @@ page-login {
   color: white;
   border-radius: 10px;
   font-size: 2rem;
-  background-color: #4cd67f;
+  background-color:map-get($colors, AppGreen);
   text-align: center;
   padding-left: 60px !important;
   padding-right: 60px !important;
   padding-top: 3vw;
   padding-bottom: 3vw;
   width: 100%;
+  font-weight: bold;
+
 
 }
 .login-button-row{

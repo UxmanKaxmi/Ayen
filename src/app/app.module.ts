@@ -1,3 +1,5 @@
+import { ConfirmationCodeSuccessPage } from './../pages/confirmation-code-success/confirmation-code-success';
+import { ConfirmationCodePage } from './../pages/confirmation-code/confirmation-code';
 import { SignupPage } from './../pages/signup/signup';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +19,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    ConfirmationCodePage,
+    ConfirmationCodeSuccessPage
 
   ],
   imports: [
@@ -33,7 +37,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    ConfirmationCodePage,
+    ConfirmationCodeSuccessPage
+
 
   ],
   providers: [

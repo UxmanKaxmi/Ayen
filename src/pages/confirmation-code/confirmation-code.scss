@@ -1,5 +1,5 @@
-page-signup {
-.toolbar-title-md {
+page-confirmation-code {
+  .toolbar-title-md {
     text-align: center;
     margin-left: -6vw;
     color:map-get($colors, AppBlue);
@@ -105,47 +105,19 @@ page-signup {
 .password-image{
   background: url(../assets/imgs/Password.png) no-repeat center center;
   display: block;
-  background-size: cover;
-  min-width: 45px;
+  background-size: auto;
+  min-width: 32px;
 
 }
 .email-image{
   background: url(../assets/imgs/Email.png) no-repeat center center;
   display: block;
-  background-size: cover;
-  min-width: 45px;
-
-}
-.mobile-image{
-  background: url(../assets/imgs/Mobile.png) no-repeat center center;
-  display: block;
-  background-size: cover;
-  min-width: 45px;
-
-}
-.address-image{
-  background: url(../assets/imgs/Address.png) no-repeat center center;
-  display: block;
-  background-size: cover;
-  min-width: 45px;
-
-}
-.city-image{
-  background: url(../assets/imgs/City.png) no-repeat center center;
-  display: block;
-  background-size: cover;
-  min-width: 45px;
-
-}
-.location-image{
-  background: url(../assets/imgs/State.png) no-repeat center center;
-  display: block;
-  background-size: cover;
-  min-width: 45px;
+  background-size: auto;
+  min-width: 32px;
 
 }
 .button-login{
-  font-weight: bold;
+
   margin-left: auto;
   margin-right: auto;
   display: block !important;
@@ -159,11 +131,12 @@ page-signup {
   padding-top: 3vw;
   padding-bottom: 3vw;
   width: 100%;
+  font-weight: bold;
+
 
 }
 .login-button-row{
   margin-top: 5vw;
-  margin-bottom: 5vw;
 
   align-self: center;
   width: 100%
@@ -184,85 +157,48 @@ page-signup {
   text-decoration: underline;
 
 }
+
 .dont-account-row{
   align-self: center;
 
 
 }
-.facebook-image{
-  background: url(../assets/imgs/FB.png) no-repeat center center;
-  display: block;
-  background-size: inherit;
-  min-width: 50px;
-  min-height: 50px;
+ion-label {
+
+  white-space: normal !important;
+}
+.label-md {
+  margin: 13px 54px 13px 54px;
+  background-color: white;
+  text-align: center;
+}
+.label-ios {
+  margin: 13px 54px 13px 54px;
+  background-color: white;
+  text-align: center;
 
 }
-.twitter-image{
-  background: url(../assets/imgs/TW.png) no-repeat center center;
-  display: block;
-  background-size: inherit;
-  min-width: 50px;
-  min-height: 50px;
+.timer-text{
+  font-size: 5rem;
+  color:map-get($colors, AppYellow);
+}
+.input-timer-text{
+  font-size: 3rem;
+  text-align: center;
 
 
 }
-.googleplus-image{
-  background: url(../assets/imgs/G.png) no-repeat center center;
-  display: block;
-  background-size: inherit;
-  min-width: 50px;
-  min-height: 50px;
-
+.text-input-md {
+  margin: 13px 8px;
+  padding: 0;
+  text-align: center;
+  width: calc(100% - 8px - 8px);
 }
-
-.inputLabel {
-  right: 1px !important;
-  background-color: transparent;
-  color: red !important;
-  text-align: end;
-  font-size: small;
-  font-weight: 700;
+.text-input-ios {
+  margin: 13px 8px;
+  padding: 0;
+  text-align: center;
+  width: calc(100% - 8px - 8px);
 }
- .inputLabelheading {
-  right: 1px !important;
-  background-color: transparent;
-  color: red !important;
-  text-align: right;
-  font-size: small;
-  font-weight: 700;
-}
-.validation-text-end{
-// width: 100%;
-max-width: -webkit-fill-available;
-text-align: end;
-margin: 5px 8px 5px 0;
-
-}
-.validation-text-start{
-  // width: 100%;
-  max-width: -webkit-fill-available;
-  text-align: start;
-  margin: 5px 8px 13px 0;
-
-  }
-  .validation-req-text-end{
-    max-width: -webkit-fill-available;
-    text-align: end;
-    margin: -14px 8px 13px 0;
-  }
-  .validation-invalid-text-end{
-    max-width: -webkit-fill-available;
-    text-align: end;
-    margin: -14px 8px 13px 20px;
-  }
-  .item{
-    margin-bottom: 15px;
-
-  }
-
-
-
-
-
 
 }
