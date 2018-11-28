@@ -148,11 +148,30 @@ page-login {
   font-size: small;
   font-weight: 700;
 }
-.validation-end{
-width: 100%;
+.validation-text-end{
+// width: 100%;
 max-width: -webkit-fill-available;
 text-align: end;
+margin: 5px 8px 5px 0;
+
 }
+.validation-text-start{
+  // width: 100%;
+  max-width: -webkit-fill-available;
+  text-align: start;
+  margin: 5px 8px 13px 0;
+
+  }
+  .validation-req-text-end{
+    max-width: -webkit-fill-available;
+    text-align: end;
+    margin: -14px 8px 13px 0;
+  }
+  .validation-invalid-text-end{
+    max-width: -webkit-fill-available;
+    text-align: start;
+    margin: -14px 8px 13px 20px;
+  }
 
 
 

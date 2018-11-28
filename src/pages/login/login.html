@@ -29,18 +29,20 @@
                   <ion-input maxlength="64" value="" formControlName="username"  type="text" placeholder="Email">
                   </ion-input>
 
-                <ion-label class="inputLabel validation-end" *ngIf="username.hasError('required') && username.touched" end>Required*</ion-label>
-                <ion-label class="inputLabel validation-end" *ngIf="username.hasError('pattern') && username.touched"   end> Invalid email</ion-label>
+
 
 
               </ion-item>
+              <ion-label class="inputLabel validation-req-text-end" *ngIf="username.hasError('required') && username.touched" end>Required*</ion-label>
+              <ion-label class="inputLabel validation-invalid-text-end" *ngIf="username.hasError('pattern') && username.touched"  end>Invalid email</ion-label>
 
               <ion-item>
                 <ion-label><ion-img class="password-image"> </ion-img></ion-label>
                 <ion-input maxlength="64" value="" formControlName="password"  type="password" placeholder="Password" end> </ion-input>
-                <ion-label class="inputLabel validation-end" *ngIf="password.hasError('required') && password.touched" end>Required*</ion-label>
+
 
               </ion-item>
+              <ion-label class="inputLabel validation-text-end" *ngIf="password.hasError('required') && password.touched" end>Required*</ion-label>
 
 
             </form>
