@@ -39,4 +39,22 @@ export class LoginPage {
   loggingIn(){
     alert('Loggingin')
   }
+
+  //check if tHe Enter key Pressed and move to the next input
+  gotoToPasswordInput(e,nextElement)
+  {
+    if(e.key === "Enter"){
+      nextElement.setFocus();
+
+    }
+
+  }
+
+  gotoToLoggingButton(e,nextElement)
+  {
+    if(e.key === "Enter"){
+      this.loggingIn()
+    }
+  }
+
 }

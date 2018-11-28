@@ -4,6 +4,9 @@ page-login {
   .scroll-content {
     background: url(../assets/imgs/backgroundImage.jpg) no-repeat center center;
     background-size:cover;
+    padding-bottom: 0px !important;
+    display: inline-grid !important;
+
 
 }
 
@@ -169,7 +172,7 @@ margin: 5px 8px 5px 0;
   }
   .validation-invalid-text-end{
     max-width: -webkit-fill-available;
-    text-align: start;
+    text-align: end;
     margin: -14px 8px 13px 20px;
   }
 
