@@ -18,3 +18,22 @@ ion-content {
   background-image: url('../assets/img/BG.png');
   -webkit-background-image: url('../assets/img/BG.png');
 }
+
+.toolbar-title-md {
+  text-align: center;
+  margin-left: -6vw;
+  color:map-get($colors, AppBlue);
+}
+.toolbar-title-ios {
+text-align: center;
+margin-left: -6vw;
+color:map-get($colors, AppBlue);
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+color:map-get($colors, AppBlue);
+background-color: transparent;
+}
+.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
+color:map-get($colors, AppBlue);
+background-color: transparent;
+}

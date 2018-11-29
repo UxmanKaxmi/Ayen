@@ -1,22 +1,5 @@
 page-signup {
-.toolbar-title-md {
-    text-align: center;
-    margin-left: -6vw;
-    color:map-get($colors, AppBlue);
-}
-.toolbar-title-ios {
-  text-align: center;
-  margin-left: -6vw;
-  color:map-get($colors, AppBlue);
-}
-.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
-  color:map-get($colors, AppBlue);
-  background-color: transparent;
-}
-.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
-  color:map-get($colors, AppBlue);
-  background-color: transparent;
-}
+
 
 .header-md::after {
   left: 0;
@@ -119,7 +102,7 @@ page-signup {
 .mobile-image{
   background: url(../assets/imgs/Mobile.png) no-repeat center center;
   display: block;
-  background-size: cover;
+  background-size: 38px;
   min-width: 45px;
 
 }

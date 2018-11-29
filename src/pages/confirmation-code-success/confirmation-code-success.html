@@ -6,13 +6,52 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <!-- <ion-navbar>
     <ion-title>confirmation-code-success</ion-title>
-  </ion-navbar>
+  </ion-navbar> -->
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-grid class="main-grid">
 
+        <ion-row class="thumbs-image-height">
+            <ion-img class="thumbsUpImage"> </ion-img>
+      </ion-row>
+
+        <ion-row class="main-row">
+            <ion-label>You have submitted your
+                request successfully</ion-label>
+          </ion-row>
+
+          <ion-row >
+              <ion-label class="label-row">We will review your request
+                  and get back to you ASAP.
+                  </ion-label>
+            </ion-row>
+
+
+
+
+        <ion-row class="row-form-center" >
+        </ion-row>
+
+
+
+        <ion-row class="login-button-row">
+            <ion-buttons class="login-ion-button">
+                <button class="button-login" tappable (click)=gotoLogin() >
+                 Done</button>
+              </ion-buttons>
+          </ion-row>
+
+
+
+
+
+
+
+
+  </ion-grid>
 </ion-content>

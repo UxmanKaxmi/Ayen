@@ -1,5 +1,7 @@
+import { ConfirmationCodeSuccessPage } from './../confirmation-code-success/confirmation-code-success';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
+import { SignupPage } from '../signup/signup';
 
 /**
  * Generated class for the ConfirmationCodePage page.
@@ -27,21 +29,29 @@ export class ConfirmationCodePage {
     console.log('ionViewDidLoad ConfirmationCodePage');
   }
 
-  gotoNextNumber(nextElement){
+  gotoNextNumber(e,nextElement,prevElement){
 
-        nextElement.setFocus();
+        if(e.key === "Backspace"){
+            prevElement.setFocus();
+          }
+          else if(e.key === "Enter"){
+            this.navCtrl.setRoot(ConfirmationCodeSuccessPage);
+          }
+          else{
+            nextElement.setFocus();
 
-
-
+          }
     }
+
+
     StartTimer(){
       var tim = setInterval(x =>
         {
-              if(this.maxtime>-1){
-              console.log(this.maxtime--);
+              if(this.maxtime>0){
+              this.maxtime--
               }
               else{
-              return true;
+                this.navCtrl.pop();
               }
 
         }, 1000);

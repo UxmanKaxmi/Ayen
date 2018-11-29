@@ -29,19 +29,19 @@
 
 
 
-                  <ion-label class="timer-text" >00:{{maxtime}} </ion-label>
+                  <ion-label class="timer-text" >{{maxtime}}s</ion-label>
 
               <ion-row>
                   <ion-col col-3>
                     <ion-item>
-                        <ion-input (keyup)="gotoNextNumber(number2)" type="tel" maxlength="1" class="input-timer-text">2</ion-input>
+                        <ion-input #number1 (keyup)="gotoNextNumber($event,number2,number1)" type="tel" maxlength="1" class="input-timer-text">2</ion-input>
 
                     </ion-item>
                   </ion-col>
 
                   <ion-col col-3>
                       <ion-item>
-                          <ion-input #number2 (keyup)="gotoNextNumber(number3)" type="tel" maxlength="1" class="input-timer-text">2</ion-input>
+                          <ion-input #number2 (keyup)="gotoNextNumber($event,number3,number1)" type="tel" maxlength="1" class="input-timer-text">2</ion-input>
 
                       </ion-item>
                     </ion-col>
@@ -49,14 +49,14 @@
 
                     <ion-col col-3>
                         <ion-item>
-                            <ion-input #number3 (keyup)="gotoNextNumber(number4)" type="tel" maxlength="1" class="input-timer-text">2</ion-input>
+                            <ion-input #number3 (keyup)="gotoNextNumber($event,number4,number2)" type="tel" maxlength="1" class="input-timer-text">2</ion-input>
 
                         </ion-item>
                       </ion-col>
 
                       <ion-col col-3>
                           <ion-item>
-                              <ion-input #number4 type="tel" maxlength="1"  class="input-timer-text">2</ion-input>
+                              <ion-input #number4 type="tel" maxlength="1" (keyup)="gotoNextNumber($event,number4,number3)" class="input-timer-text">2</ion-input>
                           </ion-item>
                         </ion-col>
               </ion-row>

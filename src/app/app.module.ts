@@ -1,3 +1,4 @@
+import { GooglePlus } from '@ionic-native/google-plus';
 import { ConfirmationCodeSuccessPage } from './../pages/confirmation-code-success/confirmation-code-success';
 import { ConfirmationCodePage } from './../pages/confirmation-code/confirmation-code';
 import { SignupPage } from './../pages/signup/signup';
@@ -12,6 +13,7 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Facebook } from '@ionic-native/facebook';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
   ],
   providers: [
+    GooglePlus,
+    Facebook,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

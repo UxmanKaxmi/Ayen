@@ -1,3 +1,213 @@
 page-confirmation-code-success {
 
+
+  .header-md::after {
+    left: 0;
+    bottom: -5px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 0px !important;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMV…h/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+    background-repeat: repeat-x;
+    content: "";
+  }
+  .header-ios::after {
+    left: 0;
+    bottom: -5px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 0px !important;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMV…h/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+    background-repeat: repeat-x;
+    content: "";
+  }
+
+  .toolbar-background-md {
+    border-color: transparent;
+    background: transparent;
+  }
+  .toolbar-background-ios {
+    border-color: transparent;
+    background: transparent;
+  }
+
+
+
+    .scroll-content {
+      background: url(../assets/imgs/backgroundImage.jpg) no-repeat center center;
+      background-size:cover;
+      padding-bottom: 0px !important;
+      display: inline-grid !important;
+
+
+  }
+
+  .main-grid{
+    align-self: center;
+    height:100%;
+    width: 100%;
+
+  }
+
+  .MainLogo{
+    background: url(../assets/imgs/logo.png) no-repeat center center;
+    display: block;
+    width: 70%;
+    height: 30vw;
+    background-size: contain;
+    margin: auto;
+
+  }
+  .item-md{
+    background-color: transparent;
+  }
+  .item-ios{
+    background-color: transparent;
+  }
+  .main-row{
+    margin-top: 20vw;
+    // margin-bottom: 10vw;
+
+  }
+  .row-form-center{
+  // margin-top: 20vw
+  }
+  .forget-password-text{
+    text-align: center
+  }
+  .forget-password-row{
+
+    margin-top: 2vw;
+
+    color:#00b7e5;
+    text-decoration: underline;
+
+  }
+  .password-image{
+    background: url(../assets/imgs/Password.png) no-repeat center center;
+    display: block;
+    background-size: auto;
+    min-width: 32px;
+
+  }
+  .email-image{
+    background: url(../assets/imgs/Email.png) no-repeat center center;
+    display: block;
+    background-size: auto;
+    min-width: 32px;
+
+  }
+  .button-login{
+
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    color: white;
+    border-radius: 10px;
+    font-size: 2rem;
+    background-color:map-get($colors, AppGreen);
+    text-align: center;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    width: 100%;
+    font-weight: bold;
+
+
+  }
+  .login-button-row{
+    margin-top: 5vw;
+
+    align-self: center;
+    width: 100%
+
+  }
+  .login-ion-button{
+    width: 100%
+  }
+
+  .dont-account-text{
+
+    overflow: initial;
+    font-weight: 500;
+
+  }
+  .create-account-text{
+    color:#00b7e5;
+    text-decoration: underline;
+
+  }
+
+  .dont-account-row{
+    align-self: center;
+
+
+  }
+  ion-label {
+
+    white-space: normal !important;
+  }
+  .label-md {
+    margin: 13px 54px 13px 54px;
+    background-color: white;
+    text-align: center;
+    font-size: 1.5rem;
+
+  }
+  .label-ios {
+    margin: 13px 54px 13px 54px;
+    background-color: white;
+    text-align: center;
+    font-size: 1.5rem;
+
+
+  }
+  .timer-text{
+    font-size: 5rem;
+    color:map-get($colors, AppYellow);
+  }
+  .input-timer-text{
+    font-size: 3rem;
+    text-align: center;
+
+
+  }
+  .text-input-md {
+    margin: 13px 8px;
+    padding: 0;
+    text-align: center;
+    width: calc(100% - 8px - 8px);
+  }
+  .text-input-ios {
+    margin: 13px 8px;
+    padding: 0;
+    text-align: center;
+    width: calc(100% - 8px - 8px);
+  }
+  .thumbsUpImage{
+    background: url(../assets/imgs/Thumbsup.png) no-repeat center center;
+    display: block;
+
+    margin: auto;
+    background-size: 50vw;
+    min-width: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+
+  }
+  .thumbs-image-height{
+    height: 35vw;
+    margin-top: 25vw;
+
+
+  }
+  .label-row{
+    margin: 0px 54px 13px 54px;
+
+  }
+
+
+
 }

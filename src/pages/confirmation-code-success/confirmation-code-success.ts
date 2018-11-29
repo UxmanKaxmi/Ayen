@@ -1,3 +1,4 @@
+import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 
@@ -19,6 +20,9 @@ export class ConfirmationCodeSuccessPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfirmationCodeSuccessPage');
+  }
+  gotoLogin(){
+    this.navCtrl.popTo(LoginPage)
   }
 
 }

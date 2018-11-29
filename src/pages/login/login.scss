@@ -54,15 +54,15 @@ page-login {
 .password-image{
   background: url(../assets/imgs/Password.png) no-repeat center center;
   display: block;
-  background-size: auto;
-  min-width: 32px;
+  background-size: cover;
+  min-width: 45px;
 
 }
 .email-image{
   background: url(../assets/imgs/Email.png) no-repeat center center;
   display: block;
-  background-size: auto;
-  min-width: 32px;
+  background-size: cover;
+  min-width: 45px;
 
 }
 .button-login{
@@ -115,7 +115,7 @@ page-login {
 .facebook-image{
   background: url(../assets/imgs/FB.png) no-repeat center center;
   display: block;
-  background-size: inherit;
+  background-size: 5vw;
   min-width: 50px;
   min-height: 50px;
 
@@ -123,7 +123,7 @@ page-login {
 .twitter-image{
   background: url(../assets/imgs/TW.png) no-repeat center center;
   display: block;
-  background-size: inherit;
+  background-size: 8vw;
   min-width: 50px;
   min-height: 50px;
 
@@ -132,9 +132,11 @@ page-login {
 .googleplus-image{
   background: url(../assets/imgs/G.png) no-repeat center center;
   display: block;
-  background-size: inherit;
+  background-size: 8vw;
   min-width: 50px;
   min-height: 50px;
+  margin-left: 35px;
+  margin-right: 35px;
 
 }
 

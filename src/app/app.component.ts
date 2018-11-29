@@ -1,3 +1,4 @@
+import { ConfirmationCodeSuccessPage } from './../pages/confirmation-code-success/confirmation-code-success';
 import { ConfirmationCodePage } from './../pages/confirmation-code/confirmation-code';
 import { LoginPage } from './../pages/login/login';
 import { Component, ViewChild } from '@angular/core';
@@ -35,6 +36,8 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.keyboard.hasFocusedTextInput()
+      this.statusBar.overlaysWebView(false);
+      this.statusBar.backgroundColorByHexString('#cccccc');
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
