@@ -1,3 +1,4 @@
+import { ApiProvider } from './../../providers/api/api';
 import { HomePage } from './../home/home';
 import { SignupPage } from './../signup/signup';
 import { Component } from '@angular/core';
@@ -23,8 +24,11 @@ export class LoginPage {
   formgroup:FormGroup;
   username:AbstractControl;
   password:AbstractControl;
+  method : string = "";
+  request : string = "";
+  dataList : any = "";
 
-  constructor(private googlePlus: GooglePlus,public fb: Facebook,public navCtrl: NavController, public navParams: NavParams,public formbuilder: FormBuilder) {
+  constructor(public api:ApiProvider,private googlePlus: GooglePlus,public fb: Facebook,public navCtrl: NavController, public navParams: NavParams,public formbuilder: FormBuilder) {
 
     //for Validation
     let EMAILPATTERN = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$/i;
@@ -41,9 +45,81 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   loggingIn(){
-    alert('Loggingin')
-    this.navCtrl.push(HomePage)
+
+
+ //assigning values of method for the request
+ this.method = "Login";
+ // assigning values of signup form to request soap
+ this.request ="<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">"+
+  "<soapenv:Header/>"+
+  "<soapenv:Body>"+
+  "<tem:Login>"+
+  "<tem:usernameOrEmail>"+
+
+  "kazmi58@gmail.com"+
+
+  "</tem:usernameOrEmail>"+
+  "<tem:userPassword>"+
+
+
+  "123456"+
+
+  "</tem:userPassword>"+
+  "<tem:guestToken></tem:guestToken>"+
+"</tem:Login>"+
+
+
+
+  "</soapenv:Body>"+
+ "</soapenv:Envelope>";
+
+    this.api.apiService(this.request,this.method)
+    .then(response => {
+        this.dataList = response;
+        this.dataList = JSON.parse(this.dataList._body);
+
+        // checking for success or failure
+      console.log(this.dataList)
+      alert('data recieved')
+        //FOR CUSTOMER DOESNT EXIST ERROR
+        if (this.dataList.aStatus == "CustomerNotExist") {
+
+
+        }
+
+        //FOR wrongPasswordText ERROR
+
+         if (this.dataList.aStatus == "WrongPassword") {
+
+
+       }
+
+
+
+         if (this.dataList.aStatus == "Success") {
+
+
+
+
+       }
+
+   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
+
   gotoSignupPage(){
     this.navCtrl.push(SignupPage)
 
