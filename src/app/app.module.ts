@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Facebook } from '@ionic-native/facebook';
 import { ApiProvider } from '../providers/api/api';
+import { HelpersProvider } from '../providers/helpers/helpers';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ApiProvider } from '../providers/api/api';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiProvider
+    ApiProvider,
+    HelpersProvider
   ]
 })
 export class AppModule {}

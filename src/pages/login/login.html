@@ -13,14 +13,35 @@
 
 <ion-content padding >
 
-    <ion-grid class="main-grid">
-          <ion-row class="main-row">
-                <ion-img class="MainLogo"> </ion-img>
+
+
+    <!-- <ion-list>
+        <ion-item>
+          <ion-label>Select an effect</ion-label>
+          <ion-select
+             [(ngModel)]="effect"
+             (ionChange)="applyClassBySelection($event, effect)">
+             <ion-option value="shake">Shake</ion-option>
+             <ion-option value="bounce">Bounce</ion-option>
+             <ion-option value="jello">Jello</ion-option>
+             <ion-option value="lightSpeedIn">Light Speed In</ion-option>
+             <ion-option value="flip">Flip</ion-option>
+             <ion-option value="swing">Swing</ion-option>
+          </ion-select>
+        </ion-item>
+     </ion-list> -->
+
+
+
+
+    <ion-grid class="main-grid"  >
+          <ion-row  class="main-row">
+                <ion-img [ngClass]="logoAnimation" class="MainLogo"> </ion-img>
           </ion-row>
 
 
 
-          <ion-row class="row-form-center" >
+          <ion-row  class="row-form-center"  [ngClass]="restAnimation">
             <form style="flex: 1;" [formGroup]="formgroup" >
 
               <ion-item style="margin-bottom: 20px">
@@ -48,20 +69,20 @@
             </form>
           </ion-row>
 
-          <ion-row class="forget-password-row">
+          <ion-row class="forget-password-row"  [ngClass]="restAnimation">
             <ion-label class="forget-password-text">
               Forgot Password?
             </ion-label>
           </ion-row>
 
-          <ion-row class="login-button-row">
+          <ion-row class="login-button-row"  [ngClass]="restAnimation">
               <ion-buttons class="login-ion-button">
                   <button class="button-login" tappable (click)="loggingIn()">
                     Login   </button>
                 </ion-buttons>
             </ion-row>
 
-            <ion-row (click)="gotoSignupPage()" class="dont-account-row">
+            <ion-row (click)="gotoSignupPage()" class="dont-account-row"  [ngClass]="restAnimation">
                 <ion-label class="dont-account-text">
                   Don't have an account?
                 </ion-label>
@@ -71,7 +92,7 @@
               </ion-row>
 
 
-              <ion-row  class="dont-account-row">
+              <ion-row  class="dont-account-row"  [ngClass]="restAnimation">
                   <ion-img tappable (click)="loginFacebook()" class="facebook-image"> </ion-img>
                   <ion-img tappable (click)="loginGoogle()"class="googleplus-image"> </ion-img>
                   <ion-img class="twitter-image"> </ion-img>

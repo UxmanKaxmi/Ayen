@@ -28,6 +28,12 @@ export class LoginPage {
   request : string = "";
   dataList : any = "";
 
+  public effect : any;
+  public logoAnimation : string = "";
+  public restAnimation : string = "";
+
+
+
   constructor(public api:ApiProvider,private googlePlus: GooglePlus,public fb: Facebook,public navCtrl: NavController, public navParams: NavParams,public formbuilder: FormBuilder) {
 
     //for Validation
@@ -41,9 +47,13 @@ export class LoginPage {
 
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     console.log('ionViewDidLoad LoginPage');
+      this.applyAnimation();
   }
+
+
+
   loggingIn(){
 
 
@@ -200,6 +210,14 @@ export class LoginPage {
 
   }
 
+  applyAnimation()
+  {
+    this.logoAnimation = "animated " + 'fadeInDown';
 
+    this.restAnimation = "animated " + 'fadeInUp';
+
+
+    // console.log(cssAnimation)
+  }
 
 }
