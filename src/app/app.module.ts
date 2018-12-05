@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { HttpModule } from "@angular/http";
+import { DeviceFeedback } from '@ionic-native/device-feedback';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -49,7 +50,7 @@ import { HelpersProvider } from '../providers/helpers/helpers';
   ],
   providers: [
     GooglePlus,
-    Facebook,
+    Facebook,DeviceFeedback,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

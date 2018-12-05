@@ -21,11 +21,11 @@
 
 
         <ion-row class="row-form-center" >
-          <form style="flex: 1;"  [formGroup]="formgroup">
+          <form style="flex: 1;"  [formGroup]="formgroup" [ngClass]="inputAnimation" >
 
             <ion-item class="item">
                 <ion-label><ion-img class="email-image"> </ion-img></ion-label>
-                <ion-input maxlength="55" value=""   type="text" placeholder="Email"  formControlName="username">
+                <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value=""   type="text" placeholder="Email"  formControlName="username">
                 </ion-input>
             </ion-item>
 
@@ -34,14 +34,14 @@
 
             <ion-item class="item">
                 <ion-label><ion-img class="password-image"> </ion-img></ion-label>
-              <ion-input maxlength="44"     value=""  type="password" placeholder="Password"  formControlName="password" end> </ion-input>
+              <ion-input (ionFocus)='provideHepticFeedback()' maxlength="44"     value=""  type="password" placeholder="Password"  formControlName="password" end> </ion-input>
             </ion-item>
             <ion-label class="inputLabel validation-invalid-text-end" *ngIf="password.hasError('required') && password.touched" end>Required*</ion-label>
 
 
             <ion-item class="item">
                 <ion-label><ion-img class="password-image"> </ion-img></ion-label>
-                <ion-input (input)="checkConfirmPassword($event)"  maxlength="64" value=""   type="password" placeholder="Confirm Password">
+                <ion-input (ionFocus)='provideHepticFeedback()' (input)="checkConfirmPassword($event)"  maxlength="64" value=""   type="password" placeholder="Confirm Password">
                 </ion-input>
             </ion-item>
 
@@ -50,13 +50,13 @@
 
             <ion-item class="item">
                 <ion-label><ion-img class="email-image"> </ion-img></ion-label>
-              <ion-input maxlength="44"     value=""  type="text" formControlName="fullname" placeholder="Full Name" end> </ion-input>
+              <ion-input (ionFocus)='provideHepticFeedback()' maxlength="44"     value=""  type="text" formControlName="fullname" placeholder="Full Name" end> </ion-input>
             </ion-item>
             <ion-label class="inputLabel validation-invalid-text-end" *ngIf="fullname.hasError('required') && fullname.touched" end>Required*</ion-label>
 
             <ion-item class="item">
                 <ion-label><ion-img class="mobile-image"> </ion-img></ion-label>
-                <ion-input maxlength="20" value="" formControlName="mobile"   type="tel" placeholder="Mobile">
+                <ion-input (ionFocus)='provideHepticFeedback()' maxlength="20" value="" formControlName="mobile"   type="tel" placeholder="Mobile">
                 </ion-input>
             </ion-item>
 
@@ -65,14 +65,14 @@
 
             <ion-item class="item">
                 <ion-label><ion-img class="address-image"> </ion-img></ion-label>
-              <ion-input maxlength="64" #b    value=""  formControlName="address" type="text" placeholder="Address" end> </ion-input>
+              <ion-input (ionFocus)='provideHepticFeedback()' maxlength="64" #b    value=""  formControlName="address" type="text" placeholder="Address" end> </ion-input>
             </ion-item>
             <ion-label class="inputLabel validation-req-text-end" *ngIf="address.hasError('required') && address.touched" end>Required*</ion-label>
 
 
             <ion-item class="item">
                 <ion-label><ion-img class="city-image"> </ion-img></ion-label>
-                <ion-input maxlength="44" formControlName="city" value=""   type="text" placeholder="City">
+                <ion-input (ionFocus)='provideHepticFeedback()' maxlength="44" formControlName="city" value=""   type="text" placeholder="City">
                 </ion-input>
             </ion-item>
 
@@ -81,13 +81,13 @@
 
             <ion-item class="item">
                 <ion-label><ion-img class="location-image"> </ion-img></ion-label>
-              <ion-input maxlength="44" #b formControlName="state"   value=""  type="text" placeholder="State" end> </ion-input>
+              <ion-input (ionFocus)='provideHepticFeedback()' maxlength="44" #b formControlName="state"   value=""  type="text" placeholder="State" end> </ion-input>
             </ion-item>
             <ion-label class="inputLabel validation-req-text-end" *ngIf="state.hasError('required') && state.touched" end>Required*</ion-label>
 
             <ion-item class="item">
                 <ion-label><ion-img class="location-image"> </ion-img></ion-label>
-              <ion-input maxlength="44" #b formControlName="country"   value=""  type="text" placeholder="Country" end> </ion-input>
+              <ion-input (ionFocus)='provideHepticFeedback()' maxlength="44" #b formControlName="country"   value=""  type="text" placeholder="Country" end> </ion-input>
             </ion-item>
             <ion-label class="inputLabel validation-req-text-end" *ngIf="country.hasError('required') && country.touched" end>Required*</ion-label>
 

@@ -41,13 +41,13 @@
 
 
 
-          <ion-row  class="row-form-center"  [ngClass]="restAnimation">
-            <form style="flex: 1;" [formGroup]="formgroup" >
+          <ion-row  class="row-form-center"   [ngClass]="restAnimation">
+            <form   style="flex: 1;" [formGroup]="formgroup"  >
 
               <ion-item style="margin-bottom: 20px">
 
                   <ion-label><ion-img class="email-image"> </ion-img></ion-label>
-                  <ion-input maxlength="64" value="" (keyup)="gotoToPasswordInput($event,b)"    formControlName="username"  type="text" placeholder="Email">
+                  <ion-input  (ionFocus)='provideHepticFeedback()' maxlength="64" value=""   (keyup)="gotoToPasswordInput($event,b)"    formControlName="username"  type="text" placeholder="Email">
                   </ion-input>
 
 
@@ -59,7 +59,7 @@
 
               <ion-item>
                 <ion-label><ion-img class="password-image"> </ion-img></ion-label>
-                <ion-input maxlength="64" #b  (keyup)="gotoToLoggingButton($event,b)"  value="" formControlName="password"  type="password" placeholder="Password" end> </ion-input>
+                <ion-input (ionFocus)='provideHepticFeedback()' maxlength="64" #b  (keyup)="gotoToLoggingButton($event,b)"  value="" formControlName="password"  type="password" placeholder="Password" end> </ion-input>
 
 
               </ion-item>
@@ -92,7 +92,7 @@
               </ion-row>
 
 
-              <ion-row  class="dont-account-row"  [ngClass]="restAnimation">
+              <ion-row  class="social-buttons-row"  [ngClass]="restAnimation">
                   <ion-img tappable (click)="loginFacebook()" class="facebook-image"> </ion-img>
                   <ion-img tappable (click)="loginGoogle()"class="googleplus-image"> </ion-img>
                   <ion-img class="twitter-image"> </ion-img>

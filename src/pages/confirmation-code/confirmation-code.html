@@ -15,7 +15,7 @@
 
 <ion-content padding>
      <ion-grid class="main-grid">
-          <ion-row class="main-row">
+          <ion-row [ngClass]="textAnimation" class="main-row">
               <ion-label>Please enter the confirmation code
                   that sent to you via
                   SMS message</ion-label>
@@ -29,7 +29,7 @@
 
 
 
-                  <ion-label class="timer-text" >{{maxtime}}s</ion-label>
+                  <ion-label [ngClass]="TimerTextAnimation" class="timer-text" >{{maxtime}}s</ion-label>
 
               <ion-row>
                   <ion-col col-3>
@@ -70,7 +70,7 @@
             </ion-label>
           </ion-row>
 
-          <ion-row class="login-button-row">
+          <ion-row class="login-button-row" [ngClass]="buttonAnimation">
               <ion-buttons class="login-ion-button">
                   <button class="button-login" tappable >
                     Resend OTP   </button>

@@ -1,3 +1,4 @@
+import { HelpersProvider } from './../../providers/helpers/helpers';
 import { HomePage } from './../home/home';
 import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Component } from '@angular/core';
@@ -31,7 +32,8 @@ export class SignupPage {
 
   validate_confirmpassword: any;
   chkCP: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formbuilder: FormBuilder) {
+  inputAnimation: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public formbuilder: FormBuilder,private helper:HelpersProvider) {
 
 
     let EMAILPATTERN = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$/i;
@@ -61,8 +63,8 @@ export class SignupPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
+  ionViewWillEnter() {
+    this.applyAnimation();
   }
 
   checkConfirmPassword(t){
@@ -92,6 +94,17 @@ export class SignupPage {
       this.gotoConfirmationCodePage()
     }
   }
+
+  applyAnimation()
+  {
+    this.inputAnimation = "animated " + 'fadeInRight';
+  }
+
+  provideHepticFeedback(){
+    this.helper.provideHepticFeedback()
+  }
+
+
 
 
 }

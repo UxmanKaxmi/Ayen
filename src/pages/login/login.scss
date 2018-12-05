@@ -33,19 +33,17 @@ page-login {
   background-color: transparent;
 }
 .main-row{
-  margin-top: 20vw;
-  margin-bottom: 10vw;
+  margin-top: 10%;
+  margin-bottom: 10%;
 
 }
-.row-form-center{
-// margin-top: 20vw
-}
+
 .forget-password-text{
   text-align: center
 }
 .forget-password-row{
 
-  margin-top: 2vw;
+  margin-top: 5%;
 
   color:#00b7e5;
   text-decoration: underline;
@@ -85,7 +83,7 @@ page-login {
 
 }
 .login-button-row{
-  margin-top: 5vw;
+  margin-top: 5%;
 
   align-self: center;
   width: 100%
@@ -96,7 +94,6 @@ page-login {
 }
 
 .dont-account-text{
-
   overflow: initial;
   font-weight: 500;
 
@@ -108,24 +105,30 @@ page-login {
 }
 
 .dont-account-row{
+  margin-top: 5%;
+
   align-self: center;
 
 
+}
+.social-buttons-row{
+
+  align-self: center;
 }
 .facebook-image{
   background: url(../assets/imgs/FB.png) no-repeat center center;
   display: block;
   background-size: 5vw;
-  min-width: 50px;
-  min-height: 50px;
+  min-width: 100px;
+  min-height: 100px;
 
 }
 .twitter-image{
   background: url(../assets/imgs/TW.png) no-repeat center center;
   display: block;
   background-size: 8vw;
-  min-width: 50px;
-  min-height: 50px;
+  min-width: 100px;
+  min-height: 100px;
 
 
 }
@@ -133,10 +136,9 @@ page-login {
   background: url(../assets/imgs/G.png) no-repeat center center;
   display: block;
   background-size: 8vw;
-  min-width: 50px;
-  min-height: 50px;
-  margin-left: 35px;
-  margin-right: 35px;
+  min-width: 100px;
+  min-height: 100px;
+
 
 }
 

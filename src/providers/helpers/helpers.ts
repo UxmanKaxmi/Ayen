@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { DeviceFeedback } from '@ionic-native/device-feedback';
 import { Injectable } from '@angular/core';
 
 /*
@@ -11,15 +11,14 @@ import { Injectable } from '@angular/core';
 export class HelpersProvider {
 
   public effect : any;
-  // public cssClass : string;
-  constructor(public http: HttpClient) {
+  constructor(private deviceFeedback: DeviceFeedback) {
     console.log('Hello HelpersProvider Provider');
   }
 
 
-  // public animation(effect : string,cssClass){
-  //   cssClass = "animated " + effect;
-
-  // }
+  //for providting vibration on focusing input
+  provideHepticFeedback(){
+    this.deviceFeedback.haptic(1);
+  }
 
 }

@@ -19,15 +19,16 @@ export class ConfirmationCodePage {
 
     timer:any
   hidevalue: boolean;
+  TimerTextAnimation: string;
+  buttonAnimation: string;
+  textAnimation: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.StartTimer()
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ConfirmationCodePage');
-  }
+
 
   gotoNextNumber(e,nextElement,prevElement){
 
@@ -55,6 +56,19 @@ export class ConfirmationCodePage {
               }
 
         }, 1000);
+
+    }
+
+    ionViewWillEnter() {
+      this.applyAnimation();
+  }
+    applyAnimation()
+    {
+      this.textAnimation = "animated " + 'fadeInDown';
+      this.buttonAnimation = "animated " + 'fadeInUp';
+      this.TimerTextAnimation = "animated " + 'tada';
+
+
 
     }
 
