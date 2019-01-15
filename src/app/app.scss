@@ -15,8 +15,9 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 ion-content {
-  background-image: url('../assets/img/BG.png');
-  -webkit-background-image: url('../assets/img/BG.png');
+  // background-image: url('../assets/img/BG.png');
+  // -webkit-background-image: url('../assets/img/BG.png');
+  // background-color: #000;
 }
 
 .toolbar-title-md {
