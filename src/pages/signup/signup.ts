@@ -1,9 +1,11 @@
+import { SignupPersonalInfoPage } from './../signup-personal-info/signup-personal-info';
 import { HelpersProvider } from './../../providers/helpers/helpers';
 import { HomePage } from './../home/home';
 import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { ConfirmationCodePage } from '../confirmation-code/confirmation-code';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 /**
  * Generated class for the SignupPage page.
@@ -28,12 +30,14 @@ export class SignupPage {
   state:AbstractControl;
   country:AbstractControl;
 
+
   confirmPassword: AbstractControl;
 
   validate_confirmpassword: any;
   chkCP: boolean = false;
   inputAnimation: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formbuilder: FormBuilder,private helper:HelpersProvider) {
+  constructor(private googlePlus: GooglePlus,
+    public navCtrl: NavController, public navParams: NavParams,public formbuilder: FormBuilder,private helper:HelpersProvider) {
 
 
     let EMAILPATTERN = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$/i;
@@ -85,13 +89,13 @@ export class SignupPage {
   }
   }
 
-  gotoConfirmationCodePage(){
-    this.navCtrl.push(ConfirmationCodePage)
+  gotoSignupPersonalInfoPage(){
+    this.navCtrl.push(SignupPersonalInfoPage)
   }
   gotoToLoggingButton(e,nextElement)
   {
     if(e.key === "Enter"){
-      this.gotoConfirmationCodePage()
+      this.gotoSignupPersonalInfoPage()
     }
   }
 
@@ -103,6 +107,18 @@ export class SignupPage {
   provideHepticFeedback(){
     this.helper.provideHepticFeedback()
   }
+
+  goBack(){
+    this.navCtrl.pop()
+  }
+  loginGoogle() {
+    console.log("google login");
+    this.googlePlus
+      .login({})
+      .then(res => alert("Google Logged In! Welcome " + res.displayName))
+      .catch(err => console.error(err));
+  }
+
 
 
 

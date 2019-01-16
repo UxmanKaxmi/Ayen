@@ -1,0 +1,52 @@
+page-signup-personal-info {
+  .main-grid{
+    align-self: center;
+    height:100%;
+    width: 100%;
+
+  }
+  .top-circle-icon{
+    background: url(../assets/imgs/personal-info-circle-icons.png) no-repeat center center;
+    display: block;
+    background-size: contain;
+    width: -webkit-fill-available;
+    min-width: 45px;
+    min-height: 45px;
+    /* padding: 0px 10px 0px 10px; */
+    margin: 0px 5px 0px 5px;
+  }
+  .login-ion-button{
+    width: 100%
+  }
+  .login-button-row{
+    margin-top: 5vw;
+
+    align-self: center;
+    width: 100%
+
+  }
+  .button-login{
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    color: black;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color:map-get($colors, AppYellow);
+    text-align: center;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .back-icon-image{
+    background: url(../assets/imgs/back-icon.png) no-repeat center center;
+    display: block;
+    background-size: contain;
+    min-width: 45px;
+
+  }
+}

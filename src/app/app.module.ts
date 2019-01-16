@@ -1,3 +1,5 @@
+import { SignupPersonalInfoPage } from './../pages/signup-personal-info/signup-personal-info';
+import { SignupExperincePage } from './../pages/signup-experince/signup-experince';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { ConfirmationCodeSuccessPage } from './../pages/confirmation-code-success/confirmation-code-success';
 import { ConfirmationCodePage } from './../pages/confirmation-code/confirmation-code';
@@ -26,7 +28,9 @@ import { HelpersProvider } from '../providers/helpers/helpers';
     LoginPage,
     SignupPage,
     ConfirmationCodePage,
-    ConfirmationCodeSuccessPage
+    ConfirmationCodeSuccessPage,
+    SignupExperincePage,
+    SignupPersonalInfoPage
 
   ],
   imports: [
@@ -44,7 +48,10 @@ import { HelpersProvider } from '../providers/helpers/helpers';
     LoginPage,
     SignupPage,
     ConfirmationCodePage,
-    ConfirmationCodeSuccessPage
+    ConfirmationCodeSuccessPage,
+    SignupExperincePage,
+    SignupPersonalInfoPage
+
 
 
   ],
