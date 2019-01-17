@@ -52,8 +52,7 @@
 
         <ion-label class="inputLabel validation-invalid-text-end" *ngIf="firstName.hasError('required') && firstName.touched"
           end>Required*</ion-label>
-        <ion-label class="inputLabel validation-invalid-text-end" *ngIf="firstName.hasError('pattern') && firstName.touched"
-          end>Invalid email*</ion-label>
+
 
           <ion-label class="email-text" end>LAST NAME</ion-label>
           <ion-item class="item">
@@ -180,7 +179,7 @@
 
                 <ion-label class="email-text" end>ORGANIZATION LICENSE NUMBER</ion-label>
                 <ion-item class="item">
-                  <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="organizationLicenseNumber">
+                  <ion-input (keyup)="gotoSelectDate($event)"  (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="organizationLicenseNumber">
                   </ion-input>
                 </ion-item>
 

@@ -152,4 +152,10 @@ export class SignupPersonalInfoPage {
     return date;
   }
 
+  gotoSelectDate(e, nextElement) {
+    if (e.key === "Enter") {
+      this.showDatePicker();
+    }
+  }
+
 }
