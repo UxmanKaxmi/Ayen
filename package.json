@@ -21,6 +21,7 @@
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/core": "~4.17.0",
+    "@ionic-native/date-picker": "^4.19.0",
     "@ionic-native/device-feedback": "^4.18.0",
     "@ionic-native/facebook": "^4.17.0",
     "@ionic-native/google-plus": "^4.17.0",
@@ -28,6 +29,7 @@
     "@ionic-native/status-bar": "^4.17.0",
     "@ionic/storage": "2.2.0",
     "cordova-android": "7.0.0",
+    "cordova-plugin-datepicker": "^0.9.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-facebook4": "^3.2.0",
     "cordova-plugin-googleplus": "^5.3.2",
@@ -67,7 +69,8 @@
         "REVERSED_CLIENT_ID": "myreversedclientid",
         "PLAY_SERVICES_VERSION": "11.8.0"
       },
-      "cordova-plugin-velda-devicefeedback": {}
+      "cordova-plugin-velda-devicefeedback": {},
+      "cordova-plugin-datepicker": {}
     },
     "platforms": [
       "android"

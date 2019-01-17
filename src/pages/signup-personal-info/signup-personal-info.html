@@ -38,14 +38,197 @@
 
 
 
-    <ion-row class="login-button-row" >
+
+    <ion-row>
+      <ion-row style="width:100%">
+
+      <form style="flex: 1;" [formGroup]="formgroup" [ngClass]="inputAnimation">
+
+        <ion-label class="email-text" end>FIRST NAME</ion-label>
+        <ion-item class="item">
+          <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="firstName">
+          </ion-input>
+        </ion-item>
+
+        <ion-label class="inputLabel validation-invalid-text-end" *ngIf="firstName.hasError('required') && firstName.touched"
+          end>Required*</ion-label>
+        <ion-label class="inputLabel validation-invalid-text-end" *ngIf="firstName.hasError('pattern') && firstName.touched"
+          end>Invalid email*</ion-label>
+
+          <ion-label class="email-text" end>LAST NAME</ion-label>
+          <ion-item class="item">
+            <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="lastName">
+            </ion-input>
+          </ion-item>
+
+          <ion-label class="inputLabel validation-invalid-text-end" *ngIf="lastName.hasError('required') && lastName.touched"
+          end>Required*</ion-label>
+          <!-- <ion-label class="inputLabel validation-invalid-text-end" *ngIf="lastName.hasError('pattern') && lastName.touched"
+            end>Invalid lastName*</ion-label> -->
+
+
+          <ion-label class="email-text" end>ID</ion-label>
+          <ion-item class="item">
+            <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="id">
+            </ion-input>
+          </ion-item>
+
+          <ion-label class="inputLabel validation-invalid-text-end" *ngIf="id.hasError('required') && id.touched"
+          end>Required*</ion-label>
+          <!-- <ion-label class="inputLabel validation-invalid-text-end" *ngIf="id.hasError('pattern') && id.touched"
+            end>Invalid id*</ion-label> -->
+
+
+            <ion-label class="email-text" end>MOBILE NUMBER</ion-label>
+            <ion-item class="item">
+              <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="mobile">
+              </ion-input>
+            </ion-item>
+
+            <ion-label class="inputLabel validation-invalid-text-end" *ngIf="mobile.hasError('required') && mobile.touched"
+            end>Required*</ion-label>
+            <!-- <ion-label class="inputLabel validation-invalid-text-end" *ngIf="id.hasError('pattern') && id.touched"
+              end>Invalid id*</ion-label> -->
+
+
+          </form>
+        </ion-row>
+
+        <ion-label [ngClass]="inputAnimation" class="email-text">NATIONALITY</ion-label>
+        <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+          <ion-select interface="alert" [(ngModel)]="nationality">
+            <ion-option value="saudiArabia">Saudi Arabia</ion-option>
+            <ion-option value="NATIONALITY2">NATIONALITY2</ion-option>
+            <ion-option value="NATIONALITY3">NATIONALITY3</ion-option>
+            <ion-option value="NATIONALITY4">NATIONALITY4</ion-option>
+          </ion-select>
+        </ion-item>
+
+
+          <ion-label [ngClass]="inputAnimation" class="email-text">Gender</ion-label>
+          <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+            <ion-select interface="alert" [(ngModel)]="gender">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+
+
+          <ion-label [ngClass]="inputAnimation" class="email-text">REGION</ion-label>
+          <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+            <ion-select interface="alert" [(ngModel)]="region">
+              <ion-option value="Central">Central</ion-option>
+              <ion-option value="North">North</ion-option>
+              <ion-option value="East">East</ion-option>
+              <ion-option value="West">West</ion-option>
+              <ion-option value="West">South</ion-option>
+            </ion-select>
+          </ion-item>
+
+
+          <ion-label [ngClass]="inputAnimation" class="email-text">CITY</ion-label>
+          <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+            <ion-select interface="alert" [(ngModel)]="city">
+              <ion-option value="city1">Jeddah</ion-option>
+              <ion-option value="city2">city2</ion-option>
+              <ion-option value="city3">city3</ion-option>
+              <ion-option value="city4">city4</ion-option>
+            </ion-select>
+          </ion-item>
+
+
+
+          <ion-label [ngClass]="inputAnimation" class="email-text">REGISTER IN AYEN AS</ion-label>
+          <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+            <ion-select interface="alert" [(ngModel)]="registerinAyenAs">
+              <ion-option value="Examiner">Examiner</ion-option>
+              <ion-option value="Inspector">Inspector</ion-option>
+
+
+            </ion-select>
+          </ion-item>
+
+
+
+
+          <ion-row style="width:100%">
+
+            <form style="flex: 1;" [formGroup]="formgroup" [ngClass]="inputAnimation">
+
+              <ion-label class="email-text" end>ORGANIZATION</ion-label>
+              <ion-item class="item">
+                <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="organization">
+                </ion-input>
+              </ion-item>
+
+              <ion-label class="inputLabel validation-invalid-text-end" *ngIf="organization.hasError('required') && organization.touched"
+                end>Required*</ion-label>
+              <ion-label class="inputLabel validation-invalid-text-end" *ngIf="organization.hasError('pattern') && organization.touched"
+                end>Invalid email*</ion-label>
+
+                <ion-label class="email-text" end>C.R NUMBER</ion-label>
+                <ion-item class="item">
+                  <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="crNumber">
+                  </ion-input>
+                </ion-item>
+
+                <ion-label class="inputLabel validation-invalid-text-end" *ngIf="crNumber.hasError('required') && crNumber.touched"
+                end>Required*</ion-label>
+                <!-- <ion-label class="inputLabel validation-invalid-text-end" *ngIf="lastName.hasError('pattern') && lastName.touched"
+                  end>Invalid lastName*</ion-label> -->
+
+
+                <ion-label class="email-text" end>ORGANIZATION LICENSE NUMBER</ion-label>
+                <ion-item class="item">
+                  <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="organizationLicenseNumber">
+                  </ion-input>
+                </ion-item>
+
+                <ion-label class="inputLabel validation-invalid-text-end" *ngIf="organizationLicenseNumber.hasError('required') && organizationLicenseNumber.touched"
+                end>Required*</ion-label>
+                <!-- <ion-label class="inputLabel validation-invalid-text-end" *ngIf="id.hasError('pattern') && id.touched"
+                  end>Invalid id*</ion-label> -->
+
+
+                  <ion-label class="email-text" end>EXPIRY DATE OF ORGANIZATIONS LICENSE</ion-label>
+                  <ion-item class="item"  (click)="showDatePicker()">
+                    <ion-input value={{expiryDateValue}}  disabled="true" (ionFocus)='provideHepticFeedback()' maxlength="55"  type="text" formControlName="expiryDate">
+                    </ion-input>
+                  </ion-item>
+
+                  <ion-label class="inputLabel validation-invalid-text-end" *ngIf="expiryDate.hasError('required') && expiryDate.touched"
+                  end>Required*</ion-label>
+                  <!-- <ion-label class="inputLabel validation-invalid-text-end" *ngIf="id.hasError('pattern') && id.touched"
+                    end>Invalid id*</ion-label> -->
+
+
+                </form>
+              </ion-row>
+
+
+
+
+
+
+
+        </ion-row>
+
+
+
+
+
+    <ion-row class="login-button-row" [ngClass]="inputAnimation" >
       <ion-col tappable (click)="goBack()" col-2 style="align-self: center;background-color: white;padding: 12px 0px 12px 0px;">
         <!-- <button  tappable (click)="gotoConfirmationCodePage()"> -->
         <ion-img class="back-icon-image"> </ion-img>
         <!-- </button> -->
       </ion-col>
 
-      <ion-col col-10>
+
+
+
+
+      <ion-col col-10 >
         <ion-buttons>
           <button class="button-login" tappable (click)="gotoSignupExperience()">
             Continue</button>

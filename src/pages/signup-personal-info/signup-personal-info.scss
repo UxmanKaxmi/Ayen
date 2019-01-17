@@ -1,8 +1,16 @@
 page-signup-personal-info {
+
+  .scroll-content {
+    background-size:cover;
+    background-color: #f7f8fc;
+    padding-bottom: 0px !important;
+    display: inline-grid !important;
+}
   .main-grid{
     align-self: center;
     height:100%;
     width: 100%;
+    margin-bottom: 10px;
 
   }
   .top-circle-icon{
@@ -49,4 +57,84 @@ page-signup-personal-info {
     min-width: 45px;
 
   }
+  .email-text{
+    margin: 13px 2px 0px 17px;
+    color:map-get($colors, AppGrey);
+    font-size: 13px;
+
+  }
+  .inputLabel {
+    right: 1px !important;
+    background-color: transparent;
+    color: red !important;
+    text-align: end;
+    font-size: small;
+    font-weight: 700;
+  }
+   .inputLabelheading {
+    right: 1px !important;
+    background-color: transparent;
+    color: red !important;
+    text-align: right;
+    font-size: small;
+    font-weight: 700;
+  }
+  .validation-text-end{
+  // width: 100%;
+  max-width: -webkit-fill-available;
+  text-align: end;
+  margin: 5px 8px 5px 0;
+
+  }
+  .validation-text-start{
+    // width: 100%;
+    max-width: -webkit-fill-available;
+    text-align: start;
+    margin: 5px 8px 13px 0;
+
+    }
+    .validation-req-text-end{
+      max-width: -webkit-fill-available;
+      text-align: end;
+      margin: -14px 8px 13px 0;
+    }
+    .validation-invalid-text-end{
+      max-width: -webkit-fill-available;
+      text-align: end;
+      margin: 7px 8px 13px 20px;
+    }
+
+    .item-md {
+
+      background-color: transparent;
+    }
+    .item-ios {
+
+      background-color: transparent;
+    }
+
+
+
+    .select-md {
+      padding: 13px 8px 13px 16px;
+      width: 100%;
+      max-width: -webkit-fill-available;
+  }
+  .select-ios {
+    padding: 13px 8px 13px 16px;
+    width: 100%;
+    max-width: -webkit-fill-available;
+}
+
+.text-input[disabled] {
+  opacity: 1;
+}
+.text-input-md {
+  margin: 13px 20px;
+}
+.text-input-ios {
+  margin: 13px 20px;
+}
+
+
 }

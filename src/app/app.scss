@@ -38,3 +38,10 @@ background-color: transparent;
 color:map-get($colors, AppBlue);
 background-color: transparent;
 }
+
+.scroll-content {
+  background-size:cover;
+  background-color: #f7f8fc !important;
+  padding-bottom: 0px !important;
+  display: inline-grid !important;
+}

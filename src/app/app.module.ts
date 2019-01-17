@@ -19,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Facebook } from '@ionic-native/facebook';
 import { ApiProvider } from '../providers/api/api';
 import { HelpersProvider } from '../providers/helpers/helpers';
+import { DatePicker } from '@ionic-native/date-picker';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { HelpersProvider } from '../providers/helpers/helpers';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
-    HelpersProvider
+    HelpersProvider,DatePicker
   ]
 })
 export class AppModule {}
