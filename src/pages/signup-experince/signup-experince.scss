@@ -16,6 +16,62 @@ page-signup-experince {
     margin: 0px 5px 0px 5px;
   }
   .login-ion-button{
+    width: 100%;
+    padding: 10px 12px;
+  }
+  .login-button-row{
+    margin-top: 5vw;
+
+    align-self: center;
+    width: 100%
+
+  }
+  .submit-button-row{
+    // margin-top: 5vw;
+
+    align-self: center;
+    width: 100%
+
+  }
+  .button-login{
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    color: black;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color:map-get($colors, AppYellow);
+    text-align: center;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .back-icon-image{
+    background: url(../assets/imgs/back-icon.png) no-repeat center center;
+    display: block;
+    background-size: contain;
+    min-width: 45px;
+
+  }
+  .scroll-content {
+    background-size:cover;
+    background-color: #f7f8fc;
+    padding-bottom: 0px !important;
+    display: inline-grid !important;
+}
+  .main-grid{
+    align-self: center;
+    height:100%;
+    width: 100%;
+    margin-bottom: 10px;
+
+  }
+
+  .login-ion-button{
     width: 100%
   }
   .login-button-row{
@@ -49,4 +105,137 @@ page-signup-experince {
     min-width: 45px;
 
   }
+  .email-text{
+    margin: 13px 2px 0px 17px;
+    color:map-get($colors, AppGrey);
+    font-size: 13px;
+
+  }
+
+  .agreement-text{
+    color:gray;
+    font-size: 9px;
+    text-align: center;
+  }
+  .terms-text{
+    color:gray;
+    font-size: 9px;
+    text-align: center;
+  }
+
+  .inputLabel {
+    right: 1px !important;
+    background-color: transparent;
+    color: red !important;
+    text-align: end;
+    font-size: small;
+    font-weight: 700;
+  }
+   .inputLabelheading {
+    right: 1px !important;
+    background-color: transparent;
+    color: red !important;
+    text-align: right;
+    font-size: small;
+    font-weight: 700;
+  }
+  .validation-text-end{
+  // width: 100%;
+  max-width: -webkit-fill-available;
+  text-align: end;
+  margin: 5px 8px 5px 0;
+
+  }
+  .validation-text-start{
+    // width: 100%;
+    max-width: -webkit-fill-available;
+    text-align: start;
+    margin: 5px 8px 13px 0;
+
+    }
+    .validation-req-text-end{
+      max-width: -webkit-fill-available;
+      text-align: end;
+      margin: -14px 8px 13px 0;
+    }
+    .validation-invalid-text-end{
+      max-width: -webkit-fill-available;
+      text-align: end;
+      margin: 7px 8px 13px 20px;
+    }
+
+    .item-md {
+
+      background-color: transparent;
+    }
+    .item-ios {
+
+      background-color: transparent;
+    }
+
+
+
+    .select-md {
+      padding: 13px 8px 13px 16px;
+      width: 100%;
+      max-width: -webkit-fill-available;
+  }
+  .select-ios {
+    padding: 13px 8px 13px 16px;
+    width: 100%;
+    max-width: -webkit-fill-available;
+}
+
+.select-text {
+
+  white-space: initial !important;
+}
+
+.text-input[disabled] {
+  opacity: 1;
+}
+.text-input-md {
+  margin: 13px 20px;
+}
+.text-input-ios {
+  margin: 13px 20px;
+}
+
+.upload-cv-image{
+  background: url(../assets/imgs/upload-cv-image.png) no-repeat center center;
+  display: block;
+  background-size: cover;
+  width: -webkit-fill-available;
+  min-width: 45px;
+  min-height: 65px;
+  /* padding: 0px 10px 0px 10px; */
+  margin: 0px 5px 0px 5px;
+}
+
+.upload-license-image{
+  background: url(../assets/imgs/upload-license-image.png) no-repeat center center;
+  display: block;
+  background-size: cover;
+  width: -webkit-fill-available;
+  min-width: 45px;
+  min-height: 65px;
+  /* padding: 0px 10px 0px 10px; */
+  margin: 0px 5px 0px 5px;
+}
+.text-area{
+  margin: 10px 18px 0px 18px;
+  border: 1px solid map-get($colors, AppGrey);
+  width: auto;
+  height: 30vw;
+
+}
+textarea.text-input {
+  height: 20vw !important;
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+  border-bottom-color: transparent;
+  box-shadow: inset 0 -1px 0 0 transparent;
+}
+
 }

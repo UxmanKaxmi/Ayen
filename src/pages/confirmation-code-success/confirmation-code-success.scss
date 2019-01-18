@@ -67,7 +67,7 @@ page-confirmation-code-success {
     background-color: transparent;
   }
   .main-row{
-    margin-top: 20vw;
+    margin-top: 10vw;
     // margin-bottom: 10vw;
 
   }
@@ -104,25 +104,27 @@ page-confirmation-code-success {
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    color: white;
-    border-radius: 10px;
-    font-size: 2rem;
-    background-color:map-get($colors, AppGreen);
+    color: black;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color:map-get($colors, AppYellow);
     text-align: center;
     padding-left: 60px !important;
     padding-right: 60px !important;
-    padding-top: 3vw;
-    padding-bottom: 3vw;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
     width: 100%;
     font-weight: bold;
-
-
   }
   .login-button-row{
-    margin-top: 5vw;
 
+    position: absolute;
+    bottom: 5vw;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
     align-self: center;
-    width: 100%
+    width: 100%;
+    padding: 0px 20px;
 
   }
   .login-ion-button{
@@ -151,17 +153,20 @@ page-confirmation-code-success {
     white-space: normal !important;
   }
   .label-md {
-    margin: 13px 54px 13px 54px;
+    margin: 13px 34px;
     background-color: white;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+
 
   }
   .label-ios {
-    margin: 13px 54px 13px 54px;
+    margin: 13px 34px;
     background-color: white;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 
 
   }
@@ -188,11 +193,11 @@ page-confirmation-code-success {
     width: calc(100% - 8px - 8px);
   }
   .thumbsUpImage{
-    background: url(../assets/imgs/Thumbsup.png) no-repeat center center;
+    background: url(../assets/imgs/tick-image.png) no-repeat center center;
     display: block;
 
     margin: auto;
-    background-size: 50vw;
+    background-size: contain;
     min-width: -webkit-fill-available;
     min-height: -webkit-fill-available;
 

@@ -15,6 +15,10 @@ import {  NavController, NavParams } from 'ionic-angular';
 })
 export class ConfirmationCodeSuccessPage {
 
+  public effect: any;
+  public logoAnimation: string = "";
+  public restAnimation: string = "";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -22,7 +26,16 @@ export class ConfirmationCodeSuccessPage {
     console.log('ionViewDidLoad ConfirmationCodeSuccessPage');
   }
   gotoLogin(){
-    this.navCtrl.popTo(LoginPage)
+    this.navCtrl.popToRoot()
+  }
+
+  ionViewWillEnter() {
+    this.applyAnimation();
+  }
+
+  applyAnimation() {
+    this.logoAnimation = "animated " + "fadeInDown";
+    this.restAnimation = "animated " + "fadeInUp";
   }
 
 }

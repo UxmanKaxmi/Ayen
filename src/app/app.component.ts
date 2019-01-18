@@ -1,3 +1,4 @@
+import { SignupExperincePage } from './../pages/signup-experince/signup-experince';
 import { ConfirmationCodeSuccessPage } from './../pages/confirmation-code-success/confirmation-code-success';
 import { ConfirmationCodePage } from './../pages/confirmation-code/confirmation-code';
 import { LoginPage } from './../pages/login/login';
@@ -17,7 +18,7 @@ import { SignupPersonalInfoPage } from '../pages/signup-personal-info/signup-per
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SignupPersonalInfoPage;
+  rootPage: any = SignupExperincePage;
 
   pages: Array<{title: string, component: any}>;
 

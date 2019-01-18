@@ -19,26 +19,149 @@
 
 
 
-    <ion-row style="padding: 10% 15px 10% 15px;" >
-      <ion-row  class="login-ion-button">
+    <ion-row style="padding: 10% 15px 10% 15px;">
+      <ion-row class="login-ion-button">
         <ion-img class="top-circle-icon"> </ion-img>
       </ion-row>
-        <ion-col col-4 style="align-self:center">
-          <ion-label style="font-size: 9px;font-weight: bold;">ACCOUNT</ion-label>
-        </ion-col>
+      <ion-col col-4 style="align-self:center">
+        <ion-label style="font-size: 9px;font-weight: bold;">ACCOUNT</ion-label>
+      </ion-col>
 
-        <ion-col col-4 style="align-self:center">
-            <ion-label style="font-size: 9px;text-align: center;color: #d7d6dc;margin: 11px 0px 11px 0px;">PERSONAL INFO</ion-label>
-        </ion-col>
+      <ion-col col-4 style="align-self:center">
+        <ion-label style="font-size: 9px;text-align: center;color: #d7d6dc;margin: 11px 0px 11px 0px;">PERSONAL INFO</ion-label>
+      </ion-col>
 
-        <ion-col col-4 style="align-self:flex-end">
-              <ion-label style="font-size: 9px;text-align: end;color: #d7d6dc;margin: 11px 0px 11px 0px;">EXPERIENCE</ion-label>
-        </ion-col>
+      <ion-col col-4 style="align-self:flex-end">
+        <ion-label style="font-size: 9px;text-align: end;color: #d7d6dc;margin: 11px 0px 11px 0px;">EXPERIENCE</ion-label>
+      </ion-col>
     </ion-row>
 
 
 
-    <ion-row class="login-button-row" >
+
+
+
+
+
+
+    <ion-row>
+      <ion-row style="width:100%">
+
+        <ion-label [ngClass]="inputAnimation" class="email-text">ACADEMIC MAJOR</ion-label>
+        <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+          <ion-select interface="alert" [(ngModel)]="academicMajor">
+            <ion-option value="architect">Architect</ion-option>
+            <ion-option value="structuralEngineer">Structural Engineer</ion-option>
+            <ion-option value="civilEngineer">Civil Engineer</ion-option>
+            <ion-option value="mechanicalEngineer">Mechanical Engineer</ion-option>
+            <ion-option value="technical">Technical</ion-option>
+            <ion-option value="electricalEngineer">Electrical Engineer</ion-option>
+
+          </ion-select>
+        </ion-item>
+
+        <ion-label [ngClass]="inputAnimation" class="email-text">YEARS OF EXPERIENCE</ion-label>
+        <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+          <ion-select interface="alert" [(ngModel)]="yearsOfExperience">
+            <ion-option value="exp1">Fresh Graduate</ion-option>
+            <ion-option value="exp2">1 to 4 years</ion-option>
+            <ion-option value="exp3">4+ to 9 years</ion-option>
+            <ion-option value="exp4">9+ to 15 years</ion-option>
+            <ion-option value="exp5">15+ years</ion-option>
+
+          </ion-select>
+        </ion-item>
+
+
+        <form style="flex: 1;" [formGroup]="formgroup" [ngClass]="inputAnimation">
+
+          <ion-label class="email-text" end>SCE MEMBERSHIP NUMBER</ion-label>
+          <ion-item class="item">
+            <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="sceNumber">
+            </ion-input>
+          </ion-item>
+          <ion-label class="inputLabel validation-invalid-text-end" *ngIf="sceNumber.hasError('required') && sceNumber.touched"
+            end>Required*</ion-label>
+
+
+          <ion-label class="email-text" end>EXPIRY DATE OF SCE MEMBERSHIP</ion-label>
+          <ion-item (click)="showDatePicker()" class="item">
+            <ion-input value={{expiryDateValue}} disabled="true" (ionFocus)='provideHepticFeedback()' maxlength="55"
+              value="" type="text" >
+            </ion-input>
+          </ion-item>
+
+
+
+
+        </form>
+      </ion-row>
+
+
+      <ion-label [ngClass]="inputAnimation" class="email-text">DEGREE OF PROFESSIONAL ACCREDITATION</ion-label>
+      <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+        <ion-select interface="alert" [(ngModel)]="degreePrefession">
+          <ion-option value="normalEngineer">Normal Engineer</ion-option>
+          <ion-option value="associateEngineer">Associate Engineer</ion-option>
+          <ion-option value="civilEngineer">Professional Engineer</ion-option>
+          <ion-option value="mechanicalEngineer">Consultant Engineer</ion-option>
+          <ion-option value="technical">Technical</ion-option>
+
+        </ion-select>
+      </ion-item>
+
+      <ion-label [ngClass]="inputAnimation" class="email-text">FOCUS OF EXPERIENCES</ion-label>
+      <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+        <ion-select (ionChange)="onChange(focusExperience)" interface="alert" [(ngModel)]="focusExperience">
+          <ion-option value="design">Design</ion-option>
+          <ion-option value="engineeringSupervision">Engineering Supervision</ion-option>
+          <ion-option value="projectManagement">Project Management</ion-option>
+          <ion-option value="quantitativeCalculation">Quantitative calculation & technical support</ion-option>
+          <ion-option value="other">Other</ion-option>
+
+        </ion-select>
+
+
+      </ion-item>
+      <ion-item [hidden]="!value">
+        <ion-label floating>Please mention experience here...</ion-label>
+        <ion-input type="text" name="exp"  ></ion-input>
+      </ion-item>
+
+
+
+
+      <ion-label [ngClass]="inputAnimation" class="email-text">UPLOAD LICENSE</ion-label>
+      <ion-row  [ngClass]="inputAnimation" class="login-ion-button">
+        <ion-img class="upload-license-image"> </ion-img>
+      </ion-row>
+
+
+      <ion-label [ngClass]="inputAnimation" class="email-text">UPLOAD YOUR CV</ion-label>
+      <ion-row  [ngClass]="inputAnimation" class="login-ion-button">
+        <ion-img class="upload-cv-image"> </ion-img>
+      </ion-row>
+
+
+
+      <form style="flex: 1;" [formGroup]="formgroup" [ngClass]="inputAnimation">
+
+        <ion-label class="email-text" end>Write a brief about your achievements</ion-label>
+          <ion-textarea class='text-area' (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="briefDescription" placeholder="Write here...">
+          </ion-textarea>
+
+      </form>
+
+
+
+
+    </ion-row>
+    <ion-label [ngClass]="inputAnimation" class="agreement-text" style="margin-bottom: 0%"  end><span>By clicking ‘Submit Request’, you accept our </span>
+      <span style="color: blue">Terms & Conditions</span>
+
+    </ion-label>
+
+    <ion-row [ngClass]="inputAnimation" class="submit-button-row">
       <ion-col tappable (click)="goBack()" col-2 style="align-self: center;background-color: white;padding: 12px 0px 12px 0px;">
         <!-- <button  tappable (click)="gotoConfirmationCodePage()"> -->
         <ion-img class="back-icon-image"> </ion-img>
@@ -47,8 +170,8 @@
 
       <ion-col col-10>
         <ion-buttons>
-          <button class="button-login" tappable (click)="gotoSignupExperience()">
-            Continue</button>
+          <button class="button-login" tappable (click)="submitReq()">
+            Submit Request</button>
         </ion-buttons>
       </ion-col>
 
@@ -57,6 +180,6 @@
 
 
 
-      </ion-grid>
+  </ion-grid>
 
 </ion-content>

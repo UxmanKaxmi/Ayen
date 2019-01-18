@@ -14,22 +14,20 @@
 
 
 <ion-content padding>
-    <ion-grid class="main-grid">
+    <ion-grid class="main-grid" >
 
-        <ion-row class="thumbs-image-height">
+        <ion-row class="thumbs-image-height"  [ngClass]="logoAnimation">
             <ion-img class="thumbsUpImage"> </ion-img>
       </ion-row>
 
-        <ion-row class="main-row">
-            <ion-label>You have submitted your
-                request successfully</ion-label>
+        <ion-row class="main-row"  [ngClass]="logoAnimation">
+            <ion-label>Your request has been submitted successfully. We will review your request and get back to you within the next 48 hours (Sunday - Thursday). </ion-label>
           </ion-row>
 
-          <ion-row >
-              <ion-label class="label-row">We will review your request
-                  and get back to you ASAP.
+          <!-- <ion-row >
+              <ion-label class="label-row">
                   </ion-label>
-            </ion-row>
+            </ion-row> -->
 
 
 
@@ -39,10 +37,10 @@
 
 
 
-        <ion-row class="login-button-row">
+        <ion-row class="login-button-row"  [ngClass]="restAnimation">
             <ion-buttons class="login-ion-button">
                 <button class="button-login" tappable (click)=gotoLogin() >
-                 Done</button>
+                 Continue</button>
               </ion-buttons>
           </ion-row>
 

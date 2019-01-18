@@ -76,19 +76,23 @@ export class SignupPersonalInfoPage {
     this.expiryDate = this.formgroup.controls['expiryDate'];
 
 
-        //to set default value of date to now
+
+    //to set default value of date to now
+    this.setDefaultDate();
+
+
+
+
+
+
+
+  }
+
+  setDefaultDate(){
     this.defaultDate= new Date();
     this.defaultDate=this.splitDate(this.defaultDate)
     console.log(this.defaultDate)
     this.expiryDateValue=this.defaultDate.toString();
-
-
-
-
-
-
-
-
   }
 
 
