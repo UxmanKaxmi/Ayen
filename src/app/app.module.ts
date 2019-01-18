@@ -14,6 +14,11 @@ import { ListPage } from '../pages/list/list';
 import { HttpModule } from "@angular/http";
 import { DeviceFeedback } from '@ionic-native/device-feedback';
 
+import { FileChooser } from '@ionic-native/file-chooser';
+
+import { FileTransfer, FileUploadOptions, FileTransferObject, } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Facebook } from '@ionic-native/facebook';
@@ -63,7 +68,7 @@ import { DatePicker } from '@ionic-native/date-picker';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
-    HelpersProvider,DatePicker
+    HelpersProvider,DatePicker,FileTransfer,FileTransferObject,File,FileChooser
   ]
 })
 export class AppModule {}

@@ -1,9 +1,12 @@
+import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
 import { ConfirmationCodeSuccessPage } from './../confirmation-code-success/confirmation-code-success';
 import { DatePicker } from '@ionic-native/date-picker';
 import { AbstractControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HelpersProvider } from './../../providers/helpers/helpers';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
 
 /**
  * Generated class for the SignupExperincePage page.
@@ -16,6 +19,8 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-signup-experince',
   templateUrl: 'signup-experince.html',
 })
+
+
 export class SignupExperincePage {
 
   public inputAnimation: string = "";
@@ -36,7 +41,7 @@ export class SignupExperincePage {
   value: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private helpers: HelpersProvider,
-    public formbuilder: FormBuilder, private datePicker: DatePicker
+    public formbuilder: FormBuilder, private datePicker: DatePicker,private transfer: FileTransfer, private file: File,private fileChooser: FileChooser
   ) {
     this.setDefaultDate();
 
@@ -70,6 +75,17 @@ export class SignupExperincePage {
     }
 
   }
+
+
+
+
+
+
+
+
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupExperincePage');
@@ -154,6 +170,29 @@ export class SignupExperincePage {
   }
 
 
+  upload() {
+  //   console.log('clickrd')
+  //   debugger;
+  //   const fileTransfer: FileTransferObject = this.transfer.create();
+
+  //   let options: FileUploadOptions = {
+  //      fileKey: 'file',
+  //      fileName: 'name.jpg',
+  //      headers: {}
+
+  //     }
+
+  //   fileTransfer.upload('asdasd', 'http://192.168.0.7:8080/api/uploadImage', options)
+  //    .then((data) => {
+  //      // success
+  //    }, (err) => {
+  //      // error
+  //    })
+
+  this.fileChooser.open()
+  .then(uri => console.log(uri))
+  .catch(e => alert(e));
+  }
 
 
 }

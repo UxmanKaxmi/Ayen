@@ -131,14 +131,14 @@
 
 
 
-      <ion-label [ngClass]="inputAnimation" class="email-text">UPLOAD LICENSE</ion-label>
-      <ion-row  [ngClass]="inputAnimation" class="login-ion-button">
-        <ion-img class="upload-license-image"> </ion-img>
+      <ion-label  [ngClass]="inputAnimation" class="email-text">UPLOAD LICENSE</ion-label>
+      <ion-row  tappable (click)="upload()"   [ngClass]="inputAnimation" class="login-ion-button">
+        <ion-img  class="upload-license-image"> </ion-img>
       </ion-row>
 
 
       <ion-label [ngClass]="inputAnimation" class="email-text">UPLOAD YOUR CV</ion-label>
-      <ion-row  [ngClass]="inputAnimation" class="login-ion-button">
+      <ion-row tappable (click)="upload()"  [ngClass]="inputAnimation" class="login-ion-button">
         <ion-img class="upload-cv-image"> </ion-img>
       </ion-row>
 
