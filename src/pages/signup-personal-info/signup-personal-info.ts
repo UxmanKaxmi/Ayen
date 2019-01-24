@@ -101,7 +101,7 @@ fgggggg
   }
   gotoSignupExperience(){
     if(this.formgroup.valid){
-    this.navCtrl.push(SignupExperincePage);
+    this.navCtrl.push(SignupExperincePage,{},{animate:false});
     }
     else {
       alert("Form not Validated")

@@ -1,4 +1,3 @@
-import { Chooser } from '@ionic-native/chooser';
 import { SignupPersonalInfoPage } from './../pages/signup-personal-info/signup-personal-info';
 import { SignupExperincePage } from './../pages/signup-experince/signup-experince';
 import { GooglePlus } from '@ionic-native/google-plus';
@@ -16,6 +15,8 @@ import { HttpModule } from "@angular/http";
 import { DeviceFeedback } from '@ionic-native/device-feedback';
 
 import { FileChooser } from '@ionic-native/file-chooser';
+import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
+
 
 import { FileTransfer, FileUploadOptions, FileTransferObject, } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
@@ -25,6 +26,9 @@ import { Facebook } from '@ionic-native/facebook';
 import { ApiProvider } from '../providers/api/api';
 import { HelpersProvider } from '../providers/helpers/helpers';
 import { DatePicker } from '@ionic-native/date-picker';
+
+import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
+
 
 @NgModule({
   declarations: [
@@ -68,7 +72,7 @@ import { DatePicker } from '@ionic-native/date-picker';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
-    HelpersProvider,DatePicker,FileTransfer,FileTransferObject,File,FileChooser
+    HelpersProvider,DatePicker,FileTransfer,FileTransferObject,FileChooser,IOSFilePicker,File
   ]
 })
 export class AppModule {}

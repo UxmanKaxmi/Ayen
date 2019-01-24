@@ -86,7 +86,7 @@ export class SignupPage {
 
   gotoSignupPersonalInfoPage(){
     if (this.formgroup.valid && this.chkCP==true) {
-      this.navCtrl.push(SignupPersonalInfoPage)
+      this.navCtrl.push(SignupPersonalInfoPage,{},{animate:false})
     }
     else{
       alert('form not valid')

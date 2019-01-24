@@ -8,8 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { Platform } from 'ionic-angular';
-import { IOSFilePicker, } from '@ionic-native/file-picker';
-import { Chooser, ChooserOriginal } from '@ionic-native/chooser';
+import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
 
 /**
  * Generated class for the SignupExperincePage page.
@@ -48,7 +47,7 @@ export class SignupExperincePage {
   value: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private helpers: HelpersProvider,
-    public formbuilder: FormBuilder, private datePicker: DatePicker,private transfer: FileTransfer, private file: File,public fileChooser: FileChooser, public platform:Platform
+    public formbuilder: FormBuilder, private datePicker: DatePicker,private transfer: FileTransfer, private file: File,public fileChooser: FileChooser, public platform:Platform,public filePicker: IOSFilePicker
   ) {
     this.setDefaultDate();
 
@@ -108,7 +107,7 @@ export class SignupExperincePage {
   }
   submitReq() {
     if (this.formgroup.valid) {
-      this.navCtrl.push(ConfirmationCodeSuccessPage)
+      this.navCtrl.push(ConfirmationCodeSuccessPage,{},{animate:false})
     }
     else {
       alert('form not validated')
@@ -184,15 +183,17 @@ export class SignupExperincePage {
 
   upload_cv() {
 
+
+
     this.platform.ready().then(() => {
 
 
       if (this.platform.is('ios')) {
           console.log("running on iOS device!");
 
-          // this.filePicker.pickFile()
-          // .then(uri =>  this.setPath_cv(uri))
-          // .catch(err => console.log('Error', err));
+          this.filePicker.pickFile()
+          .then(uri => console.log(uri))
+          .catch(err => console.log('Error', err));
         }
 
 
@@ -227,10 +228,9 @@ export class SignupExperincePage {
 
       if (this.platform.is('ios')) {
           console.log("running on iOS device!");
-
-          // this.filePicker.pickFile()
-          // .then(uri =>  this.setPath_license(uri))
-          // .catch(err => console.log('Error', err));
+          this.filePicker.pickFile()
+          .then(uri => console.log(uri))
+          .catch(err => console.log('Error', err));
         }
 
 
