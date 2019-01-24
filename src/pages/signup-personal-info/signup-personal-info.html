@@ -1,16 +1,4 @@
-<!--
-  Generated template for the SignupPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<!-- <ion-header>
-
-  <ion-navbar>
-    <ion-title>Signup</ion-title>
-  </ion-navbar>
-
-</ion-header> -->
 
 
 <ion-content padding>
@@ -46,7 +34,7 @@
 
         <ion-label class="email-text" end>FIRST NAME</ion-label>
         <ion-item class="item">
-          <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="firstName">
+          <ion-input (ionFocus)='provideHepticFeedback()' [attr.maxlength]="30" value="" type="text" formControlName="firstName">
           </ion-input>
         </ion-item>
 
@@ -56,7 +44,7 @@
 
           <ion-label class="email-text" end>LAST NAME</ion-label>
           <ion-item class="item">
-            <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="lastName">
+            <ion-input (ionFocus)='provideHepticFeedback()' [attr.maxlength]="30" value="" type="text" formControlName="lastName">
             </ion-input>
           </ion-item>
 
@@ -68,7 +56,9 @@
 
           <ion-label class="email-text" end>ID</ion-label>
           <ion-item class="item">
-            <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="id">
+            <ion-input (ionFocus)='provideHepticFeedback()'   type="number"
+            (keydown)="checkLength_id($event,10)"
+            formControlName="id">
             </ion-input>
           </ion-item>
 
@@ -80,7 +70,8 @@
 
             <ion-label class="email-text" end>MOBILE NUMBER</ion-label>
             <ion-item class="item">
-              <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="mobile">
+              <ion-input (keydown)="checkLength_mobile($event,15)"
+              (ionFocus)='provideHepticFeedback()' maxlength="20" value="" type="number" formControlName="mobile">
               </ion-input>
             </ion-item>
 
@@ -97,9 +88,9 @@
         <ion-item [ngClass]="inputAnimation" class="dropdown-item">
           <ion-select interface="alert" [(ngModel)]="nationality">
             <ion-option value="saudiArabia">Saudi Arabia</ion-option>
-            <ion-option value="NATIONALITY2">NATIONALITY2</ion-option>
-            <ion-option value="NATIONALITY3">NATIONALITY3</ion-option>
-            <ion-option value="NATIONALITY4">NATIONALITY4</ion-option>
+            <ion-option value="Pk">Pakistan</ion-option>
+            <ion-option value="USA">United States of America</ion-option>
+            <ion-option value="UAE">United Arab Emirates</ion-option>
           </ion-select>
         </ion-item>
 
@@ -156,7 +147,7 @@
 
               <ion-label class="email-text" end>ORGANIZATION</ion-label>
               <ion-item class="item">
-                <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="organization">
+                <ion-input [attr.maxlength]="30" (ionFocus)='provideHepticFeedback()'  value="" type="text" formControlName="organization">
                 </ion-input>
               </ion-item>
 
@@ -167,7 +158,7 @@
 
                 <ion-label class="email-text" end>C.R NUMBER</ion-label>
                 <ion-item class="item">
-                  <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="crNumber">
+                  <ion-input (keydown)="checkLength_crNumber($event,15)" (ionFocus)='provideHepticFeedback()'  value="" type="number" formControlName="crNumber">
                   </ion-input>
                 </ion-item>
 
@@ -179,7 +170,7 @@
 
                 <ion-label class="email-text" end>ORGANIZATION LICENSE NUMBER</ion-label>
                 <ion-item class="item">
-                  <ion-input (keyup)="gotoSelectDate($event)"  (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="organizationLicenseNumber">
+                  <ion-input (keyup)="gotoSelectDate($event)"  (ionFocus)='provideHepticFeedback()' maxlength="30" value="" type="number" formControlName="organizationLicenseNumber">
                   </ion-input>
                 </ion-item>
 
@@ -197,8 +188,7 @@
 
                   <ion-label class="inputLabel validation-invalid-text-end" *ngIf="expiryDate.hasError('required') && expiryDate.touched"
                   end>Required*</ion-label>
-                  <!-- <ion-label class="inputLabel validation-invalid-text-end" *ngIf="id.hasError('pattern') && id.touched"
-                    end>Invalid id*</ion-label> -->
+
 
 
                 </form>

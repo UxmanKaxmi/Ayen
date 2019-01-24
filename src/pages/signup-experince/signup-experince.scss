@@ -207,7 +207,7 @@ page-signup-experince {
   background-size: cover;
   width: -webkit-fill-available;
   min-width: 45px;
-  min-height: 65px;
+  min-height: 20vw;
   /* padding: 0px 10px 0px 10px; */
   margin: 0px 5px 0px 5px;
 }
@@ -218,7 +218,7 @@ page-signup-experince {
   background-size: cover;
   width: -webkit-fill-available;
   min-width: 45px;
-  min-height: 65px;
+  min-height: 20vw;
   /* padding: 0px 10px 0px 10px; */
   margin: 0px 5px 0px 5px;
 }
@@ -236,6 +236,38 @@ textarea.text-input {
 .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
   border-bottom-color: transparent;
   box-shadow: inset 0 -1px 0 0 transparent;
+}
+.inbutton-row-cv{
+
+  position: absolute;
+  width: -webkit-fill-available;
+  // height: -webkit-fill-available;
+  text-align: center;
+  //  margin: 0px 0px 0px 0px;
+  //  min-height: 20vw;
+  align-self: center;
+
+
+
+}
+.inbutton-row-license{
+  position: absolute;
+  width: -webkit-fill-available;
+  // height: -webkit-fill-available;
+  text-align: center;
+  //  margin: 0px 0px 0px 0px;
+  //  min-height: 20vw;
+  align-self: center;
+
+}
+.inbutton-text-license{
+  color:white;
+  letter-spacing: 0.2px;
+}
+.inbutton-text-cv{
+  color:white;
+  letter-spacing: 0.2px;
+
 }
 
 }

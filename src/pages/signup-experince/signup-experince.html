@@ -77,7 +77,7 @@
 
           <ion-label class="email-text" end>SCE MEMBERSHIP NUMBER</ion-label>
           <ion-item class="item">
-            <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="sceNumber">
+            <ion-input (ionFocus)='provideHepticFeedback()' (keydown)="checkLength_sceNumber($event,15)"  value="" type="number" formControlName="sceNumber">
             </ion-input>
           </ion-item>
           <ion-label class="inputLabel validation-invalid-text-end" *ngIf="sceNumber.hasError('required') && sceNumber.touched"
@@ -132,14 +132,24 @@
 
 
       <ion-label  [ngClass]="inputAnimation" class="email-text">UPLOAD LICENSE</ion-label>
-      <ion-row  tappable (click)="upload()"   [ngClass]="inputAnimation" class="login-ion-button">
+      <ion-row  tappable (click)="upload_lisence()"   [ngClass]="inputAnimation" class="login-ion-button">
         <ion-img  class="upload-license-image"> </ion-img>
+        <ion-row class="inbutton-row-license">
+            <ion-label class="inbutton-text-license" >{{licenseInButtonText}}</ion-label>
+        </ion-row>
       </ion-row>
 
 
       <ion-label [ngClass]="inputAnimation" class="email-text">UPLOAD YOUR CV</ion-label>
-      <ion-row tappable (click)="upload()"  [ngClass]="inputAnimation" class="login-ion-button">
-        <ion-img class="upload-cv-image"> </ion-img>
+      <ion-row tappable (click)="upload_cv()"  [ngClass]="inputAnimation" class="login-ion-button">
+
+        <ion-img class="upload-cv-image">
+        </ion-img>
+        <ion-row class="inbutton-row-cv">
+            <ion-label class="inbutton-text-cv" >{{CVInButtonText}}</ion-label>
+        </ion-row>
+
+
       </ion-row>
 
 

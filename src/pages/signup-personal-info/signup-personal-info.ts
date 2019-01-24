@@ -34,7 +34,7 @@ export class SignupPersonalInfoPage {
   region: string;
   nationality: string;
 
-
+fgggggg
   expiryDate:AbstractControl;
   expiryDateValue:string ;
   defaultDate:any;
@@ -58,7 +58,7 @@ export class SignupPersonalInfoPage {
       lastName:['',Validators.required],
       id:['',Validators.required],
       mobile:['',Validators.required],
-      organization:['',Validators.required],
+      organization:['',Validators.compose([ Validators.required])],
       crNumber:['',Validators.required],
       organizationLicenseNumber:['',Validators.required],
       expiryDate:['',Validators.required],
@@ -157,9 +157,71 @@ export class SignupPersonalInfoPage {
   }
 
   gotoSelectDate(e, nextElement) {
+
+
+    if(this.organizationLicenseNumber.value.length>15){
+
+      //to remove all the chracter after 10 digits
+    let str = this.organizationLicenseNumber.value.substring(0, 15);
+    this.formgroup.controls['organizationLicenseNumber'].setValue(str);
+
+
+
+
+    }
     if (e.key === "Enter") {
+
       this.showDatePicker();
     }
   }
 
+  checkLength_id(e,length){
+    console.log(e)
+    if(this.id.value.length>length){
+      console.log('greater than 10')
+
+      //to remove all the chracter after 10 digits
+    let str = this.id.value.substring(0, length);
+    this.formgroup.controls['id'].setValue(str);
+
+
+
+
+    }
+  }
+
+  checkLength_mobile(e,length){
+    console.log(e)
+    if(this.mobile.value.length>length){
+      console.log('greater than 10')
+
+      //to remove all the chracter after 10 digits
+    let str = this.mobile.value.substring(0, length);
+    this.formgroup.controls['mobile'].setValue(str);
+    }
+ }
+
+
+ checkLength_crNumber(e,length){
+  console.log(e)
+  if(this.crNumber.value.length>length){
+    console.log('greater than 10')
+
+    //to remove all the chracter after 10 digits
+  let str = this.crNumber.value.substring(0, length);
+  this.formgroup.controls['crNumber'].setValue(str);
+  }
+}
+
+
+checkLength_organizationLicenseNumber(e,length){
+  console.log(e)
+  if(this.organizationLicenseNumber.value.length>length){
+    console.log('greater than 10')
+
+    //to remove all the chracter after 10 digits
+  let str = this.organizationLicenseNumber.value.substring(0, length);
+  this.formgroup.controls['organizationLicenseNumber'].setValue(str);
+  }
+}
 }

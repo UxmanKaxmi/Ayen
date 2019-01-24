@@ -1,3 +1,4 @@
+import { Chooser } from '@ionic-native/chooser';
 import { SignupPersonalInfoPage } from './../pages/signup-personal-info/signup-personal-info';
 import { SignupExperincePage } from './../pages/signup-experince/signup-experince';
 import { GooglePlus } from '@ionic-native/google-plus';
@@ -18,7 +19,6 @@ import { FileChooser } from '@ionic-native/file-chooser';
 
 import { FileTransfer, FileUploadOptions, FileTransferObject, } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Facebook } from '@ionic-native/facebook';
