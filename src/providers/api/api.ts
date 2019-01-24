@@ -9,6 +9,10 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 */
 @Injectable()
 export class ApiProvider {
+  body:any;
+  body2:any;
+  body3:any = [];
+  // bodyJSON:JSON
 
   constructor(public http:Http) {
     console.log('Hello ApiProvider Provider');
@@ -18,21 +22,31 @@ export class ApiProvider {
 
     let promise = new Promise((resolve, reject) => {
 
-      let body = "method=" + method + "&body=" + request;
+       this.body = {
+        "Email":"naveed@mail.com",
+        "Password":"123",
+        "Location":"24.8830857,67.0678734"
+      }
 
+      console.log(this.body);
+      this.body2=JSON.stringify(this.body)
 
-      let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+      console.log(this.body2);
+      this.body3=JSON.parse(this.body2)
+
+      console.log(this.body3);
+
+      let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
       // console.log(body);
-      this.http.post('https://bahjahcards.com//translateAPI/', body, options)
-        // .timeout(100000)
+      this.http.post('http://ayen.apptech.com.tr/ayen/Api/login',JSON.stringify(this.body),options)
         .toPromise()
         .then(
           res => { // Success
-            resolve(res);
+            console.log(res);
           },
           msg => { // Error
-            reject(msg);
+            console.log(msg);
           }
         );
     });
