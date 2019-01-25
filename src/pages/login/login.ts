@@ -64,13 +64,16 @@ export class LoginPage {
     //To check if form is valid
     if(this.formgroup.valid){
 
-    let body = {
-      "Email":this.username.value,
-      "Password":this.password.value,
-      "Location":"24.8830857,67.0678734"
-    }
+    // let body = {
+    //   "Email":this.username.value,
+    //   "Password":this.password.value,
+    //   "Location":"24.8830857,67.0678734"
+    // }
+    let body =  "EmailConfirmed=" +'true' + "&emailed=" + 'admin@mac.com' + "&mobilenumber=" + '9025225' + "&password=" + '12345' + "&officename=" + 'mrc' + "&designation=" + 'programmer' +"&landlnecode=" + '0000' +"&landlinenumber=" + '888888' +"&sttus=" + 'A';
 
-    this.api.loginService("login",body).then(response => {
+
+
+    this.api.signUpService("signup",body).then(response => {
       this.dataList = response;
 
       if(this.dataList.message=="User Verified"){

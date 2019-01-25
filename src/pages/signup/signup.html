@@ -43,7 +43,7 @@
 
         <ion-label class="email-text" end>EMAIL</ion-label>
         <ion-item class="item">
-          <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="text" formControlName="username">
+          <ion-input (ionFocus)='provideHepticFeedback()' maxlength="55" value="asd@asd.com" type="text" formControlName="username">
           </ion-input>
         </ion-item>
 
@@ -55,7 +55,7 @@
 
         <ion-label class="password-text" end>PASSWORD</ion-label>
         <ion-item class="item">
-          <ion-input (ionFocus)='provideHepticFeedback()' maxlength="44" value="" type="password" formControlName="password"
+          <ion-input (ionFocus)='provideHepticFeedback()' maxlength="44" value="asdasd" type="password" formControlName="password"
             end> </ion-input>
         </ion-item>
         <ion-label class="inputLabel validation-invalid-text-end" *ngIf="password.hasError('required') && password.touched"
@@ -63,7 +63,7 @@
 
         <ion-label class="password-text" end>CONFIRM PASSWORD</ion-label>
         <ion-item class="item">
-          <ion-input (ionFocus)='provideHepticFeedback()' (input)="checkConfirmPassword($event)" maxlength="64" value=""
+          <ion-input (ionFocus)='provideHepticFeedback()' (input)="checkConfirmPassword($event)" maxlength="64" value="asdasd"
             type="password">
           </ion-input>
         </ion-item>

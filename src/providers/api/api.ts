@@ -13,9 +13,8 @@ export class ApiProvider {
   constructor(public http: Http) {
     console.log('Hello ApiProvider Provider');
   }
-
+  //LOGIN SERVICE
   public loginService(afterLink,body) {
-
     return new Promise((resolve, reject) => {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
@@ -31,8 +30,30 @@ export class ApiProvider {
           reject(error);
         });
     });
+  }
 
 
+//SIGNUP SERVICE
+  public signUpService(afterLink,body) {
+
+
+    console.log("TTTTTT",body)
+    debugger;
+    return new Promise((resolve, reject) => {
+      let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+      let options = new RequestOptions({ headers: headers });
+      this.http.post(this.APILink + afterLink , body, options)
+        .toPromise()
+        .then((response) => {
+          console.log('API Response from '+afterLink+ ': ', response.json());
+          resolve(response.json());
+        })
+        .catch((error) => {
+          console.error('API Error from '+afterLink+ ': ', error.status);
+          console.error('API Error from '+afterLink+ ', ', JSON.stringify(error));
+          reject(error);
+        });
+    });
   }
 
 }

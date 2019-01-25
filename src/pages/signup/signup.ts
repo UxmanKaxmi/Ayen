@@ -20,6 +20,7 @@ import { GooglePlus } from '@ionic-native/google-plus';
 })
 export class SignupPage {
 
+
   formgroup:FormGroup;
   username:AbstractControl;
   password:AbstractControl;
@@ -29,7 +30,7 @@ export class SignupPage {
   city:AbstractControl;
   state:AbstractControl;
   country:AbstractControl;
-
+  // signUpData:any;
 
   confirmPassword: AbstractControl;
 
@@ -68,13 +69,14 @@ export class SignupPage {
 
   checkConfirmPassword(t){
     this.validate_confirmpassword = ""
-    console.log(this.password , this.confirmPassword ,t, t.target.value, t.target.value)
+    // console.log(this.password , this.confirmPassword ,t, t.target.value, t.target.value)
     if(t.target.value.length != 0){
     if(t.target.value === this.password.value){
-      console.log("Password matched")
+      // console.log("Password matched")
       this.validate_confirmpassword = ""
       this.chkCP = true
-    }else{ console.log("Password donot match")
+    }else{
+    // console.log("Password donot match")
     this.validate_confirmpassword = 'Passwords dont match'
     this.chkCP = false
   }
@@ -86,7 +88,14 @@ export class SignupPage {
 
   gotoSignupPersonalInfoPage(){
     if (this.formgroup.valid && this.chkCP==true) {
-      this.navCtrl.push(SignupPersonalInfoPage,{},{animate:false})
+
+      let signUpData = {
+        "Email":this.username.value,
+        "Password":this.password.value,
+        "EmailConfirmed":false,
+      }
+      console.log('signUpData  ',signUpData )
+      this.navCtrl.push(SignupPersonalInfoPage,{ signUpData: signUpData },{animate:false})
     }
     else{
       alert('form not valid')

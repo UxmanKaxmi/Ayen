@@ -34,10 +34,10 @@ export class SignupPersonalInfoPage {
   region: string;
   nationality: string;
 
-fgggggg
   expiryDate:AbstractControl;
   expiryDateValue:string ;
   defaultDate:any;
+  dataFromSignUp:any;
 
   inputAnimation: string;
 
@@ -79,8 +79,7 @@ fgggggg
 
     //to set default value of date to now
     this.setDefaultDate();
-
-
+    this.dataFromSignUp =this.navParams.get('signUpData')
 
 
 
@@ -101,7 +100,30 @@ fgggggg
   }
   gotoSignupExperience(){
     if(this.formgroup.valid){
-    this.navCtrl.push(SignupExperincePage,{},{animate:false});
+      let newObject = {
+        "FirstName": "usman",
+        LastName: "kazmi",
+        Prefix:"Mr",
+        NationalityId: "123123123",
+        PhoneNumber: "03152821859",
+        PhoneNumberConfirmed: true,
+        Nationality: "Pakistani",
+        Gender: "male",
+        Region: "North",
+        City: "Jeddah",
+        RoleType: "Examiner",
+        OrganizationName:"jemstech",
+        CRNumber: "123",
+        OrgLicenceNumber: "123",
+        OrgExpiryDate: "123",
+
+      }
+      //to add the newObject into dataFromSignUp
+      Object.assign(this.dataFromSignUp,newObject);
+
+
+
+    this.navCtrl.push(SignupExperincePage,{ signUpDataPersonal: this.dataFromSignUp },{animate:false});
     }
     else {
       alert("Form not Validated")

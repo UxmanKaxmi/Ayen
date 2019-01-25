@@ -1,3 +1,4 @@
+import { ApiProvider } from './../../providers/api/api';
 import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
 import { ConfirmationCodeSuccessPage } from './../confirmation-code-success/confirmation-code-success';
 import { DatePicker } from '@ionic-native/date-picker';
@@ -41,13 +42,14 @@ export class SignupExperincePage {
   expiryDateValue: string;
   defaultDate: any;
   filePath:any;
-
+  signUpDataPersonal:any;
+  dataList: any = "";
   willshowOtherTextField: boolean = false;
   membership: string;
   value: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private helpers: HelpersProvider,
-    public formbuilder: FormBuilder, private datePicker: DatePicker,private transfer: FileTransfer, private file: File,public fileChooser: FileChooser, public platform:Platform,public filePicker: IOSFilePicker
+    public formbuilder: FormBuilder, private datePicker: DatePicker,private transfer: FileTransfer, private file: File,public fileChooser: FileChooser, public platform:Platform,public filePicker: IOSFilePicker,public api:ApiProvider
   ) {
     this.setDefaultDate();
 
@@ -83,7 +85,8 @@ export class SignupExperincePage {
       console.log('DISABLED:SHOW OTHER BOX')
 
     }
-
+    this.signUpDataPersonal =this.navParams.get('signUpDataPersonal')
+    console.log('data from signUpDataPersonal', this.signUpDataPersonal)
 
   }
 
@@ -107,7 +110,39 @@ export class SignupExperincePage {
   }
   submitReq() {
     if (this.formgroup.valid) {
-      this.navCtrl.push(ConfirmationCodeSuccessPage,{},{animate:false})
+
+      let dataFromSignupExperience = {
+        AcademicMajor: "Engineer",
+        YearsOfExperience: "2",
+        SceMemberShipNumber:"123456",
+        SceExpiryDate:"123456",
+        ProfessionalDegree:"Engineer",
+        FocusExperience:"Civil",
+        Description:"EXAMPLE DESCRIPTION IS NECESSARYs"
+
+
+
+      }
+      Object.assign(this.signUpDataPersonal,dataFromSignupExperience);
+      console.log(this.signUpDataPersonal)
+
+      this.api.signUpService("signup",this.signUpDataPersonal).then(response => {
+        this.dataList = response;
+
+        if(this.dataList.message=="User Verified"){
+          alert("LOGIN SUCCESS")
+        }
+          else {
+            alert(this.dataList.message)
+
+          }
+
+
+
+      });
+
+
+      // this.navCtrl.push(ConfirmationCodeSuccessPage,{},{animate:false})
     }
     else {
       alert('form not validated')
