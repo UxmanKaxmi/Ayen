@@ -61,44 +61,36 @@ export class LoginPage {
   }
 
   loggingIn() {
-    //assigning values of method for the request
-    this.method = "Login";
-    // assigning values of signup form to request soap
-    this.request =
-      '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">' +
-      "<soapenv:Header/>" +
-      "<soapenv:Body>" +
-      "<tem:Login>" +
-      "<tem:usernameOrEmail>" +
-      "kazmi58@gmail.com" +
-      "</tem:usernameOrEmail>" +
-      "<tem:userPassword>" +
-      "123456" +
-      "</tem:userPassword>" +
-      "<tem:guestToken></tem:guestToken>" +
-      "</tem:Login>" +
-      "</soapenv:Body>" +
-      "</soapenv:Envelope>";
+    //To check if form is valid
+    if(this.formgroup.valid){
 
-    this.api.apiService(this.request, this.method).then(response => {
+    let body = {
+      "Email":this.username.value,
+      "Password":this.password.value,
+      "Location":"24.8830857,67.0678734"
+    }
+
+    this.api.loginService("login",body).then(response => {
       this.dataList = response;
-      this.dataList = JSON.parse(this.dataList._body);
 
-      // checking for success or failure
-      console.log(this.dataList);
-      alert("data recieved");
-      //FOR CUSTOMER DOESNT EXIST ERROR
-      if (this.dataList.aStatus == "CustomerNotExist") {
+      if(this.dataList.message=="User Verified"){
+        alert("LOGIN SUCCESS")
       }
+        else {
+          alert(this.dataList.message)
 
-      //FOR wrongPasswordText ERROR
+        }
 
-      if (this.dataList.aStatus == "WrongPassword") {
-      }
 
-      if (this.dataList.aStatus == "Success") {
-      }
+
     });
+
+  }//form is valid
+
+  else {
+    alert('Please complete the form')
+  }
+
   }
 
   gotoSignupPage() {

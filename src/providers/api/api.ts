@@ -1,57 +1,36 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers, RequestOptions} from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
-/*
-  Generated class for the ApiProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class ApiProvider {
-  body:any;
-  body2:any;
-  body3:any = [];
+
+  APILink: string = 'http://ayen.apptech.com.tr/ayen/Api/';
+  body: any;
+
   // bodyJSON:JSON
 
-  constructor(public http:Http) {
+  constructor(public http: Http) {
     console.log('Hello ApiProvider Provider');
   }
 
-  public apiService(request,method) {
+  public loginService(afterLink,body) {
 
-    let promise = new Promise((resolve, reject) => {
-
-       this.body = {
-        "Email":"naveed@mail.com",
-        "Password":"123",
-        "Location":"24.8830857,67.0678734"
-      }
-
-      console.log(this.body);
-      this.body2=JSON.stringify(this.body)
-
-      console.log(this.body2);
-      this.body3=JSON.parse(this.body2)
-
-      console.log(this.body3);
-
+    return new Promise((resolve, reject) => {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
-      // console.log(body);
-      this.http.post('http://ayen.apptech.com.tr/ayen/Api/login',JSON.stringify(this.body),options)
+      this.http.post(this.APILink + afterLink , JSON.stringify(body), options)
         .toPromise()
-        .then(
-          res => { // Success
-            console.log(res);
-          },
-          msg => { // Error
-            console.log(msg);
-          }
-        );
+        .then((response) => {
+          console.log('API Response from '+afterLink+ ': ', response.json());
+          resolve(response.json());
+        })
+        .catch((error) => {
+          console.error('API Error from '+afterLink+ ': ', error.status);
+          console.error('API Error from '+afterLink+ ', ', JSON.stringify(error));
+          reject(error);
+        });
     });
-    //console.log(promise) ;
-    return promise;
 
 
   }
