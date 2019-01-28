@@ -37,7 +37,7 @@ export class ApiProvider {
   public signUpService(afterLink,body) {
 
 
-    console.log("TTTTTT",body)
+    console.log("The body being send in signup",body)
     debugger;
     return new Promise((resolve, reject) => {
       let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });

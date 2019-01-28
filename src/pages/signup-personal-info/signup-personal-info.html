@@ -30,17 +30,44 @@
     <ion-row>
       <ion-row style="width:100%">
 
-      <form style="flex: 1;" [formGroup]="formgroup" [ngClass]="inputAnimation">
 
         <ion-label class="email-text" end>FIRST NAME</ion-label>
+
+
+        <ion-row>
+
+            <ion-col [ngClass]="inputAnimation" col-3 style="align-self:center">
+
+                    <ion-select interface="alert" [(ngModel)]="mrMrs">
+                      <ion-option value="Mr.">Mr.</ion-option>
+                      <ion-option value="Mrs.">Mrs.</ion-option>
+
+                    </ion-select>
+            </ion-col>
+
+
+      <form style="flex: 1;" [formGroup]="formgroup" [ngClass]="inputAnimation">
+
+          <ion-col col-9>
+
+
         <ion-item class="item">
           <ion-input (ionFocus)='provideHepticFeedback()' [attr.maxlength]="30" value="" type="text" formControlName="firstName">
           </ion-input>
         </ion-item>
+      </ion-col>
+    </form>
 
-        <ion-label class="inputLabel validation-invalid-text-end" *ngIf="firstName.hasError('required') && firstName.touched"
-          end>Required*</ion-label>
+      </ion-row>
+      <ion-label class="inputLabel validation-invalid-text-end" style="max-width: -webkit-fill-available;margin: 0px 0px 1px -30vw;" *ngIf="firstName.hasError('required') && firstName.touched"
+      end>Required*</ion-label>
 
+
+
+
+
+
+     <form style="flex: 1;" [formGroup]="formgroup" [ngClass]="inputAnimation">
 
           <ion-label class="email-text" end>LAST NAME</ion-label>
           <ion-item class="item">
@@ -87,7 +114,7 @@
         <ion-label [ngClass]="inputAnimation" class="email-text">NATIONALITY</ion-label>
         <ion-item [ngClass]="inputAnimation" class="dropdown-item">
           <ion-select interface="alert" [(ngModel)]="nationality">
-            <ion-option value="saudiArabia">Saudi Arabia</ion-option>
+            <ion-option value="Saudi Arabia">Saudi Arabia</ion-option>
             <ion-option value="Pk">Pakistan</ion-option>
             <ion-option value="USA">United States of America</ion-option>
             <ion-option value="UAE">United Arab Emirates</ion-option>

@@ -53,12 +53,6 @@ export class SignupPage {
     });
     this.username = this.formgroup.controls['username'];
     this.password = this.formgroup.controls['password'];
-    // this.fullname = this.formgroup.controls['fullname'];
-    // this.mobile = this.formgroup.controls['mobile'];
-    // this.address = this.formgroup.controls['address'];
-    // this.city = this.formgroup.controls['city'];
-    // this.state = this.formgroup.controls['state'];
-    // this.country = this.formgroup.controls['country'];
 
 
   }

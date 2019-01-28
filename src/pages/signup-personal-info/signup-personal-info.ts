@@ -33,6 +33,7 @@ export class SignupPersonalInfoPage {
   registerinAyenAs: string;
   region: string;
   nationality: string;
+  mrMrs: string;
 
   expiryDate:AbstractControl;
   expiryDateValue:string ;
@@ -48,7 +49,9 @@ export class SignupPersonalInfoPage {
     this.city ='city1';
     this.registerinAyenAs='Examiner';
     this.region='Central';
-    this.nationality="saudiArabia"
+    this.nationality="Saudi Arabia"
+    this.mrMrs="Mr.";
+
 
 
 
@@ -101,21 +104,21 @@ export class SignupPersonalInfoPage {
   gotoSignupExperience(){
     if(this.formgroup.valid){
       let newObject = {
-        "FirstName": "usman",
-        LastName: "kazmi",
-        Prefix:"Mr",
-        NationalityId: "123123123",
-        PhoneNumber: "03152821859",
+        FirstName: this.firstName.value,
+        LastName: this.lastName.value,
+        Prefix:this.mrMrs,
+        NationalityId: this.id.value,
+        PhoneNumber: this.mobile.value,
         PhoneNumberConfirmed: true,
-        Nationality: "Pakistani",
-        Gender: "male",
-        Region: "North",
-        City: "Jeddah",
-        RoleType: "Examiner",
-        OrganizationName:"jemstech",
-        CRNumber: "123",
-        OrgLicenceNumber: "123",
-        OrgExpiryDate: "123",
+        Nationality: this.nationality,
+        Gender: this.gender,
+        Region: this.region,
+        City: this.city,
+        RoleType: this.registerinAyenAs,
+        OrganizationName:this.organization.value,
+        CRNumber: this.crNumber.value,
+        OrgLicenceNumber: this.organizationLicenseNumber.value,
+        OrgExpiryDate: this.expiryDateValue,
 
       }
       //to add the newObject into dataFromSignUp

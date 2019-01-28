@@ -112,13 +112,13 @@ export class SignupExperincePage {
     if (this.formgroup.valid) {
 
       let dataFromSignupExperience = {
-        AcademicMajor: "Engineer",
-        YearsOfExperience: "2",
-        SceMemberShipNumber:"123456",
-        SceExpiryDate:"123456",
-        ProfessionalDegree:"Engineer",
-        FocusExperience:"Civil",
-        Description:"EXAMPLE DESCRIPTION IS NECESSARYs"
+        AcademicMajor: this.academicMajor,
+        YearsOfExperience: this.yearsOfExperience,
+        SceMemberShipNumber:this.sceNumber.value,
+        SceExpiryDate:this.expiryDateValue,
+        ProfessionalDegree:this.degreePrefession,
+        FocusExperience:this.focusExperience,
+        Description:this.briefDescription.value
 
 
 
