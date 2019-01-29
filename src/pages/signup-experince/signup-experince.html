@@ -77,7 +77,7 @@
 
           <ion-label class="email-text" end>SCE MEMBERSHIP NUMBER</ion-label>
           <ion-item class="item">
-            <ion-input (ionFocus)='provideHepticFeedback()' (keydown)="checkLength_sceNumber($event,15)"  value="" type="number" formControlName="sceNumber">
+            <ion-input (ionFocus)='provideHepticFeedback()' (keydown)="checkLength_sceNumber($event,15)"  value="123123" type="number" formControlName="sceNumber">
             </ion-input>
           </ion-item>
           <ion-label class="inputLabel validation-invalid-text-end" *ngIf="sceNumber.hasError('required') && sceNumber.touched"
@@ -87,7 +87,7 @@
           <ion-label class="email-text" end>EXPIRY DATE OF SCE MEMBERSHIP</ion-label>
           <ion-item (click)="showDatePicker()" class="item">
             <ion-input value={{expiryDateValue}} disabled="true" (ionFocus)='provideHepticFeedback()' maxlength="55"
-              value="" type="text" >
+              value="132123" type="text" >
             </ion-input>
           </ion-item>
 
@@ -157,7 +157,7 @@
       <form style="flex: 1;" [formGroup]="formgroup" [ngClass]="inputAnimation">
 
         <ion-label class="email-text" end>Write a brief about your achievements</ion-label>
-          <ion-textarea class='text-area' (ionFocus)='provideHepticFeedback()' maxlength="55" value="" type="tel" formControlName="briefDescription" placeholder="Write here...">
+          <ion-textarea  class='text-area' (ionFocus)='provideHepticFeedback()' maxlength="55" value="TEST DESCRPTION" type="tel" formControlName="briefDescription" placeholder="Write here...">
           </ion-textarea>
 
       </form>

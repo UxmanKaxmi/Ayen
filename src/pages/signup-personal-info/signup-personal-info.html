@@ -52,7 +52,7 @@
 
 
         <ion-item class="item">
-          <ion-input (ionFocus)='provideHepticFeedback()' [attr.maxlength]="30" value="" type="text" formControlName="firstName">
+          <ion-input (ionFocus)='provideHepticFeedback()' [attr.maxlength]="30" value="testFirstName" type="text" formControlName="firstName">
           </ion-input>
         </ion-item>
       </ion-col>
@@ -71,7 +71,7 @@
 
           <ion-label class="email-text" end>LAST NAME</ion-label>
           <ion-item class="item">
-            <ion-input (ionFocus)='provideHepticFeedback()' [attr.maxlength]="30" value="" type="text" formControlName="lastName">
+            <ion-input (ionFocus)='provideHepticFeedback()' [attr.maxlength]="30" value="testLastName" type="text" formControlName="lastName">
             </ion-input>
           </ion-item>
 
@@ -83,7 +83,7 @@
 
           <ion-label class="email-text" end>ID</ion-label>
           <ion-item class="item">
-            <ion-input (ionFocus)='provideHepticFeedback()'   type="number"
+            <ion-input (ionFocus)='provideHepticFeedback()'  value="123123" type="number"
             (keydown)="checkLength_id($event,10)"
             formControlName="id">
             </ion-input>
@@ -98,7 +98,7 @@
             <ion-label class="email-text" end>MOBILE NUMBER</ion-label>
             <ion-item class="item">
               <ion-input (keydown)="checkLength_mobile($event,15)"
-              (ionFocus)='provideHepticFeedback()' maxlength="20" value="" type="number" formControlName="mobile">
+              (ionFocus)='provideHepticFeedback()' maxlength="20" value="12312" type="number" formControlName="mobile">
               </ion-input>
             </ion-item>
 
@@ -174,7 +174,7 @@
 
               <ion-label class="email-text" end>ORGANIZATION</ion-label>
               <ion-item class="item">
-                <ion-input [attr.maxlength]="30" (ionFocus)='provideHepticFeedback()'  value="" type="text" formControlName="organization">
+                <ion-input [attr.maxlength]="30" (ionFocus)='provideHepticFeedback()'  value="orgTest" type="text" formControlName="organization">
                 </ion-input>
               </ion-item>
 
@@ -185,7 +185,7 @@
 
                 <ion-label class="email-text" end>C.R NUMBER</ion-label>
                 <ion-item class="item">
-                  <ion-input (keydown)="checkLength_crNumber($event,15)" (ionFocus)='provideHepticFeedback()'  value="" type="number" formControlName="crNumber">
+                  <ion-input (keydown)="checkLength_crNumber($event,15)" (ionFocus)='provideHepticFeedback()'  value="123123" type="number" formControlName="crNumber">
                   </ion-input>
                 </ion-item>
 
@@ -197,7 +197,7 @@
 
                 <ion-label class="email-text" end>ORGANIZATION LICENSE NUMBER</ion-label>
                 <ion-item class="item">
-                  <ion-input (keyup)="gotoSelectDate($event)"  (ionFocus)='provideHepticFeedback()' maxlength="30" value="" type="number" formControlName="organizationLicenseNumber">
+                  <ion-input (keyup)="gotoSelectDate($event)"  (ionFocus)='provideHepticFeedback()' maxlength="30" value="123123" type="number" formControlName="organizationLicenseNumber">
                   </ion-input>
                 </ion-item>
 
