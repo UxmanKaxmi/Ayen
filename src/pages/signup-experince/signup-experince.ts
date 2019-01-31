@@ -5,11 +5,13 @@ import { DatePicker } from '@ionic-native/date-picker';
 import { AbstractControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HelpersProvider } from './../../providers/helpers/helpers';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { File, FileEntry } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { Platform } from 'ionic-angular';
 import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
+import { FilePath } from '@ionic-native/file-path';
+import { ThrowStmt } from '@angular/compiler';
 
 /**
  * Generated class for the SignupExperincePage page.
@@ -52,9 +54,19 @@ export class SignupExperincePage {
   filesPath: any;
   fileType: any;
   filesName: any;
+  prg: number;
+  changeDetectorRef: any;
+  newjsonObject: any = [];
+  jsonNew: JSON;
+  CvName: any = "";
+  LicenseName: any = "";
+  items: any;
+  result: JSON;
+  allData: JSON
+  timeStampDate: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private helpers: HelpersProvider,
-    public formbuilder: FormBuilder, private datePicker: DatePicker, private transfer: FileTransfer, private file: File, public fileChooser: FileChooser, public platform: Platform, public filePicker: IOSFilePicker, public api: ApiProvider
+    public formbuilder: FormBuilder, private datePicker: DatePicker, private transfer: FileTransfer, private file: File, public fileChooser: FileChooser, public platform: Platform, public filePicker: IOSFilePicker, public api: ApiProvider, public loadingctrl: LoadingController, private filePath: FilePath
   ) {
     this.setDefaultDate();
 
@@ -107,7 +119,6 @@ export class SignupExperincePage {
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupExperincePage');
   }
 
   goBack() {
@@ -124,50 +135,48 @@ export class SignupExperincePage {
         ProfessionalDegree: this.degreePrefession,
         FocusExperience: this.focusExperience,
         Description: this.briefDescription.value,
-        cvUri: this.cvUri,
-        licenseUri: this.licenseUri
-
+        // cvUri: this.cvUri,
+        // licenseUri: this.licenseUri,
+        Cv: this.CvName,
+        OrgLicence: this.LicenseName
 
       }
       Object.assign(this.signUpDataPersonal, dataFromSignupExperience);
       console.log(this.signUpDataPersonal)
 
-      // this.api.signUpService("signup",this.signUpDataPersonal).then(response => {
-      //   this.dataList = response;
-
-      //   if(this.dataList.message=="User Verified"){
-      //     alert("LOGIN SUCCESS")
-      //   }
-      //     else {
-      //       alert(this.dataList.message)
-
-      //     }
 
 
 
-      // });
-      this.api.uploadFile(this.signUpDataPersonal)
+      this.api.signUpService(this.signUpDataPersonal,'signup')
 
 
-      // this.navCtrl.push(ConfirmationCodeSuccessPage,{},{animate:false})
     }
     else {
       alert('form not validated')
     }
   }
 
+
+
   provideHepticFeedback() {
     this.helpers.provideHepticFeedback()
   }
+
+
 
   //for Animation
   applyAnimation() {
     this.inputAnimation = "animated " + 'fadeInRight';
   }
 
+
+
   ionViewWillEnter() {
     this.applyAnimation();
   }
+
+
+
 
   showDatePicker() {
     this.datePicker.show({
@@ -195,6 +204,9 @@ export class SignupExperincePage {
 
   }
 
+
+
+
   splitDate(date) {
 
     let splitted = date.toString();
@@ -203,6 +215,9 @@ export class SignupExperincePage {
 
     return date;
   }
+
+
+
 
   onChange(membership) {
     if (membership == 'other') {
@@ -213,6 +228,9 @@ export class SignupExperincePage {
     }
   }
 
+
+
+
   setDefaultDate() {
     this.defaultDate = new Date();
     this.defaultDate = this.splitDate(this.defaultDate)
@@ -221,101 +239,76 @@ export class SignupExperincePage {
   }
 
 
+
+
+
   upload_cv() {
-    // this.platform.ready().then(() => {
+
+    this.fileChooser.open().then(uri => {
+      console.log(uri);
+      // debugger;
+      this.file.resolveLocalFilesystemUrl(uri) //to get file extension
+        .then((fileInfo) => {
+          // alert(JSON.stringify(fileInfo, null, 4));
+          let files = fileInfo as FileEntry;
+          files.file(success => {
+            this.fileType = success.type;
+            this.filesName = success.name;
+            console.log(this.fileType)
+            this.setPath_cv(uri, this.fileType)
+            // debugger;
 
 
-    //   if (this.platform.is('ios')) {
-    //     console.log("running on iOS device!");
+          });
 
-    //     this.filePicker.pickFile()
-    //       .then(uri => console.log(uri))
-    //       .catch(err => console.log('Error', err));
-    //   }
+        }).catch((err) => {
+          alert(JSON.stringify(err, null, 4));
+        });
 
 
-    // });
-
-
-    // this.fileChooser.open()
-    //   .then(url => this.setPath_cv(url))
-    //   .catch(e => alert(e));
-
-
-
-    this.fileChooser.open().then(uri =>
-      {
-        console.log(uri);
-        // debugger;
-        // this.filePath.resolveNativePath(uri).then(filePath =>
-        //   {
-        //     this.filesPath = filePath;
-        //     this.file.resolveLocalFilesystemUrl(filePath).then(fileInfo =>
-        //       {
-        //         let files = fileInfo as FileEntry;
-        //         files.file(success =>
-        //           {
-        //             this.fileType   = success.type;
-        //             this.filesName  = success.name;
-        //           });
-        //       },err =>
-        //       {
-        //         console.log(err);
-        //         throw err;
-        //       });
-        //   },err =>
-        //   {
-        //     console.log(err);
-        //     throw err;
-        //   });
-      },err =>
-      {
+    }, err => {
         console.log(err);
         throw err;
       });
 
-
-
-
-
   }
 
-  upload_lisence() {
-    this.platform.ready().then(() => {
 
 
-      if (this.platform.is('ios')) {
-        console.log("running on iOS device!");
-        this.filePicker.pickFile()
-          .then(uri => console.log(uri))
-          .catch(err => console.log('Error', err));
-      }
 
 
-    });
+  upload_license() {
+    this.fileChooser.open().then(uri => {
+      console.log(uri);
+      // debugger;
+      this.file.resolveLocalFilesystemUrl(uri) //to get file extension
+        .then((fileInfo) => {
+          let files = fileInfo as FileEntry;
+          files.file(success => {
+            this.fileType = success.type;
+            this.filesName = success.name;
+            console.log(this.fileType)
+            this.setPath_license(uri, this.fileType)
+            // debugger;
 
-    console.log('clickrd')
-    debugger;
-    const fileTransfer: FileTransferObject = this.transfer.create();
 
-    let options: FileUploadOptions = {
-      fileKey: 'file',
-      fileName: 'name.jpg',
-      headers: {}
+          });
 
-    }
+        }).catch((err) => {
+          alert(JSON.stringify(err, null, 4));
+        });
 
-    fileTransfer.upload('asdasd', 'http://192.168.0.7:8080/api/uploadImage', options)
-      .then((data) => {
-        // success
-      }, (err) => {
-        // error
-      })
 
-    this.fileChooser.open()
-      .then(url => this.setPath_license(url))
-      .catch(e => alert(e));
+    }, err => {
+        console.log(err);
+        throw err;
+      });
   }
+
+
+
+
+
 
   checkLength_sceNumber(e, length) {
     console.log(e)
@@ -326,30 +319,76 @@ export class SignupExperincePage {
       this.formgroup.controls['sceNumber'].setValue(str);
     }
   }
-  setPath_license(url) {
-    this.licenseUri = url;
-    console.log('licenseUri from setPAth function', this.licenseUri);
-    console.log(url);
-    let var1 = url.lastIndexOf("/") + 1;
-    let var2 = url.substring(var1);
-    this.licenseInButtonText = var2;
 
 
 
+
+  setPath_license(uri, fileType) {
+    console.log(fileType)
+
+    let random4DigitValue = Math.floor(1000 + Math.random() * 9000);
+    this.timeStampDate = Date.now();
+    let fileType2 = fileType.lastIndexOf("/") + 1
+    let fileType3 = fileType.substring(fileType2)
+
+    try {
+      if (fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
+        debugger;
+        this.cvUri = uri;
+        // console.log('cvURI from setPAth function', this.cvUri);
+        let var1 = uri.lastIndexOf("/") + 1;
+        let var2 = uri.substring(var1);
+        this.licenseInButtonText = var2 + '.' + fileType3;
+        this.LicenseName = 'OrgLicence' + this.timeStampDate + '_' + random4DigitValue + '.' + fileType3
+        console.log("THE SAVED LICENSE NAME IS " + this.LicenseName)
+        this.api.uploadLicenseApi(uri, fileType3, this.timeStampDate, random4DigitValue)
+      }
+      else {
+        alert('Please upload a valid format')
+
+      }
+    } catch (error) {
+      alert(error)
+
+    }
+    console.log(fileType3)
 
   }
-  setPath_cv(url) {
-    console.log('the Path is', url)
-
-
-    this.cvUri = url;
-    console.log('cvURI from setPAth function', this.cvUri);
-    let var1 = url.lastIndexOf("/") + 1;
-    let var2 = url.substring(var1);
-    this.CVInButtonText = var2;
 
 
 
+
+  setPath_cv(uri, fileType) {
+    debugger;
+    console.log(fileType)
+
+    let fileType2 = fileType.lastIndexOf("/") + 1
+    let fileType3 = fileType.substring(fileType2)
+
+
+    try {
+      if (fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
+
+        this.cvUri = uri;
+        // console.log('cvURI from setPAth function', this.cvUri);
+        let var1 = uri.lastIndexOf("/") + 1;
+        let var2 = uri.substring(var1);
+        this.CVInButtonText = var2 + '.' + fileType3;
+        let random4DigitValue = Math.floor(1000 + Math.random() * 9000);
+        this.timeStampDate = Date.now();
+        this.CvName = 'Cv' + this.timeStampDate + '_' + random4DigitValue + '.' + fileType3
+        console.log("THE SAVED CV NAME IS " + this.CvName)
+        this.api.uploadCVApi(uri, fileType3, this.timeStampDate, random4DigitValue)
+      }
+      else {
+        alert('Please upload a valid format')
+
+      }
+    } catch (error) {
+      alert(error)
+
+    }
+    console.log(fileType3)
 
   }
 

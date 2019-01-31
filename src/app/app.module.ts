@@ -26,6 +26,7 @@ import { Facebook } from '@ionic-native/facebook';
 import { ApiProvider } from '../providers/api/api';
 import { HelpersProvider } from '../providers/helpers/helpers';
 import { DatePicker } from '@ionic-native/date-picker';
+import { FilePath } from '@ionic-native/file-path';
 
 import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
 
@@ -71,7 +72,7 @@ import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiProvider,
+    ApiProvider,FilePath,
     HelpersProvider,DatePicker,FileTransfer,FileTransferObject,FileChooser,IOSFilePicker,File
   ]
 })
