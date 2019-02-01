@@ -22,7 +22,7 @@ export class ApiProvider {
   }
   //LOGIN SERVICE
   public loginService(afterLink, body) {
-    console.log('LOGIN BODY ', body)
+    console.log(afterLink+ ' BODY ', body)
     return new Promise((resolve, reject) => {
       let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
       let options = new RequestOptions({ headers: headers });
@@ -43,7 +43,7 @@ export class ApiProvider {
 
   //SIGNUP SERVICE
   public signUpService(body, afterLink) {
-    console.log("The body being send in signup", body)
+    console.log(afterLink.toUpperCase()+ ' BODY ', body)
     this.body2 = "Email=" + body.Email +
       "&EmailConfirmed=" + 'true' +
       "&Password=" + body.Password +
@@ -67,17 +67,15 @@ export class ApiProvider {
       "&RoleType=" + body.RoleType +
       "&SceMemberShipNumber=" + body.SceMemberShipNumber +
       "&SceExpiryDate=" + body.SceExpiryDate +
-      "&NationalityId=" + body.NationalityId;
-    "&OrgLicence=" + body.OrgLicence +
+      "&NationalityId=" + body.NationalityId +
+      "&Nationality=" + body.Nationality +
+      "&OrgLicence=" + body.OrgLicence +
       "&Cv=" + body.Cv;
 
-
-
-    console.log(body)
     return new Promise((resolve, reject) => {
-      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
       let options = new RequestOptions({ headers: headers });
-      this.http.post(this.APILink + afterLink, JSON.stringify(body), options)
+      this.http.post(this.APILink + afterLink, this.body2, options)
         .toPromise()
         .then((response) => {
           console.log('API Response from              ' + afterLink + ': ', response.json());
@@ -95,6 +93,7 @@ export class ApiProvider {
 
 
   uploadCVApi(uri, fileType, timeStampDate, random4DigitValue) {
+       return new Promise((resolve, reject) => {
 
     let loader = this.loadingctrl.create({
       content: "Uploading CV..."
@@ -120,39 +119,30 @@ export class ApiProvider {
         this.newjsonObject = JSON.parse(data.response)
         console.log(this.newjsonObject);
         alert(this.newjsonObject.message);
-
         loader.dismiss();
-
+        resolve(this.newjsonObject.message)
       }, (err) => {
         console.log(err);
         loader.dismiss();
+        resolve(err)
         alert(err);
+      });
+
       });
 
   }
 
 
   uploadLicenseApi(uri, fileType, timeStampDate, random4DigitValue) {
-    // debugger;
-    // this.defaultDate= Date.now();
-    // this.defaultDate =this.defaultDate.getUTCTime();
-    // console.log(this.defaultDate)
-
-    // this.defaultDate=this.splitDate(this.defaultDate)
-    // debugger;
+   return new Promise((resolve, reject) => {
     let loader = this.loadingctrl.create({
       content: "Uploading License..."
     });
     loader.present();
     const fileTransfer: FileTransferObject = this.transfer.create();
-    // let val = Math.floor(1000 + Math.random() * 9000);
-
     let options: FileUploadOptions = {
       fileKey: 'OrgLicence',
-
-
       fileName: 'OrgLicence' + timeStampDate + '_' + random4DigitValue + '.' + fileType,
-
       chunkedMode: false,
       mimeType: "application/json",
 
@@ -169,14 +159,18 @@ export class ApiProvider {
         this.newjsonObject = JSON.parse(data.response)
         console.log(this.newjsonObject);
         alert(this.newjsonObject.message);
-
         loader.dismiss();
+        resolve(this.newjsonObject.message)
 
       }, (err) => {
         console.log(err);
         loader.dismiss();
+        reject(err)
         alert(err);
       });
+
+    });
+
 
   }
   splitDate(date) {

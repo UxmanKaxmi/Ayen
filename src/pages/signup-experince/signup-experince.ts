@@ -65,6 +65,10 @@ export class SignupExperincePage {
   allData: JSON
   timeStampDate: any;
 
+  isCvUploaded:boolean = false;
+  isLicenseUploaded:boolean = false;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private helpers: HelpersProvider,
     public formbuilder: FormBuilder, private datePicker: DatePicker, private transfer: FileTransfer, private file: File, public fileChooser: FileChooser, public platform: Platform, public filePicker: IOSFilePicker, public api: ApiProvider, public loadingctrl: LoadingController, private filePath: FilePath
   ) {
@@ -125,35 +129,61 @@ export class SignupExperincePage {
     this.navCtrl.pop()
   }
   submitReq() {
-    if (this.formgroup.valid) {
+    if(this.isLicenseUploaded && this.isCvUploaded){
+      if (this.formgroup.valid) {
 
-      let dataFromSignupExperience = {
-        AcademicMajor: this.academicMajor,
-        YearsOfExperience: this.yearsOfExperience,
-        SceMemberShipNumber: this.sceNumber.value,
-        SceExpiryDate: this.expiryDateValue,
-        ProfessionalDegree: this.degreePrefession,
-        FocusExperience: this.focusExperience,
-        Description: this.briefDescription.value,
-        // cvUri: this.cvUri,
-        // licenseUri: this.licenseUri,
-        Cv: this.CvName,
-        OrgLicence: this.LicenseName
+        let dataFromSignupExperience = {
+          AcademicMajor: this.academicMajor,
+          YearsOfExperience: this.yearsOfExperience,
+          SceMemberShipNumber: this.sceNumber.value,
+          SceExpiryDate: this.expiryDateValue,
+          ProfessionalDegree: this.degreePrefession,
+          FocusExperience: this.focusExperience,
+          Description: this.briefDescription.value,
+          // cvUri: this.cvUri,
+          // licenseUri: this.licenseUri,
+          Cv: this.CvName,
+          OrgLicence: this.LicenseName
+
+        }
+        Object.assign(this.signUpDataPersonal, dataFromSignupExperience);
+        console.log(this.signUpDataPersonal)
+
+
+
+
+        this.api.signUpService(this.signUpDataPersonal,'signup')
+        .then(
+          response => {
+            this.dataList = response;
+            if(this.dataList.message=="Email Already Exist Try Other Unique Email"){
+              alert(this.dataList.message)
+            }
+              else {
+                alert(this.dataList.message)
+              }
+          }
+        )
+        .catch(
+          error => {
+            alert(error)
+          }
+        )
+
+
 
       }
-      Object.assign(this.signUpDataPersonal, dataFromSignupExperience);
-      console.log(this.signUpDataPersonal)
-
-
-
-
-      this.api.signUpService(this.signUpDataPersonal,'signup')
-
-
+      else {
+        alert('form not validated')
+      }//check for form not validated
     }
     else {
-      alert('form not validated')
-    }
+      alert('Please Upload the appropriate files...')
+      this.isCvUploaded=false
+      this.isLicenseUploaded=false
+
+    }//check for files uploaded
+
   }
 
 
@@ -341,7 +371,20 @@ export class SignupExperincePage {
         this.licenseInButtonText = var2 + '.' + fileType3;
         this.LicenseName = 'OrgLicence' + this.timeStampDate + '_' + random4DigitValue + '.' + fileType3
         console.log("THE SAVED LICENSE NAME IS " + this.LicenseName)
+        debugger;
         this.api.uploadLicenseApi(uri, fileType3, this.timeStampDate, random4DigitValue)
+        .then(response=>{
+          if(response=="Licence Upload Successfully"){                          //for checking if the license is uploaded.
+            this.isLicenseUploaded=true;
+          }
+          else {
+            this.isLicenseUploaded=false;
+
+          }
+        })
+        .catch(err=>{
+          alert(err)
+        })
       }
       else {
         alert('Please upload a valid format')
@@ -379,6 +422,18 @@ export class SignupExperincePage {
         this.CvName = 'Cv' + this.timeStampDate + '_' + random4DigitValue + '.' + fileType3
         console.log("THE SAVED CV NAME IS " + this.CvName)
         this.api.uploadCVApi(uri, fileType3, this.timeStampDate, random4DigitValue)
+        .then(response=>{
+          if(response=="Cv Upload Successfully"){                          //for checking if the license is uploaded.
+            this.isCvUploaded=true;
+          }
+          else {
+            this.isCvUploaded=false;
+
+          }
+        })
+        .catch(err=>{
+          alert(err)
+        })
       }
       else {
         alert('Please upload a valid format')
