@@ -18,7 +18,7 @@ import { SignupPersonalInfoPage } from '../pages/signup-personal-info/signup-per
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = SignupExperincePage;
 
   pages: Array<{title: string, component: any}>;
 

@@ -49,7 +49,7 @@
 
         <ion-label [ngClass]="inputAnimation" class="email-text">ACADEMIC MAJOR</ion-label>
         <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-          <ion-select interface="alert" [(ngModel)]="academicMajor">
+          <ion-select interface="action-sheet" [(ngModel)]="academicMajor">
             <ion-option value="architect">Architect</ion-option>
             <ion-option value="structuralEngineer">Structural Engineer</ion-option>
             <ion-option value="civilEngineer">Civil Engineer</ion-option>
@@ -62,7 +62,7 @@
 
         <ion-label [ngClass]="inputAnimation" class="email-text">YEARS OF EXPERIENCE</ion-label>
         <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-          <ion-select interface="alert" [(ngModel)]="yearsOfExperience">
+          <ion-select interface="action-sheet" [(ngModel)]="yearsOfExperience">
             <ion-option value="exp1">Fresh Graduate</ion-option>
             <ion-option value="exp2">1 to 4 years</ion-option>
             <ion-option value="exp3">4+ to 9 years</ion-option>
@@ -100,7 +100,7 @@
 
       <ion-label [ngClass]="inputAnimation" class="email-text">DEGREE OF PROFESSIONAL ACCREDITATION</ion-label>
       <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-        <ion-select interface="alert" [(ngModel)]="degreePrefession">
+        <ion-select interface="action-sheet" [(ngModel)]="degreePrefession">
           <ion-option value="normalEngineer">Normal Engineer</ion-option>
           <ion-option value="associateEngineer">Associate Engineer</ion-option>
           <ion-option value="civilEngineer">Professional Engineer</ion-option>
@@ -112,7 +112,7 @@
 
       <ion-label [ngClass]="inputAnimation" class="email-text">FOCUS OF EXPERIENCES</ion-label>
       <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-        <ion-select (ionChange)="onChange(focusExperience)" interface="alert" [(ngModel)]="focusExperience">
+        <ion-select (ionChange)="onChange(focusExperience)" interface="action-sheet" [(ngModel)]="focusExperience">
           <ion-option value="design">Design</ion-option>
           <ion-option value="engineeringSupervision">Engineering Supervision</ion-option>
           <ion-option value="projectManagement">Project Management</ion-option>
@@ -137,7 +137,15 @@
         <ion-row class="inbutton-row-license">
             <ion-label class="inbutton-text-license" >{{licenseInButtonText}}</ion-label>
         </ion-row>
+        <!-- <progress id="progressbar" max="100" [value]="prg"> </progress> -->
       </ion-row>
+
+
+      <div id="licenseLoader" class="progress-outer">
+          <div  class="progress-inner-license" [style.width]="[(prg_license)] + '%'">
+              {{prg_license}}%
+          </div>
+      </div>
 
 
       <ion-label [ngClass]="inputAnimation" class="email-text">UPLOAD YOUR CV</ion-label>
@@ -148,9 +156,15 @@
         <ion-row class="inbutton-row-cv">
             <ion-label class="inbutton-text-cv" >{{CVInButtonText}}</ion-label>
         </ion-row>
-
-
       </ion-row>
+
+      <div  id="cvLoader" class="progress-outer">
+          <div class="progress-inner-cv" [style.width]="[(prg_cv)] + '%'">
+              {{prg_cv}}%
+          </div>
+      </div>
+
+
 
 
 

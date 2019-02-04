@@ -12,6 +12,8 @@ import { Platform } from 'ionic-angular';
 import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
 import { FilePath } from '@ionic-native/file-path';
 import { ThrowStmt } from '@angular/compiler';
+import {NgZone} from '@angular/core';
+
 
 /**
  * Generated class for the SignupExperincePage page.
@@ -54,7 +56,8 @@ export class SignupExperincePage {
   filesPath: any;
   fileType: any;
   filesName: any;
-  prg: number;
+  prg_license: number;
+  prg_cv:number
   changeDetectorRef: any;
   newjsonObject: any = [];
   jsonNew: JSON;
@@ -64,13 +67,16 @@ export class SignupExperincePage {
   result: JSON;
   allData: JSON
   timeStampDate: any;
-
+  progress: 0 ;
   isCvUploaded:boolean = false;
   isLicenseUploaded:boolean = false;
+  showCvLoader:boolean=false;
+  showLicenseLoader:boolean=false;
+
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private helpers: HelpersProvider,
-    public formbuilder: FormBuilder, private datePicker: DatePicker, private transfer: FileTransfer, private file: File, public fileChooser: FileChooser, public platform: Platform, public filePicker: IOSFilePicker, public api: ApiProvider, public loadingctrl: LoadingController, private filePath: FilePath
+    public formbuilder: FormBuilder, private datePicker: DatePicker, private transfer: FileTransfer, private file: File, public fileChooser: FileChooser, public platform: Platform, public filePicker: IOSFilePicker, public api: ApiProvider, public loadingctrl: LoadingController, private filePath: FilePath, public _zone: NgZone
   ) {
     this.setDefaultDate();
 
@@ -354,7 +360,6 @@ export class SignupExperincePage {
 
 
   setPath_license(uri, fileType) {
-    console.log(fileType)
 
     let random4DigitValue = Math.floor(1000 + Math.random() * 9000);
     this.timeStampDate = Date.now();
@@ -362,29 +367,62 @@ export class SignupExperincePage {
     let fileType3 = fileType.substring(fileType2)
 
     try {
-      if (fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
-        debugger;
+      if (fileType3 == "mpeg" || fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
+        // if (fileType3 != "png" ) {
         this.cvUri = uri;
-        // console.log('cvURI from setPAth function', this.cvUri);
         let var1 = uri.lastIndexOf("/") + 1;
         let var2 = uri.substring(var1);
         this.licenseInButtonText = var2 + '.' + fileType3;
         this.LicenseName = 'OrgLicence' + this.timeStampDate + '_' + random4DigitValue + '.' + fileType3
-        console.log("THE SAVED LICENSE NAME IS " + this.LicenseName)
-        debugger;
-        this.api.uploadLicenseApi(uri, fileType3, this.timeStampDate, random4DigitValue)
-        .then(response=>{
-          if(response=="Licence Upload Successfully"){                          //for checking if the license is uploaded.
-            this.isLicenseUploaded=true;
-          }
-          else {
-            this.isLicenseUploaded=false;
 
-          }
-        })
-        .catch(err=>{
-          alert(err)
-        })
+    //---------------FOR USING THE API SERVICE TO UPLOAD LICENSE-------------------------//
+        // this.api.uploadLicenseApi(uri, fileType3, this.timeStampDate, random4DigitValue)
+        // .then(response=>{
+        //   if(response=="Licence Upload Successfully"){                          //for checking if the license is uploaded.
+        //     this.isLicenseUploaded=true;
+        //   }
+        //   else {
+        //     this.isLicenseUploaded=false;
+
+        //   }
+        // })
+        // .catch(err=>{
+        //   alert(err)
+        // })
+
+        // let loader = this.loadingctrl.create({
+        //   content: "Uploading License..."
+        // });
+        // loader.present();
+
+
+
+
+        const fileTransfer: FileTransferObject = this.transfer.create();
+        let options: FileUploadOptions = {
+          fileKey: 'OrgLicence',
+          fileName: 'OrgLicence' + this.timeStampDate + '_' + random4DigitValue + '.' + fileType3,
+          chunkedMode: false,
+          mimeType: "application/json",
+
+        }
+        fileTransfer.onProgress((e)=>
+        {
+          this._zone.run(() => this.prg_license=(e.lengthComputable) ?  Math.round((e.loaded * 100) / e.total) : -1
+          )
+        });
+
+        fileTransfer.upload(uri, ApiProvider.APILink + 'uploadlicence', options)
+          .then((data) => {
+            this.newjsonObject = JSON.parse(data.response)
+            console.log(this.newjsonObject);
+            alert(this.newjsonObject.message);
+
+          }, (err) => {
+            console.log(err);
+            alert(err);
+          });
+
       }
       else {
         alert('Please upload a valid format')
@@ -394,7 +432,6 @@ export class SignupExperincePage {
       alert(error)
 
     }
-    console.log(fileType3)
 
   }
 
@@ -410,7 +447,7 @@ export class SignupExperincePage {
 
 
     try {
-      if (fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
+      if ( fileType3 == "mpeg" || fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
 
         this.cvUri = uri;
         // console.log('cvURI from setPAth function', this.cvUri);
@@ -421,19 +458,53 @@ export class SignupExperincePage {
         this.timeStampDate = Date.now();
         this.CvName = 'Cv' + this.timeStampDate + '_' + random4DigitValue + '.' + fileType3
         console.log("THE SAVED CV NAME IS " + this.CvName)
-        this.api.uploadCVApi(uri, fileType3, this.timeStampDate, random4DigitValue)
-        .then(response=>{
-          if(response=="Cv Upload Successfully"){                          //for checking if the license is uploaded.
-            this.isCvUploaded=true;
-          }
-          else {
-            this.isCvUploaded=false;
 
-          }
-        })
-        .catch(err=>{
-          alert(err)
-        })
+
+
+
+
+
+        // this.api.uploadCVApi(uri, fileType3, this.timeStampDate, random4DigitValue)
+        // .then(response=>{
+        //   if(response=="Cv Upload Successfully"){                          //for checking if the license is uploaded.
+        //     this.isCvUploaded=true;
+        //   }
+        //   else {
+        //     this.isCvUploaded=false;
+
+        //   }
+        // })
+        // .catch(err=>{
+        //   alert(err)
+        // })
+
+
+        const fileTransfer: FileTransferObject = this.transfer.create();
+        let options: FileUploadOptions = {
+          fileKey: 'Cv',
+          fileName: 'Cv' + this.timeStampDate + '_' + random4DigitValue + '.' + fileType3,
+          chunkedMode: false,
+          mimeType: "application/json",
+
+        }
+        fileTransfer.onProgress((e)=>
+        {
+          this._zone.run(() => this.prg_cv=(e.lengthComputable) ?  Math.round((e.loaded * 100) / e.total) : -1
+          )
+        });
+
+        fileTransfer.upload(uri, ApiProvider.APILink + 'uploadcv', options)
+          .then((data) => {
+            this.newjsonObject = JSON.parse(data.response)
+            console.log(this.newjsonObject);
+            alert(this.newjsonObject.message);
+          }, (err) => {
+            console.log(err);
+            alert(err);
+          });
+
+
+
       }
       else {
         alert('Please upload a valid format')

@@ -27,6 +27,7 @@ import { ApiProvider } from '../providers/api/api';
 import { HelpersProvider } from '../providers/helpers/helpers';
 import { DatePicker } from '@ionic-native/date-picker';
 import { FilePath } from '@ionic-native/file-path';
+import { CountryPickerModule } from 'ngx-country-picker';
 
 import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
 
@@ -45,7 +46,7 @@ import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
 
   ],
   imports: [
-    BrowserModule,HttpModule,
+    BrowserModule,HttpModule,CountryPickerModule.forRoot(),
     IonicModule.forRoot(MyApp, {
       scrollAssist: true,
       autoFocusAssist: true

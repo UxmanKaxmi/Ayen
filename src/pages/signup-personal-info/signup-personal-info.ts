@@ -2,8 +2,10 @@ import { HelpersProvider } from './../../providers/helpers/helpers';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { SignupExperincePage } from './../signup-experince/signup-experince';
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams, Platform } from 'ionic-angular';
 import { DatePicker } from '@ionic-native/date-picker';
+import { HttpModule, Http, Response } from '@angular/http';
+import { ICountry } from 'ngx-country-picker';
 
 /**
  * Generated class for the SignupPersonalInfoPage page.
@@ -34,19 +36,22 @@ export class SignupPersonalInfoPage {
   region: string;
   nationality: string;
   mrMrs: string;
+  public countries: ICountry[] = [];
 
   expiryDate:AbstractControl;
   expiryDateValue:string ;
   defaultDate:any;
   dataFromSignUp:any;
+  countryArray:any=[]
+  stateArray:any=[]
 
   inputAnimation: string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public helper:HelpersProvider,public formbuilder: FormBuilder,private datePicker: DatePicker) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public helper:HelpersProvider,public formbuilder: FormBuilder,private datePicker: DatePicker,public platform:Platform,public http:Http) {
 
     this.gender ='m';
-    this.city ='city1';
+    this.city ='Al Bahah';
     this.registerinAyenAs='Examiner';
     this.region='Central';
     this.nationality="Saudi Arabia"
@@ -65,8 +70,6 @@ export class SignupPersonalInfoPage {
       crNumber:['',Validators.required],
       organizationLicenseNumber:['',Validators.required],
       expiryDate:['',Validators.required],
-
-
     });
 
     this.firstName = this.formgroup.controls['firstName'];
@@ -90,6 +93,15 @@ export class SignupPersonalInfoPage {
 
   }
 
+
+
+
+  public ngOnInit(): void {
+    // this.countryPicker.getCountries()
+    //   .subscribe((countries: ICountry[]) => this.countries = countries);
+    //   console.log(this.countryPicker)
+
+  }
   setDefaultDate(){
     this.defaultDate= new Date();
     this.defaultDate=this.splitDate(this.defaultDate)
@@ -145,6 +157,8 @@ export class SignupPersonalInfoPage {
 
   ionViewWillEnter() {
     this.applyAnimation();
+    this.loadCountryJSON()
+
   }
   showDatePicker(){
     this.datePicker.show({
@@ -249,4 +263,51 @@ checkLength_organizationLicenseNumber(e,length){
   this.formgroup.controls['organizationLicenseNumber'].setValue(str);
   }
 }
+
+loadCountryJSON(){
+  var url = "";
+    if(this.platform.is('core') || this.platform.is('mobileweb')) {
+      url = 'assets/countries.json';
+    }else{
+      if(this.platform.is('android')){
+        url = "/android_asset/www/assets/countries.json";
+      }else if(this.platform.is('ios')){
+        url = 'assets/countries.json';
+      }
+    }
+    return this.http.get('assets/countries.json')
+
+    .subscribe(res => {
+      debugger;
+      this.countryArray =res
+      this.countryArray =this.countryArray._body
+
+      this.countryArray  = JSON.parse(this.countryArray)
+      this.countryArray = this.countryArray.countries
+      this.loadStateJSON(this.nationality,0)
+
+    })
+  }
+
+
+loadStateJSON(country,index){
+  debugger;
+  var url = "";
+    if(this.platform.is('core') || this.platform.is('mobileweb')) {
+      url = 'assets/countries.json';
+    }else{
+      if(this.platform.is('android')){
+        url = "/android_asset/www/assets/countries.json";
+      }else if(this.platform.is('ios')){
+        url = 'assets/countries.json';
+      }
+    }
+    return this.http.get('assets/countries.json')
+
+    .subscribe(res => {
+      this.stateArray =this.countryArray[index].states
+      // this.stateArray  = JSON.parse( this.stateArray)
+
+    })
+  }
 }

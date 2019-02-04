@@ -6,6 +6,7 @@
 
 
 
+
   <ion-grid class="main-grid">
 
 
@@ -41,7 +42,7 @@
 
             <ion-col [ngClass]="inputAnimation" col-3 style="align-self:center">
 
-                    <ion-select interface="alert" [(ngModel)]="mrMrs">
+                    <ion-select interface="popover" [(ngModel)]="mrMrs">
                       <ion-option value="Mr.">Mr.</ion-option>
                       <ion-option value="Mrs.">Mrs.</ion-option>
 
@@ -114,29 +115,21 @@
           </form>
         </ion-row>
 
+
         <ion-label [ngClass]="inputAnimation" class="email-text">NATIONALITY</ion-label>
         <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-          <ion-select interface="alert" [(ngModel)]="nationality">
-            <ion-option value="Saudi Arabia">Saudi Arabia</ion-option>
-            <ion-option value="Pk">Pakistan</ion-option>
-            <ion-option value="USA">United States of America</ion-option>
-            <ion-option value="UAE">United Arab Emirates</ion-option>
+          <ion-select  interface="popover"  [(ngModel)]="nationality" >
+              <ion-option  (ionSelect)="loadStateJSON(nationality,i)" value={{item.country}} *ngFor="let item of countryArray;let i = index">{{item.country}}</ion-option>
           </ion-select>
         </ion-item>
 
 
-          <ion-label [ngClass]="inputAnimation" class="email-text">Gender</ion-label>
-          <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-            <ion-select interface="alert" [(ngModel)]="gender">
-              <ion-option value="f">Female</ion-option>
-              <ion-option value="m">Male</ion-option>
-            </ion-select>
-          </ion-item>
+
 
 
           <ion-label [ngClass]="inputAnimation" class="email-text">REGION</ion-label>
           <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-            <ion-select interface="alert" [(ngModel)]="region">
+            <ion-select interface="popover" [(ngModel)]="region">
               <ion-option value="Central">Central</ion-option>
               <ion-option value="North">North</ion-option>
               <ion-option value="East">East</ion-option>
@@ -148,11 +141,19 @@
 
           <ion-label [ngClass]="inputAnimation" class="email-text">CITY</ion-label>
           <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-            <ion-select interface="alert" [(ngModel)]="city">
-              <ion-option value="city1">Jeddah</ion-option>
-              <ion-option value="city2">city2</ion-option>
-              <ion-option value="city3">city3</ion-option>
-              <ion-option value="city4">city4</ion-option>
+
+              <ion-select  interface="popover"  [(ngModel)]="city" >
+                  <ion-option   value={{item}} *ngFor="let item of stateArray;let i = index">{{item}}</ion-option>
+
+              </ion-select>
+
+          </ion-item>
+
+          <ion-label [ngClass]="inputAnimation" class="email-text">Gender</ion-label>
+          <ion-item [ngClass]="inputAnimation" class="dropdown-item">
+            <ion-select interface="popover" [(ngModel)]="gender">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
             </ion-select>
           </ion-item>
 
@@ -160,7 +161,7 @@
 
           <ion-label [ngClass]="inputAnimation" class="email-text">REGISTER IN AYEN AS</ion-label>
           <ion-item [ngClass]="inputAnimation" class="dropdown-item">
-            <ion-select interface="alert" [(ngModel)]="registerinAyenAs">
+            <ion-select interface="popover" [(ngModel)]="registerinAyenAs">
               <ion-option value="Examiner">Examiner</ion-option>
               <ion-option value="Inspector">Inspector</ion-option>
 

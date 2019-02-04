@@ -1,3 +1,4 @@
+import { SignupExperincePage } from './../../pages/signup-experince/signup-experince';
 import { LoadingController } from 'ionic-angular';
 import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
 import { Injectable } from '@angular/core';
@@ -7,7 +8,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 @Injectable()
 export class ApiProvider {
 
-  APILink: string = 'http://ayen.apptech.com.tr/ayen/Api/';
+  public static APILink: string = 'http://ayen.apptech.com.tr/ayen/Api/';
   // APILink: string = 'http://192.168.0.100/ayen/Api/';
   body: any;
   bodyExample: any;
@@ -26,7 +27,7 @@ export class ApiProvider {
     return new Promise((resolve, reject) => {
       let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
       let options = new RequestOptions({ headers: headers });
-      this.http.post(this.APILink + afterLink, JSON.stringify(body), options)
+      this.http.post(ApiProvider.APILink + afterLink, JSON.stringify(body), options)
         .toPromise()
         .then((response) => {
           console.log('API Response from ' + afterLink + ': ', response.json());
@@ -75,7 +76,7 @@ export class ApiProvider {
     return new Promise((resolve, reject) => {
       let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
       let options = new RequestOptions({ headers: headers });
-      this.http.post(this.APILink + afterLink, this.body2, options)
+      this.http.post(ApiProvider.APILink + afterLink, this.body2, options)
         .toPromise()
         .then((response) => {
           console.log('API Response from              ' + afterLink + ': ', response.json());
@@ -114,7 +115,7 @@ export class ApiProvider {
     //     console.log(this.prg)
     // });
 
-    fileTransfer.upload(uri, this.APILink + 'uploadcv', options)
+    fileTransfer.upload(uri, ApiProvider.APILink + 'uploadcv', options)
       .then((data) => {
         this.newjsonObject = JSON.parse(data.response)
         console.log(this.newjsonObject);
@@ -147,14 +148,15 @@ export class ApiProvider {
       mimeType: "application/json",
 
     }
-    // fileTransfer.onProgress((e)=>
-    // {
-    //     this.prg=(e.lengthComputable) ?  Math.round((e.loaded * 100) / e.total) : -1;
-    //     this.changeDetectorRef.detectChanges();
-    //     console.log(this.prg)
-    // });
+    debugger;
+    fileTransfer.onProgress((e)=>
+    {
+        this.prg=(e.lengthComputable) ?  Math.round((e.loaded * 100) / e.total) : -1;
+        console.log(this.prg)
+        // SignupExperincePage.progress=this.prg
+    });
 
-    fileTransfer.upload(uri, this.APILink + 'uploadlicence', options)
+    fileTransfer.upload(uri, ApiProvider.APILink + 'uploadlicence', options)
       .then((data) => {
         this.newjsonObject = JSON.parse(data.response)
         console.log(this.newjsonObject);

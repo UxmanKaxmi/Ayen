@@ -269,5 +269,36 @@ textarea.text-input {
   letter-spacing: 0.2px;
 
 }
+.progress-outer {
+  width: 96%;
+  margin: 10px 2%;
+  padding: 3px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.progress-inner-cv {
+  width: 0%;
+
+  padding: 5px;
+  background-color: map-get($colors, AppYellow);
+}
+.progress-inner-license {
+  width: 0%;
+
+  padding: 5px;
+  background-color: map-get($colors, AppGreenLicense);
+}
+
+.hideThisId{
+  display: none;
+}
+.showThisId{
+  display:block !important;
+}
+
 
 }
