@@ -118,7 +118,7 @@ export class SignupPage {
     console.log("google login");
     this.googlePlus
       .login({})
-      .then(res => alert("Google Logged In! Welcome " + res.displayName))
+      .then(res => console.log("Google Logged In! Welcome " + JSON.stringify(res)))
       .catch(err => console.error(err));
   }
 

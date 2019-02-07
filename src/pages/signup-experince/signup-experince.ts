@@ -364,7 +364,7 @@ export class SignupExperincePage {
     let fileType3 = fileType.substring(fileType2)
 
     try {
-      if (fileType3 == "mpeg" || fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
+      if ( fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
         // if (fileType3 != "png" ) {
 
 
@@ -417,6 +417,15 @@ export class SignupExperincePage {
             console.log(this.newjsonObject);
             alert(this.newjsonObject.message);
 
+            if(this.newjsonObject.message=="Licence Upload Successfully"){                          //for checking if the license is uploaded.
+                  this.isLicenseUploaded=true;
+                }
+                else {
+                  this.isLicenseUploaded=false;
+
+                }
+
+
           }, (err) => {
             console.log(err);
             alert(err);
@@ -444,7 +453,7 @@ export class SignupExperincePage {
 
 
     try {
-      if ( fileType3 == "mpeg" || fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
+      if ( fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
 
         this.cvUri = uri;
         // console.log('cvURI from setPAth function', this.cvUri);
@@ -494,7 +503,16 @@ export class SignupExperincePage {
           .then((data) => {
             this.newjsonObject = JSON.parse(data.response)
             console.log(this.newjsonObject);
-            alert(this.newjsonObject.message);
+            alert(this.newjsonObject.message)
+
+            if(this.newjsonObject.message=="Cv Upload Successfully"){                          //for checking if the Cv is uploaded.
+                  this.isCvUploaded=true;
+                }
+                else {
+                  this.isCvUploaded=false;
+
+                }
+
           }, (err) => {
             console.log(err);
             alert(err);
