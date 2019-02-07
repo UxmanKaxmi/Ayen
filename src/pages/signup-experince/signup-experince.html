@@ -141,7 +141,7 @@
       </ion-row>
 
 
-      <div id="licenseLoader" class="progress-outer">
+      <div [hidden]="!showLicenseLoader" id="licenseLoader" class="progress-outer">
           <div  class="progress-inner-license" [style.width]="[(prg_license)] + '%'">
               {{prg_license}}%
           </div>
@@ -158,7 +158,7 @@
         </ion-row>
       </ion-row>
 
-      <div  id="cvLoader" class="progress-outer">
+      <div  [hidden]="!showCvLoader"   id="cvLoader" class="progress-outer">
           <div class="progress-inner-cv" [style.width]="[(prg_cv)] + '%'">
               {{prg_cv}}%
           </div>

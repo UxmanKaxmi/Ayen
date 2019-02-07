@@ -282,19 +282,21 @@ textarea.text-input {
 
 .progress-inner-cv {
   width: 0%;
+  border-radius: 20px;
 
   padding: 5px;
   background-color: map-get($colors, AppYellow);
 }
 .progress-inner-license {
   width: 0%;
+  border-radius: 20px;
 
   padding: 5px;
   background-color: map-get($colors, AppGreenLicense);
 }
 
 .hideThisId{
-  display: none;
+  display: none !important;
 }
 .showThisId{
   display:block !important;

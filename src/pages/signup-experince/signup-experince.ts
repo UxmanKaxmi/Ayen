@@ -279,10 +279,9 @@ export class SignupExperincePage {
 
 
   upload_cv() {
-
+    this.showCvButton() //show license Upload Loader
     this.fileChooser.open().then(uri => {
       console.log(uri);
-      // debugger;
       this.file.resolveLocalFilesystemUrl(uri) //to get file extension
         .then((fileInfo) => {
           // alert(JSON.stringify(fileInfo, null, 4));
@@ -292,7 +291,6 @@ export class SignupExperincePage {
             this.filesName = success.name;
             console.log(this.fileType)
             this.setPath_cv(uri, this.fileType)
-            // debugger;
 
 
           });
@@ -314,9 +312,9 @@ export class SignupExperincePage {
 
 
   upload_license() {
+    this.showLicenseButton() //show license Upload Loader
     this.fileChooser.open().then(uri => {
       console.log(uri);
-      // debugger;
       this.file.resolveLocalFilesystemUrl(uri) //to get file extension
         .then((fileInfo) => {
           let files = fileInfo as FileEntry;
@@ -325,7 +323,6 @@ export class SignupExperincePage {
             this.filesName = success.name;
             console.log(this.fileType)
             this.setPath_license(uri, this.fileType)
-            // debugger;
 
 
           });
@@ -369,6 +366,8 @@ export class SignupExperincePage {
     try {
       if (fileType3 == "mpeg" || fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
         // if (fileType3 != "png" ) {
+
+
         this.cvUri = uri;
         let var1 = uri.lastIndexOf("/") + 1;
         let var2 = uri.substring(var1);
@@ -432,14 +431,12 @@ export class SignupExperincePage {
       alert(error)
 
     }
-
   }
 
 
 
 
   setPath_cv(uri, fileType) {
-    debugger;
     console.log(fileType)
 
     let fileType2 = fileType.lastIndexOf("/") + 1
@@ -517,6 +514,57 @@ export class SignupExperincePage {
     console.log(fileType3)
 
   }
+
+  hideLicenseButton(){
+
+    if(this.showLicenseLoader == true){
+      this.showLicenseLoader = false
+
+    }
+    else {
+      this.showLicenseLoader = false
+
+    }
+
+
+  }
+
+  showLicenseButton(){
+    if(this.showLicenseLoader == false){
+      this.showLicenseLoader = true
+
+    }
+    else {
+      this.showLicenseLoader = false
+
+    }
+  }
+
+  hideCvButton(){
+
+    if(this.showCvLoader == true){
+      this.showCvLoader = false
+
+    }
+    else {
+      this.showCvLoader = false
+
+    }
+
+
+  }
+
+  showCvButton(){
+    if(this.showCvLoader == false){
+      this.showCvLoader = true
+
+    }
+    else {
+      this.showCvLoader = false
+
+    }
+  }
+
 
 
 }
