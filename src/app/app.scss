@@ -23,25 +23,233 @@ ion-content {
 .toolbar-title-md {
   text-align: center;
   margin-left: -6vw;
-  color:map-get($colors, AppBlue);
+  color: map-get($colors, AppBlue);
 }
+
 .toolbar-title-ios {
-text-align: center;
-margin-left: -6vw;
-color:map-get($colors, AppBlue);
+  text-align: center;
+  margin-left: -6vw;
+  color: map-get($colors, AppBlue);
 }
-.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
-color:map-get($colors, AppBlue);
-background-color: transparent;
+
+.bar-button-default-md,
+.bar-button-clear-md-default,
+.bar-button-md-default {
+  color: map-get($colors, AppBlue);
+  background-color: transparent;
 }
-.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
-color:map-get($colors, AppBlue);
-background-color: transparent;
+
+.bar-button-default-ios,
+.bar-button-clear-ios-default,
+.bar-button-ios-default {
+  color: map-get($colors, AppBlue);
+  background-color: transparent;
 }
 
 .scroll-content {
-  background-size:cover;
+  background-size: cover;
   background-color: #f7f8fc !important;
   padding-bottom: 0px !important;
   display: inline-grid !important;
+}
+
+ion-alert {
+
+  &.alert-error {
+    .button-inner {
+      color: map-get($colors, error);
+
+    }
+
+    .alert-title {
+      color: map-get($colors, error);
+
+    }
+
+    .alert-wrapper {
+      border-radius: 15px !important;
+      border: 3px solid map-get($colors, error);
+
+    }
+    .alert-button-group{
+      border-top: 3px solid map-get($colors, error);
+    }
+
+    .alert-head {
+      &::before {
+        -webkit-animation-name: fadein; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: fadein;
+        animation-duration: 2s;
+        animation-iteration-count: 10;
+
+        content: '';
+        margin-top: 10px;
+        background: url(../assets/imgs/exclaim-icon-red.png) no-repeat;
+        background-size: contain;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        top: 0px;
+        z-index: 20004;
+        /* padding: 3px; */
+        padding: 10px;
+      }
+    }
+  }
+
+  &.alert-success {
+    .alert-button-group{
+      border-top: 3px solid map-get($colors, successYellow);
+    }
+    .button-inner {
+      color: map-get($colors, successYellow);
+
+    }
+
+    .alert-title {
+      color: map-get($colors, successYellow);
+
+    }
+
+    .alert-wrapper {
+      border-radius: 15px !important;
+      border: 3px solid map-get($colors, successYellow);
+
+    }
+
+    .alert-head {
+      &::before {
+        -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: fadein;
+        animation-duration: 2s;
+        animation-iteration-count: 10;
+
+        content: '';
+        margin-top: 10px;
+        background: url(../assets/imgs/exclaim-icon-yellow.png) no-repeat;
+        background-size: contain;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        top: 0px;
+        z-index: 20004;
+        /* padding: 3px; */
+        padding: 10px;
+      }
+
+
+
+    }
+  }
+  @-webkit-keyframes fadein {
+    0%   {height: 40px;width: 40px;}
+    50%  {height: 50px;width: 50px;}
+    100% {height: 40px;width: 40px;}
+  }
+
+  /* Standard syntax */
+  @keyframes fadein {
+    0%   {height: 40px;width: 40px;}
+    50%  {height: 50px;width: 50px;}
+    100% {height: 40px;width: 40px;}
+  }
+  .alert-title {
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 20px !important;
+    font-variant-caps: all-small-caps;
+
+  }
+
+  .alert-wrapper {
+
+    border-radius: 15px !important;
+
+    -webkit-animation-name: slide; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 44s; /* Safari 4.0 - 8.0 */
+    animation-name: slide;
+    animation-duration: 4s;
+  }
+  @-webkit-keyframes slide {
+    0%   {margin-left:0;}
+    25%  {margin-left:50;}
+    50%  {margin-left:0;}
+    100% {margin-left:-50;}
+  }
+
+  /* Standard syntax */
+  @keyframes slide {
+    0%   {margin-left:0;}
+    25%  {margin-left:50;}
+    50%  {margin-left:0;}
+    100% {margin-left:-50;}
+  }
+
+
+
+
+
+
+
+  .alert-head{
+    padding: 24px 24px 0px !important;
+
+  }
+
+  .alert-button-group {
+    align-self: center;
+
+  }
+
+
+  .alert-sub-title {
+    text-align: center;
+
+  }
+
+  .alert-button-group {
+    width: -webkit-fill-available;
+    justify-content: center !important;
+}
+
+
+
+}
+.alert-button .button-inner {
+
+  justify-content: center !important;
+}
+.alert-md .alert-button {
+  width: -webkit-fill-available;
+}
+
+.alert-md .alert-head {
+  // border: 10px solid #ffd06e !important;
+  border-top-right-radius: 16px !important;
+  border-top-left-radius: 16px !important;
+
+}
+
+.alert-ios .alert-head {
+  // border: 10px solid #ffd06e !important;
+  border-top-right-radius: 16px !important;
+  border-top-left-radius: 16px !important;
+
+}
+.alert-ios .alert-sub-title {
+margin-top: 20px;
+}
+
+.alert-sub-title {
+  padding-bottom: 10px;
+  font-size: 13px !important;
 }

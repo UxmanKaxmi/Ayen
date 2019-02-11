@@ -92,7 +92,7 @@ export class SignupPage {
       this.navCtrl.push(SignupPersonalInfoPage,{ signUpData: signUpData },{animate:false})
     }
     else{
-      alert('form not valid')
+      this.helper.presentAlert('alert-error',"Error","Please fill all the fields")
     }
   }
   gotoToLoggingButton(e,nextElement)
@@ -100,6 +100,8 @@ export class SignupPage {
     if(e.key === "Enter"){
       this.gotoSignupPersonalInfoPage()
     }
+
+
   }
 
   applyAnimation()

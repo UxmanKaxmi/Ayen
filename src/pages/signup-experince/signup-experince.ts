@@ -158,21 +158,22 @@ export class SignupExperincePage {
 
 
 
+
         this.api.signUpService(this.signUpDataPersonal,'signup')
         .then(
           response => {
             this.dataList = response;
             if(this.dataList.message=="Email Already Exist Try Other Unique Email"){
-              alert(this.dataList.message)
+              this.helpers.presentAlert('alert-error',"Error",this.dataList.message)
             }
               else {
-                alert(this.dataList.message)
+                this.helpers.presentAlert('alert-error',"Error",this.dataList.message)
               }
           }
         )
         .catch(
           error => {
-            alert(error)
+            this.helpers.presentAlert('alert-error',"Error",error)
           }
         )
 
@@ -180,11 +181,11 @@ export class SignupExperincePage {
 
       }
       else {
-        alert('form not validated')
+        this.helpers.presentAlert('alert-error',"Error","Please fill all the fields")
       }//check for form not validated
     }
     else {
-      alert('Please Upload the appropriate files...')
+      this.helpers.presentAlert('alert-error',"Error",'Please Upload the appropriate files...')
       this.isCvUploaded=false
       this.isLicenseUploaded=false
 
@@ -296,7 +297,8 @@ export class SignupExperincePage {
           });
 
         }).catch((err) => {
-          alert(JSON.stringify(err, null, 4));
+          this.helpers.presentAlert('alert-error',"Error",JSON.stringify(err))
+
         });
 
 
@@ -328,7 +330,7 @@ export class SignupExperincePage {
           });
 
         }).catch((err) => {
-          alert(JSON.stringify(err, null, 4));
+          this.helpers.presentAlert('alert-error',"Error",JSON.stringify(err))
         });
 
 
@@ -415,7 +417,7 @@ export class SignupExperincePage {
           .then((data) => {
             this.newjsonObject = JSON.parse(data.response)
             console.log(this.newjsonObject);
-            alert(this.newjsonObject.message);
+            this.helpers.presentAlert('alert-success',"sucess",this.newjsonObject.message)
 
             if(this.newjsonObject.message=="Licence Upload Successfully"){                          //for checking if the license is uploaded.
                   this.isLicenseUploaded=true;
@@ -428,16 +430,16 @@ export class SignupExperincePage {
 
           }, (err) => {
             console.log(err);
-            alert(err);
+            this.helpers.presentAlert('alert-error',"Error",err)
           });
 
       }
       else {
-        alert('Please upload a valid format')
+        this.helpers.presentAlert('alert-error',"Error","Please fill all the fields")
 
       }
     } catch (error) {
-      alert(error)
+      this.helpers.presentAlert('alert-error',"Error",error)
 
     }
   }
@@ -503,7 +505,7 @@ export class SignupExperincePage {
           .then((data) => {
             this.newjsonObject = JSON.parse(data.response)
             console.log(this.newjsonObject);
-            alert(this.newjsonObject.message)
+            this.helpers.presentAlert('alert-success',"Success",this.newjsonObject.message)
 
             if(this.newjsonObject.message=="Cv Upload Successfully"){                          //for checking if the Cv is uploaded.
                   this.isCvUploaded=true;
@@ -514,19 +516,18 @@ export class SignupExperincePage {
                 }
 
           }, (err) => {
-            console.log(err);
-            alert(err);
+            this.helpers.presentAlert('alert-error',"Error",err)
           });
 
 
 
       }
       else {
-        alert('Please upload a valid format')
+        this.helpers.presentAlert('alert-error',"Error","Please fill all the fields")
 
       }
     } catch (error) {
-      alert(error)
+      this.helpers.presentAlert('alert-error',"Error",error)
 
     }
     console.log(fileType3)

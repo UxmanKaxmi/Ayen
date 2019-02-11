@@ -141,7 +141,7 @@ export class SignupPersonalInfoPage {
     this.navCtrl.push(SignupExperincePage,{ signUpDataPersonal: this.dataFromSignUp },{animate:false});
     }
     else {
-      alert("Form not Validated")
+      this.helper.presentAlert('alert-error',"Error","Please fill all the fields")
     }
   }
 

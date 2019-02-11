@@ -13,6 +13,7 @@ import {
 import { Facebook, FacebookLoginResponse } from "@ionic-native/facebook";
 import { GooglePlus } from "@ionic-native/google-plus";
 import { DeviceFeedback } from "@ionic-native/device-feedback";
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -44,7 +45,8 @@ export class LoginPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public formbuilder: FormBuilder,
-    private helpers: HelpersProvider
+    private helpers: HelpersProvider,
+    private alertCtrl: AlertController
   ) {
     //for Validation
     let EMAILPATTERN = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$/i;
@@ -61,7 +63,13 @@ export class LoginPage {
   }
 
   loggingIn() {
-    //To check if form is valid
+
+
+
+
+
+
+    // To check if form is valid
     if(this.formgroup.valid){
 
     let body = {
@@ -76,10 +84,10 @@ export class LoginPage {
       this.dataList = response;
 
       if(this.dataList.message=="User Verified"){
-        alert("LOGIN SUCCESS")
+        this.helpers.presentAlert('alert-success','Login Successfull',this.dataList.message)
       }
         else {
-          alert(this.dataList.message)
+          this.helpers.presentAlert('alert-error',"Error",this.dataList.message)
 
         }
 
@@ -90,7 +98,7 @@ export class LoginPage {
   }//form is valid
 
   else {
-    alert('Please complete the form')
+    this.helpers.presentAlert('alert-error',"Error",'Please fill out the form')
   }
 
   }
@@ -175,4 +183,8 @@ export class LoginPage {
   provideHepticFeedback() {
     this.helpers.provideHepticFeedback();
   }
+
+
+
+
 }
