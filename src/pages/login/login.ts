@@ -85,6 +85,7 @@ export class LoginPage {
 
       if(this.dataList.message=="User Verified"){
         this.helpers.presentAlert('alert-success','Login Successfull',this.dataList.message)
+        this.navCtrl.push(HomePage)
       }
         else {
           this.helpers.presentAlert('alert-error',"Error",this.dataList.message)

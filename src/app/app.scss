@@ -19,32 +19,51 @@ ion-content {
   // -webkit-background-image: url('../assets/img/BG.png');
   // background-color: #000;
 }
-
-.toolbar-title-md {
+//---------------TOOLBAR CSS FOR ALL APP---------------//
+.toolbar-title {
   text-align: center;
-  margin-left: -6vw;
-  color: map-get($colors, AppBlue);
+  color: black;
+  font-weight: bold;
+  font-variant-caps: all-petite-caps;
 }
 
-.toolbar-title-ios {
-  text-align: center;
-  margin-left: -6vw;
-  color: map-get($colors, AppBlue);
+.toolbar-background {
+  background-color:map-get($colors, AppYellow);
+
 }
+.toolbar-content {
+font-weight: bold;
+text-align: center;
+}
+
+.header::after {
+  left: 0;
+  bottom: -5px;
+  background-position: left 0 top -2px;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-image: none;
+  background-repeat: repeat-x;
+  content: "";
+}
+
+
 
 .bar-button-default-md,
 .bar-button-clear-md-default,
 .bar-button-md-default {
-  color: map-get($colors, AppBlue);
+  color: black;
   background-color: transparent;
 }
 
 .bar-button-default-ios,
 .bar-button-clear-ios-default,
 .bar-button-ios-default {
-  color: map-get($colors, AppBlue);
+  color: black;
   background-color: transparent;
 }
+//---------------TOOLBAR CSS FOR ALL APP---------------//
 
 .scroll-content {
   background-size: cover;
@@ -253,3 +272,29 @@ margin-top: 20px;
   padding-bottom: 10px;
   font-size: 13px !important;
 }
+
+
+//----------------SIDE-DRAWER-CSS--------------///
+.menu-inner > ion-header, .menu-inner > ion-content, .menu-inner > ion-footer {
+
+  .toolbar-background {
+    background-color:transparent;
+  }
+  .profile-image{
+    background: url(../assets/imgs/blank-profile-picture.png) no-repeat center center;
+    display: block;
+    width: 70%;
+    height: 30vw;
+    background-size: contain;
+    margin: auto;
+  }
+  .row-center{
+    align-self: center;
+  }
+  .label-id-text{
+    margin: 0%;
+    font-size: smaller;
+    font-weight: initial;
+  }
+}
+//----------------SIDE-DRAWER-CSS--------------///
