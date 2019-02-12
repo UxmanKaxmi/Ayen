@@ -71,10 +71,10 @@ page-login {
   margin-left: auto;
   margin-right: auto;
   display: block !important;
-  color: black;
+  color: white;
   border-radius: 3px;
   font-size: 14px;
-  background-color:map-get($colors, AppYellow);
+  background-color:map-get($colors, AppGreen);
   text-align: center;
   padding-left: 60px !important;
   padding-right: 60px !important;
@@ -263,6 +263,21 @@ margin: 5px 8px 0px 0;
   button ~ button {
     margin-left: 20px;
   }
+//------Toolbar------//
+  .navbar-style{
+
+  }
+  .toolbar-background {
+    background-color:map-get($colors, AppYellow);
+
+  }
+.toolbar-content {
+  font-weight: bold;
+  text-align: center;
+  }
+
+//------Toolbar------//
+
 
 
 
