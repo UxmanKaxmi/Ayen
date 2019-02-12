@@ -273,11 +273,44 @@ margin-top: 20px;
   font-size: 13px !important;
 }
 
+.menu-inner {
+  width: 256px !important;
+
+}
+.drawer-button{
+  font-weight: bold !important;
+  // padding: 2vw;
+
+}
+.drawer-button-image{
+  max-height: 8vw;
+}
+
+.drawer-button:hover{
+  background-color:map-get($colors, AppYellow);
+}
 
 //----------------SIDE-DRAWER-CSS--------------///
 .menu-inner > ion-header, .menu-inner > ion-content, .menu-inner > ion-footer {
 
+  padding: 35px 25px;
+
+  .list-md .item-block .item-inner {
+    border-bottom: 0px solid #dedede !important;
+}
+  .list-ios .item-block .item-inner {
+    border-bottom: 0px solid #c8c7cc;
+  }
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px solid #c8c7cc;
+}
+.item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner {
+
+  background-size: 0px 0px;
+}
+
   .toolbar-background {
+    border-color: transparent;
     background-color:transparent;
   }
   .profile-image{
@@ -292,9 +325,21 @@ margin-top: 20px;
     align-self: center;
   }
   .label-id-text{
-    margin: 0%;
     font-size: smaller;
     font-weight: initial;
+    margin: 1vw 0px 0px 0px;
+
+  }
+  .label-title-text{
+    margin: 11px 8px 11px 0;
+
+    font-size: larger;
+    font-weight: initial;
+    // margin: 1vw 0px 0px 0px;
+    font-weight: bold;
+    margin: 5px 0px;
+
+
   }
 }
 //----------------SIDE-DRAWER-CSS--------------///

@@ -8,15 +8,37 @@
           </ion-avatar>
         </ion-row>
       </ion-grid>
-      <ion-title>Mohammad Khalid</ion-title>
-      <ion-label class="label-id-text">ID: 232345</ion-label>
+      <ion-label class="label-title-text">Mohammad Khalid</ion-label>
+      <ion-label  class="label-id-text">ID: 232345</ion-label>
+
+
+      <ionic3-star-rating
+      activeIcon = "ios-star"
+      defaultIcon = "ios-star-outline"
+      activeColor = "#ffd059"
+      defaultColor = "#ffd059"
+      readonly="false"
+      [rating]="3">
+  </ionic3-star-rating>
+
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+    <ion-list class="drawer-list">
+      <button  class="drawer-button" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-row>
+
+          <ion-col col-2>
+              <img class='drawer-button-image' src='{{p.icon}}'/>
+          </ion-col>
+
+          <ion-col col-10>
+              {{p.title}}
+          </ion-col>
+
+        </ion-row>
+
       </button>
     </ion-list>
   </ion-content>

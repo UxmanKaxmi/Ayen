@@ -30,6 +30,7 @@ import { FilePath } from '@ionic-native/file-path';
 import { CountryPickerModule } from 'ngx-country-picker';
 
 import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
+import { StarRatingModule } from 'ionic3-star-rating';
 
 
 @NgModule({
@@ -51,6 +52,8 @@ import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
       scrollAssist: true,
       autoFocusAssist: true
   }),
+  StarRatingModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,6 +71,8 @@ import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
 
   ],
   providers: [
+    StarRatingModule,
+
     GooglePlus,
     Facebook,DeviceFeedback,
     StatusBar,

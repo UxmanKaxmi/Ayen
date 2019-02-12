@@ -18,9 +18,11 @@ import { SignupPersonalInfoPage } from '../pages/signup-personal-info/signup-per
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  urlIcon1 = "assets/imgs/Star.png";
+
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{icon: string,title: string, component: any}>;
 
   constructor(public keyboard:Keyboard,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -28,8 +30,13 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
 
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { icon:this.urlIcon1 , title: 'Ayen', component: HomePage },
+      { icon:this.urlIcon1 , title: 'Requests', component: ListPage },
+      { icon:this.urlIcon1 , title: 'Quotations', component: ListPage },
+      { icon:this.urlIcon1 , title: 'Requests', component: ListPage },
+      { icon:this.urlIcon1 , title: 'Financials', component: ListPage },
+      { icon:this.urlIcon1 , title: 'Settings', component: ListPage },
+
     ];
 
   }
