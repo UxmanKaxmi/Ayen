@@ -31,6 +31,9 @@ import { CountryPickerModule } from 'ngx-country-picker';
 
 import {  IOSFilePickerOriginal } from '@ionic-native/file-picker';
 import { StarRatingModule } from 'ionic3-star-rating';
+import { SuperTabsModule } from 'ionic2-super-tabs';
+import { InspectionsTabPage } from '../pages/inspections-tab/inspections-tab';
+import { ReportsTabPage } from '../pages/reports-tab/reports-tab';
 
 
 @NgModule({
@@ -43,7 +46,7 @@ import { StarRatingModule } from 'ionic3-star-rating';
     ConfirmationCodePage,
     ConfirmationCodeSuccessPage,
     SignupExperincePage,
-    SignupPersonalInfoPage
+    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
 
   ],
   imports: [
@@ -53,6 +56,7 @@ import { StarRatingModule } from 'ionic3-star-rating';
       autoFocusAssist: true
   }),
   StarRatingModule,
+  SuperTabsModule.forRoot()
 
   ],
   bootstrap: [IonicApp],
@@ -65,13 +69,13 @@ import { StarRatingModule } from 'ionic3-star-rating';
     ConfirmationCodePage,
     ConfirmationCodeSuccessPage,
     SignupExperincePage,
-    SignupPersonalInfoPage
-
+    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
 
 
   ],
   providers: [
     StarRatingModule,
+    SuperTabsModule,
 
     GooglePlus,
     Facebook,DeviceFeedback,

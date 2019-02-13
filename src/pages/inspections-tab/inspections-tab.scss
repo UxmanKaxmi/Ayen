@@ -1,0 +1,75 @@
+page-inspections-tab {
+
+   .scroll-content {
+    padding: 0vw !important;
+    margin-top: 0px !important;
+
+}
+
+.filter-icon-row{
+  align-self: flex-end !important;
+  padding: 5px;
+}
+
+.filter-icon-item{
+  padding: 20px;
+}
+.icon-filter{
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 25px;
+  min-width: 25px;
+  min-height: 20px;
+  background-size: contain;
+  background: url(../assets/imgs/filter.png) no-repeat center center !important;
+
+}
+.icon-sort{
+  background: url(../assets/imgs/sort.png) no-repeat center center !important;
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 25px;
+  min-width: 25px;
+  min-height: 20px;
+  background-size: contain;
+}
+
+.draft-text-row{
+  align-self: flex-start !important;
+  padding-left: 15px;
+  padding-bottom: 10px;
+
+}
+.label-md {
+  margin: 0px;
+  font-weight: bold;
+  color: gray;
+
+}
+.label-ios {
+
+  margin: 0px;
+  font-weight: bold;
+  color: gray;
+
+}
+.draft-list{
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  background-color:white;
+  margin: 0px 15px;
+  padding: 15px 0px;
+
+}
+.invoice-text{
+  font-weight: bold;
+
+}
+.address-text{
+
+}
+
+
+
+}

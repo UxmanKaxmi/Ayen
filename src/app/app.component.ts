@@ -18,7 +18,12 @@ import { SignupPersonalInfoPage } from '../pages/signup-personal-info/signup-per
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  urlIcon1 = "assets/imgs/Star.png";
+  urlIcon1 = "assets/imgs/inspection-drawer.png";
+  urlIcon2 = "assets/imgs/request.png";
+  urlIcon3 = "assets/imgs/quotes.png";
+  urlIcon4 = "assets/imgs/balance.png";
+  urlIcon5 = "assets/imgs/settings.png";
+
 
   rootPage: any = HomePage;
 
@@ -31,11 +36,10 @@ export class MyApp {
     this.pages = [
 
       { icon:this.urlIcon1 , title: 'Ayen', component: HomePage },
-      { icon:this.urlIcon1 , title: 'Requests', component: ListPage },
-      { icon:this.urlIcon1 , title: 'Quotations', component: ListPage },
-      { icon:this.urlIcon1 , title: 'Requests', component: ListPage },
-      { icon:this.urlIcon1 , title: 'Financials', component: ListPage },
-      { icon:this.urlIcon1 , title: 'Settings', component: ListPage },
+      { icon:this.urlIcon2 , title: 'Requests', component: ListPage },
+      { icon:this.urlIcon3 , title: 'Quotations', component: ListPage },
+      { icon:this.urlIcon4 , title: 'Financials', component: ListPage },
+      { icon:this.urlIcon5 , title: 'Settings', component: ListPage },
 
     ];
 

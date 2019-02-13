@@ -19,12 +19,18 @@ ion-content {
   // -webkit-background-image: url('../assets/img/BG.png');
   // background-color: #000;
 }
+.toolbar{
+    min-height: 65px !important;
+
+}
 //---------------TOOLBAR CSS FOR ALL APP---------------//
 .toolbar-title {
   text-align: center;
   color: black;
   font-weight: bold;
   font-variant-caps: all-petite-caps;
+  font-size: 2.2rem;
+
 }
 
 .toolbar-background {
@@ -343,3 +349,67 @@ margin-top: 20px;
   }
 }
 //----------------SIDE-DRAWER-CSS--------------///
+
+
+.drawer-icon-img{
+  background: url(../assets/imgs/drawer.png) no-repeat center center;
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 50px;
+  padding: 35%;
+  background-size: contain;
+}
+.drawer-notification-img{
+  background: url(../assets/imgs/Notification.png) no-repeat center center;
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 50px;
+  padding: 36%;
+  background-size: contain;
+}
+.drawer-button-text{
+  margin:auto;
+  padding-left: 20px;
+}
+.drawer-stats-img{
+  background: url(../assets/imgs/Stats.png) no-repeat right center;
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 47px;
+  min-width: 25px;
+  min-height: 25px;
+  padding: 14px 16px 16px;
+  background-size: contain;
+
+}
+
+
+
+//-----------CUSTOM ICONS---------// to be used in ionic Super Tabs (swiper tabs on homepage)
+ion-icon {
+  &[class*="ayen-"] {
+      // Instead of using the font-based icons
+      // We're applying SVG masks
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 1em;
+      height: 1em;
+  }
+  // custom icons
+  &[class*="ayen-inspectorIcon"] {
+      mask-image: url(../assets/imgs/Inspection.png);
+  }
+  &[class*="ayen-reportIcon"] {
+      mask-image: url(../assets/imgs/Reports.png);
+  }
+  // &[class*="ayen-customicon3"] {
+  //     mask-image: url(../assets/img/customicon3.svg);
+  // }
+}
+
+//----------------------CUSTOM ICONS----------------//

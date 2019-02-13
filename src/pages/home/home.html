@@ -1,33 +1,23 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+        <ion-img class="drawer-icon-img"> </ion-img>
+      </button>
     <ion-title>Ayen</ion-title>
     <button ion-button end menuToggle>
-      <ion-icon name="menu"></ion-icon>
+        <ion-img class="drawer-stats-img"> </ion-img>
     </button>
     <button ion-button end menuToggle>
-      <ion-icon name="menu"></ion-icon>
+        <ion-img class="drawer-notification-img"> </ion-img>
     </button>
+
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
-    <ionic3-star-rating
-    activeIcon = "ios-star"
-    defaultIcon = "ios-star-outline"
-    activeColor = "#488aff"
-    defaultColor = "#f4f4f4"
-    readonly="false"
-    [rating]="3">
-  </ionic3-star-rating>
-
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <super-tabs tabsPlacement="top" toolbarBackground="AppYellow" toolbarColor="dark" indicatorColor="dark"
+    (tabSelect)="onTabSelect($event)">
+    <super-tab *ngFor="let page of pages" [title]="page.title" [root]="page.pageName"  [icon]="page.icon" [id]="page.id"></super-tab>
+  </super-tabs>
 </ion-content>

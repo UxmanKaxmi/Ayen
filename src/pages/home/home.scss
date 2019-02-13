@@ -1,3 +1,32 @@
 page-home {
 
+  .scroll-content {
+    padding: 0vw !important;
+    margin-top: 45px;
+  }
+
+  super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button .title {
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: smaller;
+    padding-left: 10px;
+    display: inline;
+}
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button.title-and-icon {
+  height: -webkit-fill-available;
+  padding-top: 7vw;
+}
+.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+  border-style: solid;
+  border-color: transparent;
+}
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button.title-and-icon ion-icon {
+  margin-bottom: -6px;
+}
+
+
+
+
+
+
 }
