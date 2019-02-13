@@ -16,8 +16,8 @@
 </ion-header>
 
 <ion-content padding>
-    <super-tabs tabsPlacement="top" toolbarBackground="AppYellow" toolbarColor="dark" indicatorColor="dark"
+    <super-tabs [config]="{sideMenu:'left'}" tabsPlacement="top" toolbarBackground="AppYellow" toolbarColor="dark" indicatorColor="dark"
     (tabSelect)="onTabSelect($event)">
-    <super-tab *ngFor="let page of pages" [title]="page.title" [root]="page.pageName"  [icon]="page.icon" [id]="page.id"></super-tab>
+    <super-tab *ngFor="let page of pages"  [title]="page.title" [root]="page.pageName"  [icon]="page.icon" [id]="page.id"></super-tab>
   </super-tabs>
 </ion-content>

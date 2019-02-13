@@ -8,9 +8,11 @@ page-inspections-tab {
 
 .filter-icon-row{
   align-self: flex-end !important;
-  padding: 5px;
+  padding: 10px 10px 5px ;
 }
-
+// .item {
+//   padding: 10px;
+// }
 .filter-icon-item{
   padding: 20px;
 }
@@ -38,8 +40,14 @@ page-inspections-tab {
 
 .draft-text-row{
   align-self: flex-start !important;
-  padding-left: 15px;
-  padding-bottom: 10px;
+  padding: 10px 20px 5px 10px;
+
+
+}
+.inprogress-text-row{
+  align-self: flex-start !important;
+  padding: 20px 20px 5px 10px;
+
 
 }
 .label-md {
@@ -55,18 +63,94 @@ page-inspections-tab {
   color: gray;
 
 }
+.list-md ion-item-options {
+   border-bottom: 0px solid #dedede !important; 
+}
+.sliding-label{
+  color: white !important;
+}
 .draft-list{
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, draftGrey), 0 3px 1px -2px map-get($colors, draftGrey);
   background-color:white;
-  margin: 0px 15px;
-  padding: 15px 0px;
+  margin: 10px 15px;
+  // padding: 15px 0px;
 
 }
+.inprogress-list{
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, AppYellow), 0 3px 1px -2px map-get($colors, AppYellow);
+  background-color:white;
+  margin: 10px 15px;
+}
+
+.completed-list{
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, success), 0 3px 1px -2px map-get($colors, success);
+  background-color:white;
+  margin: 10px 15px;
+}
 .invoice-text{
+  padding: 0px 0px 10px;
+  font-size: 2rem;
+  color: black;
   font-weight: bold;
 
 }
 .address-text{
+  font-size: 1.3rem;
+  font-weight: normal;
+
+}
+.icon-image-class{
+  margin: 5px;
+}
+.placeholder-image{
+  background: url(../assets/imgs/image-placeholder.gif) no-repeat center center !important;
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 25px;
+  min-width: 25px;
+  min-height: 20px;
+  background-size: contain;
+}
+
+.item-md ion-avatar ion-img, .item-md ion-avatar img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 65px;
+  height: auto;
+}
+
+.item-ios ion-avatar ion-img, .item-ios ion-avatar img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 65px;
+  height: auto;
+}
+.sliding-background-draft{
+  background-color:map-get($colors, draftGrey);
+  // padding: 10%;
+
+}
+.sliding-background-progress{
+  background-color:map-get($colors, AppYellow);
+
+}
+.sliding-background-completed{
+  background-color:map-get($colors, success);
+
+}
+
+
+  ion-item-sliding.active-slide .item {
+    // transform: translate3d(100px, 0px, 0px) !important;
+}
+.list-ios ion-item-sliding {
+  background-color:map-get($colors, draftGrey);
+
+}
+.list-md ion-item-sliding {
+  background-color:map-get($colors, draftGrey);
 
 }
 

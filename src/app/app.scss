@@ -19,6 +19,14 @@ ion-content {
   // -webkit-background-image: url('../assets/img/BG.png');
   // background-color: #000;
 }
+ion-img.img-unloaded img {
+  // background: url(../assets/imgs/image-placeholder.gif) no-repeat center center;
+  // display: block;
+  // width:-webkit-fill-available;
+  // height: 30vw;
+  // background-size: contain;
+  // margin: auto;
+}
 .toolbar{
     min-height: 65px !important;
 
