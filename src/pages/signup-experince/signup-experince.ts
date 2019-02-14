@@ -13,6 +13,7 @@ import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
 import { FilePath } from '@ionic-native/file-path';
 import { ThrowStmt } from '@angular/compiler';
 import {NgZone} from '@angular/core';
+import { ConfirmationCodePage } from '../confirmation-code/confirmation-code';
 
 
 /**
@@ -167,7 +168,8 @@ export class SignupExperincePage {
               this.helpers.presentAlert('alert-error',"Error",this.dataList.message)
             }
               else {
-                this.helpers.presentAlert('alert-error',"Error",this.dataList.message)
+                this.helpers.presentAlert('alert-success',"Success",this.dataList.message)
+                this.navCtrl.setRoot(ConfirmationCodeSuccessPage)
               }
           }
         )

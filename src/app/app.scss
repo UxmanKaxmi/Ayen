@@ -296,6 +296,10 @@ margin-top: 20px;
   // padding: 2vw;
 
 }
+.drawer-logout-button{
+margin-bottom: 30px;
+}
+
 .drawer-button-image{
   max-height: 8vw;
 }
@@ -303,12 +307,34 @@ margin-top: 20px;
 .drawer-button:hover{
   background-color:map-get($colors, AppYellow);
 }
+.drawer-logout-text{
+  color: #dd7e8b;
+}
+.no-scroll .scroll-content{
+  overflow: hidden;
+}
+
 
 //----------------SIDE-DRAWER-CSS--------------///
 .menu-inner > ion-header, .menu-inner > ion-content, .menu-inner > ion-footer {
 
-  padding: 35px 25px;
 
+  .list > .item-block:last-child, .list > .item-wrapper:last-child .item-block {
+
+    border-bottom: 0px solid #c8c7cc;
+    position: absolute;
+    bottom: 1px;
+}
+
+  padding: 35px 25px;
+  .list-ios {
+    scroll-behavior: unset;
+    margin: 0px 0 0px !important;
+}
+.list-md {
+  scroll-behavior: unset;
+  margin: 0px 0 0px !important;
+}
   .list-md .item-block .item-inner {
     border-bottom: 0px solid #dedede !important;
 }

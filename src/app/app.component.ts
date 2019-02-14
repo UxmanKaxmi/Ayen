@@ -11,6 +11,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SignupPage } from '../pages/signup/signup';
 import { SignupPersonalInfoPage } from '../pages/signup-personal-info/signup-personal-info';
+import { InspectionsTabPage } from '../pages/inspections-tab/inspections-tab';
+import { ReportsTabPage } from '../pages/reports-tab/reports-tab';
 
 @Component({
   templateUrl: 'app.html'

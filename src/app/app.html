@@ -24,8 +24,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-    <ion-list class="drawer-list">
+  <ion-content class="no-scroll">
+    <ion-list  class="drawer-list">
       <button  class="drawer-button" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-row>
 
@@ -40,7 +40,24 @@
         </ion-row>
 
       </button>
+      <button  class="drawer-logout-button" menuClose ion-item >
+          <ion-row>
+
+            <ion-col col-2>
+                <img class='drawer-button-image' src='../assets/imgs/payment_outline.png'/>
+            </ion-col>
+
+            <ion-col col-10 class="drawer-logout-text">
+                Sign Out
+            </ion-col>
+
+          </ion-row>
+
+        </button>
+
     </ion-list>
+
+
   </ion-content>
 
 </ion-menu>
