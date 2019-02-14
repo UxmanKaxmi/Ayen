@@ -12,6 +12,10 @@ import { ReportsTabPage } from '../reports-tab/reports-tab';
 })
 export class HomePage {
 
+  public effect: any;
+  public logoAnimation: string = "";
+  public restAnimation: string = "";
+
   pages = [
     { pageName: InspectionsTabPage, title: 'Inspections', icon: 'ayen-inspectorIcon', id: 'inspectionTab'},
     { pageName: ReportsTabPage, title: 'Reports', icon: 'ayen-reportIcon', id: 'reportTab'},
@@ -24,6 +28,10 @@ export class HomePage {
   constructor(public navCtrl: NavController, public events: Events , public alertCtrl:AlertController,public helper:HelpersProvider) {
     events.subscribe('star-rating:changed', (starRating) => {console.log(starRating)});
 
+  }
+
+  ionViewWillEnter() {
+    this.applyAnimation();
   }
 
   onTabSelect(ev: any) {
@@ -50,6 +58,11 @@ export class HomePage {
       this.selectedTab = ev.index;
       this.superTabs.clearBadge(this.pages[ev.index].id);
     }
+  }
+
+  applyAnimation() {
+    this.logoAnimation = "animated " + "fadeInDown";
+    this.restAnimation = "animated " + "fadeInUp";
   }
 
 

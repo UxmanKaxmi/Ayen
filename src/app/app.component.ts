@@ -25,7 +25,7 @@ export class MyApp {
   urlIcon5 = "assets/imgs/settings.png";
 
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{icon: string,title: string, component: any}>;
 

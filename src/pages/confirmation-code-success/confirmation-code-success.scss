@@ -1,5 +1,17 @@
 page-confirmation-code-success {
-
+  .header-text{
+    font-weight:bold;
+    width:90%;
+    text-align: center;
+    position: absolute;
+    z-index: 999;
+    // margin: -30px -30px -7px -30px;
+  }
+  .header-row{
+    margin: -30px -30px -7px -30px;
+    background-color: map-get($colors, successYellow);
+    padding: 20% 20% 6% 20%;
+  }
 
   .header-md::after {
     left: 0;
@@ -104,10 +116,10 @@ page-confirmation-code-success {
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    color: black;
+    color: white;
     border-radius: 3px;
     font-size: 14px;
-    background-color:map-get($colors, AppYellow);
+    background-color:map-get($colors, AppGreen);
     text-align: center;
     padding-left: 60px !important;
     padding-right: 60px !important;
@@ -153,13 +165,23 @@ page-confirmation-code-success {
     white-space: normal !important;
   }
   .label-md {
-    margin: 13px 34px;
+    // margin: 13px 34px;
     // background-color:;
     text-align: center;
     font-size: 1.1rem;
     font-weight: 500;
 
 
+  }
+  .top-circle-icon{
+    background: url(../assets/imgs/Group3.png) no-repeat center center;
+    display: block;
+    background-size: contain;
+    width: -webkit-fill-available;
+    min-width: 45px;
+    min-height: 45px;
+    /* padding: 0px 10px 0px 10px; */
+    margin: 0px 5px 0px 5px;
   }
   .label-ios {
     margin: 13px 34px;
@@ -216,6 +238,10 @@ page-confirmation-code-success {
 
 
   }
+
+
+
+
 
 
 

@@ -64,13 +64,13 @@ page-inspections-tab {
 
 }
 .list-md ion-item-options {
-   border-bottom: 0px solid #dedede !important; 
+   border-bottom: 0px solid #dedede !important;
 }
 .sliding-label{
   color: white !important;
 }
 .draft-list{
-  
+
   box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, draftGrey), 0 3px 1px -2px map-get($colors, draftGrey);
   background-color:white;
   margin: 10px 15px;
@@ -81,6 +81,10 @@ page-inspections-tab {
   box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, AppYellow), 0 3px 1px -2px map-get($colors, AppYellow);
   background-color:white;
   margin: 10px 15px;
+}
+.col-width{
+  width: 200px !important;
+  align-self: center;
 }
 
 .completed-list{

@@ -85,7 +85,7 @@ export class LoginPage {
 
       if(this.dataList.message=="User Verified"){
         this.helpers.presentAlert('alert-success','Login Successfull',this.dataList.message)
-        this.navCtrl.push(HomePage)
+        this.navCtrl.setRoot(HomePage)
       }
         else {
           this.helpers.presentAlert('alert-error',"Error",this.dataList.message)
@@ -156,7 +156,7 @@ export class LoginPage {
 
               // => Open user session and redirect to the next page
               alert("Welcome" + name);
-              this.navCtrl.push(HomePage);
+              this.navCtrl.setRoot(HomePage);  
             });
         }
         // An error occurred while loging-in

@@ -188,13 +188,13 @@ margin: 5px 8px 0px 0;
   }
   .email-text{
     margin: 13px 2px 0px 17px;
-    color:map-get($colors, AppGrey);
+    color:map-get($colors, danger);
     font-size: 12px;
 
   }
   .password-text{
     margin: 13px 2px 0px 17px;
-    color: map-get($colors, AppGrey);
+    color: map-get($colors, danger);
     font-size: 12px;
 
   }

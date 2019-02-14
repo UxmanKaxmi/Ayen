@@ -268,19 +268,32 @@ margin: 5px 8px 5px 0;
   }
   .email-text{
     margin: 13px 2px 0px 17px;
-    color:map-get($colors, AppGrey);
+    color:map-get($colors, danger);
     font-size: 13px;
 
   }
   .password-text{
     margin: 13px 2px 0px 17px;
-    color: map-get($colors, AppGrey);
-    font-size: 13px;
-
+    color: map-get($colors, danger);
+    font-size: 13px; 
+ 
+  }
+  .header-text{ 
+    font-weight:bold;
+    width:90%;
+    text-align: center;
+    position: absolute;
+    z-index: 999;
+    // margin: -30px -30px -7px -30px;
+  }
+  .header-row{
+    margin: -30px -30px -7px -30px;
+    background-color: map-get($colors, successYellow);
+    padding: 20% 20% 6% 20%;
   }
   .confirm-password-text{
     margin: 13px 2px 0px 17px;
-    color: map-get($colors, AppGrey);
+    color: map-get($colors, danger);
     font-size: 13px;
 
   }
