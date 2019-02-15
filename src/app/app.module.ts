@@ -1,3 +1,5 @@
+import { InvoiceSelectedLogPage } from './../pages/invoice-selected-log/invoice-selected-log';
+import { InvoiceSelectedPage } from './../pages/invoice-selected/invoice-selected';
 import { SignupPersonalInfoPage } from './../pages/signup-personal-info/signup-personal-info';
 import { SignupExperincePage } from './../pages/signup-experince/signup-experince';
 import { GooglePlus } from '@ionic-native/google-plus';
@@ -34,16 +36,20 @@ import { StarRatingModule } from 'ionic3-star-rating';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { InspectionsTabPage } from '../pages/inspections-tab/inspections-tab';
 import { ReportsTabPage } from '../pages/reports-tab/reports-tab';
+import { InvoiceSelectedDetailPage } from '../pages/invoice-selected-detail/invoice-selected-detail';
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    InvoiceSelectedPage,
     ListPage,
     LoginPage,
     SignupPage,
     ConfirmationCodePage,
+    InvoiceSelectedDetailPage,
+    InvoiceSelectedLogPage,
     ConfirmationCodeSuccessPage,
     SignupExperincePage,
     SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
@@ -64,6 +70,9 @@ import { ReportsTabPage } from '../pages/reports-tab/reports-tab';
     MyApp,
     HomePage,
     ListPage,
+    InvoiceSelectedPage,
+    InvoiceSelectedDetailPage,
+    InvoiceSelectedLogPage,
     LoginPage,
     SignupPage,
     ConfirmationCodePage,

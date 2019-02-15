@@ -35,9 +35,10 @@ ion-img.img-unloaded img {
 .toolbar-title {
   text-align: center;
   color: black;
+  margin-right: 3%;
   font-weight: bold;
   font-variant-caps: all-petite-caps;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 
 }
 
@@ -316,6 +317,17 @@ margin-bottom: 30px;
 
 
 //----------------SIDE-DRAWER-CSS--------------///
+
+
+
+.menu-inner > ion-header .list, .menu-inner > ion-content .list, .menu-inner > ion-footer .list {
+  background-color: white!important;
+}
+
+.menu-inner > ion-header, .menu-inner > ion-content, .menu-inner > ion-footer {
+  background-color: white;
+  padding: 10% 25px !important;
+}
 .menu-inner > ion-header, .menu-inner > ion-content, .menu-inner > ion-footer {
 
 
@@ -324,6 +336,8 @@ margin-bottom: 30px;
     border-bottom: 0px solid #c8c7cc;
     position: absolute;
     bottom: 1px;
+    margin: 5% 8px 2% 0 !important;
+
 }
 
   padding: 35px 25px;
@@ -390,17 +404,31 @@ margin-bottom: 30px;
   display: block;
   background-size: contain;
   margin: auto;
-  width: 50px;
-  padding: 35%;
+  width: 30px;
+  padding: 38%;
   background-size: contain;
 }
+.drawer-hide-img{
+  background: url(../assets/imgs/Stats.png) no-repeat right center;
+  display: none;
+  background-size: contain;
+  margin: auto;
+  width: 30px;
+  padding: 38%;
+  background-size: contain;
+  /* padding: 14px 16px 16px; */
+
+}
+.bar-button-menutoggle {
+  min-width: 35px;
+}
 .drawer-notification-img{
-  background: url(../assets/imgs/Notification.png) no-repeat center center;
+  background: url(../assets/imgs/Notification.png) no-repeat center right;
   display: block;
   background-size: contain;
   margin: auto;
-  width: 50px;
-  padding: 36%;
+  width: 33px;
+  padding: 50%;
   background-size: contain;
 }
 .drawer-button-text{
@@ -414,9 +442,10 @@ margin-bottom: 30px;
   margin: auto;
   width: 47px;
   min-width: 25px;
+  width: 30px;
+  padding: 45%;
   min-height: 25px;
-  padding: 14px 16px 16px;
-  background-size: contain;
+  /* padding: 14px 16px 16px; */
 
 }
 

@@ -26,6 +26,7 @@ export class HomePage {
   @ViewChild(SuperTabs) superTabs: SuperTabs;
 
   constructor(public navCtrl: NavController, public events: Events , public alertCtrl:AlertController,public helper:HelpersProvider) {
+
     events.subscribe('star-rating:changed', (starRating) => {console.log(starRating)});
 
   }
