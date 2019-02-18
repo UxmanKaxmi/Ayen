@@ -13,12 +13,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'invoice-selected-log.html',
 })
 export class InvoiceSelectedLogPage {
+  dataFromHome: any=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InvoiceSelectedLogPage');
-  }
+  ionViewCanEnter() {
+    this.dataFromHome =this.navParams.get('dataFromHome')
+    this.dataFromHome = this.dataFromHome.log_page_array
+    console.log("The data coming in: invoice-selected-log Page  ",this.dataFromHome)
+
+     }
 
 }

@@ -1,3 +1,4 @@
+import { InvoiceSelectedLogPage } from './../pages/invoice-selected-log/invoice-selected-log';
 import { SignupExperincePage } from './../pages/signup-experince/signup-experince';
 import { ConfirmationCodeSuccessPage } from './../pages/confirmation-code-success/confirmation-code-success';
 import { ConfirmationCodePage } from './../pages/confirmation-code/confirmation-code';
@@ -27,7 +28,7 @@ export class MyApp {
   urlIcon5 = "assets/imgs/settings.png";
 
 
-  rootPage: any = SignupExperincePage;
+  rootPage: any = HomePage;
 
   pages: Array<{icon: string,title: string, component: any}>;
 
@@ -36,13 +37,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-
       { icon:this.urlIcon1 , title: 'Ayen', component: HomePage },
       { icon:this.urlIcon2 , title: 'Requests', component: ListPage },
       { icon:this.urlIcon3 , title: 'Quotations', component: ListPage },
       { icon:this.urlIcon4 , title: 'Financials', component: ListPage },
       { icon:this.urlIcon5 , title: 'Settings', component: ListPage },
-
     ];
 
   }

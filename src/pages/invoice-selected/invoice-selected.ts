@@ -38,7 +38,9 @@ export class InvoiceSelectedPage {
   ionViewDidLoad() {
     debugger;
     this.dataFromHome =this.navParams.get('dataObject')
-    this.invoiceName=this.dataFromHome.number
+    this.invoiceName=this.dataFromHome.detail_page.number
+    // this.dataFromHome = this.dataFromHome.detail_page;
+
     console.log(this.dataFromHome)
     console.log('ionViewDidLoad InvoiceSelectedPage');
   }

@@ -24,7 +24,8 @@ export class InvoiceSelectedDetailPage {
   ionViewCanEnter() {
     debugger;
     this.dataFromHome =this.navParams.get('dataFromHome')
-    console.log(this.dataFromHome)
+    this.dataFromHome = this.dataFromHome.detail_page
+    console.log("The data coming in: invoice-selected-detail Page  ",this.dataFromHome)
     this.invoiceName=this.dataFromHome.number
 
      }

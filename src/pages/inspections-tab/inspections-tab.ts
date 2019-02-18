@@ -23,107 +23,343 @@ export class InspectionsTabPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.draftsArray = [
       {
-        img: this.urlIcon1,
-        number: "IN34560234R1",
-        address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
-        requestId:'RQ8093291',
-        package:'Basic Platinum',
-        inspectionDate:'28.02.2019',
-        time:'10:30am',
-        clientsComments:'Some comments for the client.',
-        latLong:'24.0345000,25.533443',
-        // long
+        detail_page:{
+            img: this.urlIcon1,
+            number: "IN34560234R1",
+            address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+            requestId:'RQ8093291',
+            package:'Basic Platinum',
+            inspectionDate:'28.02.2019',
+            time:'10:30am',
+            clientsComments:'Some comments for the client.',
+            latLong:'24.0345000,25.533443',
+          },
 
-
+          log_page_array:[
+                {
+                date: '11.02.2014',
+                longLat: "76.302947, 70.209038",
+                startTime:"08:29am",
+                endingTime:'2:08pm',
+                mainTime:'(03:28:49)',
+              },
+              {
+                date: '11.02.2014',
+                longLat: "76.302947, 70.209038",
+                startTime:"08:29am",
+                endingTime:'2:08pm',
+                mainTime:'(03:28:49)',
+              },  {
+                date: '11.02.2014',
+                longLat: "76.302947, 70.209038",
+                startTime:"08:29am",
+                endingTime:'2:08pm',
+                mainTime:'(03:28:49)',
+              }
+          ]
 
       },
       {
-        img: this.urlIcon1,
-        number: "IN3456072342341",
-        address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
-        requestId:'RQ8093291',
-        package:'Basic Gold',
-        inspectionDate:'28.02.2019',
-        time:'10:30am',
-        clientsComments:'Some comments for the client.',
-        latLong:'24.0345000,25.533443',
+        detail_page:{
+          img: this.urlIcon1,
+          number: "IN34560234R1",
+          address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+          requestId:'RQ8093291',
+          package:'Basic Platinum',
+          inspectionDate:'28.02.2019',
+          time:'10:30am',
+          clientsComments:'Some comments for the client.',
+          latLong:'24.0345000,25.533443',
+        },
+
+        log_page_array:[
+          {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },
+        {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },  {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        }
+    ]
       },
       {
-        img: this.urlIcon1,
-        number: "IN345607012342",
-        address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
-        requestId:'RQ8093291',
-        package:'Basic For',
-        inspectionDate:'28.02.2019',
-        time:'10:30am',
-        clientsComments:'Some comments for the client.',
-        latLong:'24.0345000,25.533443',
+        detail_page:{
+          img: this.urlIcon1,
+          number: "IN34560234R1",
+          address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+          requestId:'RQ8093291',
+          package:'Basic Platinum',
+          inspectionDate:'28.02.2019',
+          time:'10:30am',
+          clientsComments:'Some comments for the client.',
+          latLong:'24.0345000,25.533443',
+        },
+
+        log_page_array:[
+          {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },
+        {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },  {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        }
+    ]
       }
     ];
 
     this.inProgressArray = [
       {
-        img: this.urlIcon1,
-        number: "IN3456070234234",
-        address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
-        requestId:'RQ8093291',
-        package:'Basic New',
-        inspectionDate:'28.02.2019',
-        time:'10:30am',
-        clientsComments:'Some comments for the client.',
-        latLong:'24.0345000,25.533443',
+        detail_page:{
+            img: this.urlIcon1,
+            number: "IN34560234R1",
+            address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+            requestId:'RQ8093291',
+            package:'Basic Platinum',
+            inspectionDate:'28.02.2019',
+            time:'10:30am',
+            clientsComments:'Some comments for the client.',
+            latLong:'24.0345000,25.533443',
+          },
+
+
+          log_page_array:[
+            {
+            date: '11.02.2014',
+            longLat: "76.302947, 70.209038",
+            startTime:"08:29am",
+            endingTime:'2:08pm',
+            mainTime:'(03:28:49)',
+          },
+          {
+            date: '11.02.2014',
+            longLat: "76.302947, 70.209038",
+            startTime:"08:29am",
+            endingTime:'2:08pm',
+            mainTime:'(03:28:49)',
+          },  {
+            date: '11.02.2014',
+            longLat: "76.302947, 70.209038",
+            startTime:"08:29am",
+            endingTime:'2:08pm',
+            mainTime:'(03:28:49)',
+          }
+      ]
+
       },
       {
-        img: this.urlIcon1,
-        number: "IN34560701123sqd",
-        address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
-        requestId:'RQ8093291',
-        package:'Basic platinum',
-        inspectionDate:'28.02.2019',
-        time:'10:30am',
-        clientsComments:'Some comments for the client.',
-        latLong:'24.0345000,25.533443',
+        detail_page:{
+          img: this.urlIcon1,
+          number: "IN34560234R1",
+          address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+          requestId:'RQ8093291',
+          package:'Basic Platinum',
+          inspectionDate:'28.02.2019',
+          time:'10:30am',
+          clientsComments:'Some comments for the client.',
+          latLong:'24.0345000,25.533443',
+        },
+
+
+        log_page_array:[
+          {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },
+        {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },  {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        }
+    ]
       },
       {
-        img: this.urlIcon1,
-        number: "IN34560745646",
-        address: "Progress address 3 bin Fahd Rd., Khobar, Eastern..."
+        detail_page:{
+          img: this.urlIcon1,
+          number: "IN34560234R1",
+          address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+          requestId:'RQ8093291',
+          package:'Basic Platinum',
+          inspectionDate:'28.02.2019',
+          time:'10:30am',
+          clientsComments:'Some comments for the client.',
+          latLong:'24.0345000,25.533443',
+        },
+
+
+        log_page_array:[
+          {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },
+        {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },  {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        }
+    ]
       }
     ];
 
     this.completedArray = [
       {
-        img: this.urlIcon1,
-        number: "IN34560701A78789",
-        address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
-        requestId:'RQ8093291',
-        package:'Basic Gold',
-        inspectionDate:'28.02.2019',
-        time:'10:30am',
-        clientsComments:'Some comments for the client.',
-        latLong:'24.0345000,25.533443',
+        detail_page:{
+            img: this.urlIcon1,
+            number: "IN34560234R1",
+            address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+            requestId:'RQ8093291',
+            package:'Basic Platinum',
+            inspectionDate:'28.02.2019',
+            time:'10:30am',
+            clientsComments:'Some comments for the client.',
+            latLong:'24.0345000,25.533443',
+          },
+
+
+          log_page_array:[
+            {
+            date: '11.02.2014',
+            longLat: "76.302947, 70.209038",
+            startTime:"08:29am",
+            endingTime:'2:08pm',
+            mainTime:'(03:28:49)',
+          },
+          {
+            date: '11.02.2014',
+            longLat: "76.302947, 70.209038",
+            startTime:"08:29am",
+            endingTime:'2:08pm',
+            mainTime:'(03:28:49)',
+          },  {
+            date: '11.02.2014',
+            longLat: "76.302947, 70.209038",
+            startTime:"08:29am",
+            endingTime:'2:08pm',
+            mainTime:'(03:28:49)',
+          }
+      ]
+
       },
       {
-        img: this.urlIcon1,
-        number: "IN345607016786",
-        address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
-        requestId:'RQ8093291',
-        package:'Not Basic',
-        inspectionDate:'28.02.2019',
-        time:'10:30am',
-        clientsComments:'Some comments for the client.',
-        latLong:'24.0345000,25.533443',
+        detail_page:{
+          img: this.urlIcon1,
+          number: "IN34560234R1",
+          address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+          requestId:'RQ8093291',
+          package:'Basic Platinum',
+          inspectionDate:'28.02.2019',
+          time:'10:30am',
+          clientsComments:'Some comments for the client.',
+          latLong:'24.0345000,25.533443',
+        },
+
+
+        log_page_array:[
+          {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },
+        {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },  {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        }
+    ]
       },
       {
-        img: this.urlIcon1,
-        number: "IN34560701A45646",
-        address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
-        requestId:'RQ8093291',
-        package:'New',
-        inspectionDate:'28.02.2019',
-        time:'10:30am',
-        clientsComments:'Some comments for the client.',
-        latLong:'24.0345000,25.533443',
+        detail_page:{
+          img: this.urlIcon1,
+          number: "IN34560234R1",
+          address:"draft address 1 Prince Faisal bin Fahd Rd., Khobar, Eastern...",
+          requestId:'RQ8093291',
+          package:'Basic Platinum',
+          inspectionDate:'28.02.2019',
+          time:'10:30am',
+          clientsComments:'Some comments for the client.',
+          latLong:'24.0345000,25.533443',
+        },
+
+
+        log_page_array:[
+          {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },
+        {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        },  {
+          date: '11.02.2014',
+          longLat: "76.302947, 70.209038",
+          startTime:"08:29am",
+          endingTime:'2:08pm',
+          mainTime:'(03:28:49)',
+        }
+    ]
       }
     ];
   }
