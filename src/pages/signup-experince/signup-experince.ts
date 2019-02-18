@@ -73,6 +73,22 @@ export class SignupExperincePage {
   isLicenseUploaded:boolean = false;
   showCvLoader:boolean=false;
   showLicenseLoader:boolean=false;
+  licenseImage:any = 'default'
+
+  //for LICENSE ICON
+  showDefaultIcon_license: boolean = true;
+  showPdfIcon_license: boolean = false;
+  showWordIcon_license: boolean = false;
+  showExcelIcon_license: boolean = false;
+
+
+  //for CV ICON
+  showDefaultIcon_cv: boolean = true;
+  showPdfIcon_cv: boolean = false;
+  showWordIcon_cv: boolean = false;
+  showExcelIcon_cv: boolean = false;
+
+
 
 
 
@@ -130,6 +146,7 @@ export class SignupExperincePage {
 
 
   ionViewDidLoad() {
+
   }
 
   goBack() {
@@ -362,14 +379,20 @@ export class SignupExperincePage {
 
   setPath_license(uri, fileType) {
 
+    this.showExcelIcon_license=false;
+    this.showPdfIcon_license=false;
+    this.showWordIcon_license=false;
+    this.showDefaultIcon_license=true;
+
+
     let random4DigitValue = Math.floor(1000 + Math.random() * 9000);
     this.timeStampDate = Date.now();
     let fileType2 = fileType.lastIndexOf("/") + 1
     let fileType3 = fileType.substring(fileType2)
 
+
     try {
-      if ( fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx") {
-        // if (fileType3 != "png" ) {
+      if ( fileType3 == "png" || fileType3 == "jpeg" || fileType3 == "pdf" || fileType3 == "doc" || fileType3 == "docx"  ) {
 
 
         this.cvUri = uri;
@@ -421,7 +444,42 @@ export class SignupExperincePage {
             console.log(this.newjsonObject);
             this.helpers.presentAlert('alert-success',"sucess",this.newjsonObject.message)
 
-            if(this.newjsonObject.message=="Licence Upload Successfully"){                          //for checking if the license is uploaded.
+            if(this.newjsonObject.message=="Licence Upload Successfully"){
+
+              switch (fileType3) {
+                case "png":
+                    this.showDefaultIcon_license=false;
+                    this.showExcelIcon_license=true;
+                  break;
+
+                  case "jpeg":
+                  this.showDefaultIcon_license=false;
+                  this.showExcelIcon_license=true;
+                  break;
+
+                  case "doc":
+                  this.showDefaultIcon_license=false;
+                  this.showWordIcon_license=true;
+                  break;
+
+                  case "docx":
+                  this.showDefaultIcon_license=false;
+                  this.showWordIcon_license=true;
+                  break;
+                  case "document":
+                  this.showDefaultIcon_license=false;
+                  this.showWordIcon_license=true;
+                  break;
+
+                  case "pdf":
+                  this.showDefaultIcon_license=false;
+                  this.showPdfIcon_license=true;
+                  break;
+
+
+              }
+
+              //for checking if the license is uploaded.
                   this.isLicenseUploaded=true;
                 }
                 else {
@@ -510,6 +568,40 @@ export class SignupExperincePage {
             this.helpers.presentAlert('alert-success',"Success",this.newjsonObject.message)
 
             if(this.newjsonObject.message=="Cv Upload Successfully"){                          //for checking if the Cv is uploaded.
+
+              //to change icon depending on the fileuploaded
+              switch (fileType3) {
+                case "png":
+                    this.showDefaultIcon_cv=false;
+                    this.showExcelIcon_cv=true;
+                  break;
+
+                  case "jpeg":
+                  this.showDefaultIcon_cv=false;
+                  this.showExcelIcon_cv=true;
+                  break;
+
+                  case "doc":
+                  this.showDefaultIcon_cv=false;
+                  this.showWordIcon_cv=true;
+                  break;
+
+                  case "docx":
+                  this.showDefaultIcon_cv=false;
+                  this.showWordIcon_cv=true;
+                  break;
+                  case "document":
+                  this.showDefaultIcon_cv=false;
+                  this.showWordIcon_cv=true;
+                  break;
+
+                  case "pdf":
+                  this.showDefaultIcon_cv=false;
+                  this.showPdfIcon_cv=true;
+                  break;
+
+
+              }
                   this.isCvUploaded=true;
                 }
                 else {
