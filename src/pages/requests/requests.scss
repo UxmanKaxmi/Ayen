@@ -1,0 +1,213 @@
+page-requests {
+
+  .scroll-content {
+    padding: 0vw !important;
+    // margin-top: 45px;
+  }
+
+  super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button .title {
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: smaller;
+    padding-left: 10px;
+    display: inline;
+}
+ion-navbar.toolbar {
+
+  background-color: map-get($colors, AppYellow) !important;
+}
+ion-header {
+  background-color: #ffd059 !important ;
+
+}
+
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button.title-and-icon {
+  height: -webkit-fill-available;
+  padding-top: 7vw;
+}
+.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+  border-style: solid;
+  border-color: transparent;
+}
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button.title-and-icon ion-icon {
+  margin-bottom: -6px;
+}
+
+
+.filter-icon-row{
+align-self: flex-end !important;
+padding: 10px 10px 5px ;
+}
+// .item {
+//   padding: 10px;
+// }
+.filter-icon-item{
+padding: 20px;
+}
+.date-text{
+padding-top: 3px;
+font-size: 1.1rem !important;
+text-align: end;
+
+
+}
+.icon-filter{
+display: block;
+background-size: contain;
+margin: auto;
+width: 25px;
+min-width: 25px;
+min-height: 20px;
+background-size: contain;
+background: url(../assets/imgs/filter.png) no-repeat center center !important;
+
+}
+.icon-sort{
+background: url(../assets/imgs/sort.png) no-repeat center center !important;
+display: block;
+background-size: contain;
+margin: auto;
+width: 25px;
+min-width: 25px;
+min-height: 20px;
+background-size: contain;
+}
+
+.draft-text-row{
+align-self: flex-start !important;
+padding: 10px 20px 5px 10px;
+
+
+}
+.inprogress-text-row{
+align-self: flex-start !important;
+padding: 20px 20px 5px 10px;
+
+
+}
+.label-md {
+margin: 0px;
+font-weight: bold;
+color: gray;
+
+}
+.label-ios {
+
+margin: 0px;
+font-weight: bold;
+color: gray;
+
+}
+.list-md ion-item-options {
+ border-bottom: 0px solid #dedede !important;
+}
+.sliding-label{
+color: white !important;
+}
+.draft-list{
+
+box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, draftGrey), 0 3px 1px -2px map-get($colors, draftGrey);
+background-color:white;
+margin: 10px 15px;
+// padding: 15px 0px;
+width: -webkit-fill-available;
+
+
+}
+.inprogress-list{
+box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, AppYellow), 0 3px 1px -2px map-get($colors, AppYellow);
+background-color:white;
+margin: 10px 15px;
+}
+.col-width{
+width: 200px !important;
+align-self: center;
+}
+
+.completed-list{
+box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, success), 0 3px 1px -2px map-get($colors, success);
+background-color:white;
+margin: 10px 15px;
+}
+.invoice-text{
+overflow: unset;
+padding: 0px 0px 5px;
+font-size: 1.7rem;
+color: black;
+font-weight: bold;
+
+}
+.invoice-text-end{
+  overflow: unset;
+  padding: 0px 0px 5px;
+  text-align: end;
+  font-size: 1.7rem;
+  color: black;
+  font-weight: bold;
+
+  }
+.address-text{
+font-size: 1.1rem;
+font-weight: normal;
+
+
+}
+.icon-image-class{
+margin: 5px;
+}
+.placeholder-image{
+background: url(../assets/imgs/image-placeholder.gif) no-repeat center center !important;
+display: block;
+background-size: contain;
+margin: auto;
+width: 25px;
+min-width: 25px;
+min-height: 20px;
+background-size: contain;
+}
+
+.item-md ion-avatar ion-img, .item-md ion-avatar img {
+border-radius: 50%;
+overflow: hidden;
+width: 65px;
+height: auto;
+}
+
+.item-ios ion-avatar ion-img, .item-ios ion-avatar img {
+border-radius: 50%;
+overflow: hidden;
+width: 65px;
+height: auto;
+}
+.sliding-background-draft{
+background-color:map-get($colors, draftGrey);
+// padding: 10%;
+
+}
+.sliding-background-progress{
+background-color:map-get($colors, AppYellow);
+
+}
+.sliding-background-completed{
+background-color:map-get($colors, success);
+
+}
+
+
+
+.list-ios ion-item-sliding {
+background-color:map-get($colors, draftGrey);
+
+}
+.list-md ion-item-sliding {
+background-color:map-get($colors, draftGrey);
+
+}
+ion-item-sliding .item {
+  padding: 15px;
+  position: static;
+}
+
+
+
+}

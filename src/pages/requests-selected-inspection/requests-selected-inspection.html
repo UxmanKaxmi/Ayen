@@ -1,0 +1,82 @@
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-row >
+          <ion-col col-6>
+            <ion-label><a href="#">QUOTATION ID</a></ion-label>
+            <ion-item>
+              <ion-input value="{{dataFromHome.quotationId}}" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+              <ion-label>PACKAGE</ion-label>
+            <ion-item>
+              <ion-input value="{{dataFromHome.package}}" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+
+      <ion-list>
+        <ion-row>
+          <ion-col col-6>
+              <ion-label>INSPECTION DATE</ion-label>
+            <ion-item>
+              <ion-input value="{{dataFromHome.inspectionDate}}" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+              <ion-label>TIME TO VISIT</ion-label>
+            <ion-item>
+              <ion-input value="{{dataFromHome.timeToVisit}}"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+
+
+      <ion-list>
+        <ion-row>
+          <ion-col col-6>
+              <ion-label>REQUESTED COST</ion-label>
+            <ion-item>
+              <ion-input  value="{{dataFromHome.requestCost}}" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+              <ion-label>INSPECTOR'S SHARE</ion-label>
+            <ion-item>
+              <ion-input  value="{{dataFromHome.inspectorShare}}" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+
+
+      <ion-list>
+      <ion-label>CLIENT'S COMMENTS</ion-label>
+         <ion-item>
+      <ion-textarea style='height: 35vw;' value="{{dataFromHome.clientComments}}"  type="message"></ion-textarea>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <button class="reject-button" ion-button  full>
+              Reject
+
+          </button>
+        </ion-col>
+
+        <ion-col>
+            <button class="accept-button" ion-button  full>
+                Accept
+
+            </button>
+          </ion-col>
+        </ion-row>
+        </ion-list>
+
+
+</ion-content>

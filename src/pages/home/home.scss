@@ -3,6 +3,8 @@ page-home {
   .scroll-content {
     padding: 0vw !important;
     margin-top: 45px;
+    display: inline-grid !important;
+
   }
 
   super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button .title {

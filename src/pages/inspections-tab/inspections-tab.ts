@@ -374,7 +374,6 @@ export class InspectionsTabPage {
 
   //to open a new tab from superTabs
   openNewPageFromSuperTabs(pageName, dataToPush) {
-    debugger;
     this.navParams.get("rootNavCtrl").push(pageName, { dataObject: dataToPush });
   }
 }

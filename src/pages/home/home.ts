@@ -28,11 +28,13 @@ export class HomePage {
   constructor(public navCtrl: NavController, public events: Events , public alertCtrl:AlertController,public helper:HelpersProvider) {
 
     events.subscribe('star-rating:changed', (starRating) => {console.log(starRating)});
-
   }
 
   ionViewWillEnter() {
     this.applyAnimation();
+    this.superTabs.enableTabSwipe('inspectionTab',false) // to disable scroll swiping
+    this.superTabs.enableTabSwipe('reportTab',false) // to disable scroll swiping
+
   }
 
   onTabSelect(ev: any) {

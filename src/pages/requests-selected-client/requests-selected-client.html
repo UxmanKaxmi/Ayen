@@ -1,0 +1,78 @@
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-row >
+          <ion-col col-12>
+            <ion-label>FULL NAME</ion-label>
+            <ion-item>
+              <ion-input value="{{dataFromRequestSelected.fullName}}" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+
+      <ion-list>
+        <ion-row>
+          <ion-col col-12>
+              <ion-label>EMAIL</ion-label>
+            <ion-item>
+              <ion-input value="{{dataFromRequestSelected.email}}" ></ion-input>
+            </ion-item>
+          </ion-col>
+
+        </ion-row>
+      </ion-list>
+
+      <ion-list>
+          <ion-row>
+            <ion-col col-12>
+                <ion-label>MOBILE NUMBER</ion-label>
+              <ion-item>
+                <ion-input value="{{dataFromRequestSelected.mobileNumber}}" ></ion-input>
+              </ion-item>
+            </ion-col>
+
+          </ion-row>
+        </ion-list>
+
+
+      <!-- <ion-list>
+        <ion-row>
+          <ion-col col-6>
+              <ion-label>REQUESTED COST</ion-label>
+            <ion-item>
+              <ion-input  value="{{dataFromRequestSelected.requestCost}}" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+              <ion-label>INSPECTOR'S SHARE</ion-label>
+            <ion-item>
+              <ion-input  value="{{dataFromRequestSelected.inspectorShare}}" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-list> -->
+
+
+
+
+      <ion-row class="button-row">
+        <ion-col>
+          <button class="reject-button" ion-button  full>
+              Reject
+
+          </button>
+        </ion-col>
+
+        <ion-col>
+            <button class="accept-button" ion-button  full>
+                Accept
+
+            </button>
+          </ion-col>
+        </ion-row>
+
+
+</ion-content>

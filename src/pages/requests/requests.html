@@ -1,0 +1,118 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button start menuToggle>
+          <ion-img class="drawer-icon-img"> </ion-img>
+        </button>
+        <!-- <button ion-button start menuToggle>
+            <ion-img class="drawer-hide-img"> </ion-img>
+          </button> -->
+
+      <ion-title style="padding: 0 2vw  0px 12px;">Requests</ion-title>
+      <!-- <button ion-button end menuToggle>
+          <ion-img class="drawer-stats-img"> </ion-img>
+      </button> -->
+      <button ion-button end menuToggle>
+          <ion-img class="drawer-notification-img"> </ion-img>
+      </button>
+
+    </ion-navbar>
+
+  </ion-header>
+
+  <ion-content  [ngClass]="logoAnimation" padding >
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="filter-icon-row" align-self-end>
+
+        <ion-img  class="icon-sort"> </ion-img>
+        <!-- <img class="filter-icon-image" /> -->
+          <ion-img  class="icon-filter"> </ion-img>
+
+
+
+    </ion-row>
+
+    <ion-row  class="draft-text-row">
+      <ion-label>
+        BASIC PACKAGE
+      </ion-label>
+
+
+    </ion-row>
+    <ion-list class='draft-list' *ngFor='let item of basicPackageArray'>
+        <ion-item-sliding >
+          <ion-item  tappable (click)="openRequestSelected(item)">
+            <ion-label>
+          <ion-row>
+                  <ion-row style='flex: 1;'>
+                        <ion-col style="padding: 0" align-self-end>
+                            <ion-label class="invoice-text">{{item.detail_page.number}}</ion-label>
+                        </ion-col>
+                        <ion-col style="padding: 0" align-self-end>
+                            <ion-label class="invoice-text-end">{{item.detail_page.price}}</ion-label>
+                        </ion-col>
+                  </ion-row>
+
+                  <ion-row >
+                      <ion-label class="address-text">{{item.detail_page.address}}</ion-label>
+                  </ion-row>
+
+          </ion-row>
+        </ion-label>
+        </ion-item>
+
+          <ion-item-options  side="left">
+              <button  class="sliding-background-draft">
+                    <ion-label style="color:white" class="sliding-label"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draft&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </ion-label>
+              </button>
+            </ion-item-options>
+
+        </ion-item-sliding>
+    </ion-list>
+
+    <ion-row  class="draft-text-row">
+        <ion-label>
+          CUSTOM
+        </ion-label>
+      </ion-row>
+
+      <ion-list class='draft-list' *ngFor='let item of customArray'>
+          <ion-item-sliding >
+            <ion-item  tappable (click)="openRequestSelected(item)">
+              <ion-label>
+            <ion-row>
+                    <ion-row style='flex: 1;'>
+                          <ion-col style="padding: 0" align-self-end>
+                              <ion-label class="invoice-text">{{item.detail_page.number}}</ion-label>
+                          </ion-col>
+                          <ion-col style="padding: 0" align-self-end>
+                              <ion-label class="invoice-text-end">{{item.detail_page.price}}</ion-label>
+                          </ion-col>
+                    </ion-row>
+
+                    <ion-row >
+                        <ion-label class="address-text">{{item.detail_page.address}}</ion-label>
+                    </ion-row>
+
+            </ion-row>
+          </ion-label>
+          </ion-item>
+
+            <ion-item-options  side="left">
+                <button  class="sliding-background-draft">
+                      <ion-label style="color:white" class="sliding-label"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draft&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </ion-label>
+                </button>
+              </ion-item-options>
+
+          </ion-item-sliding>
+      </ion-list>
+
+
+
+  </ion-grid>
+
+
+</ion-content>
+
+  </ion-content>

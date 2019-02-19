@@ -37,6 +37,11 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
 import { InspectionsTabPage } from '../pages/inspections-tab/inspections-tab';
 import { ReportsTabPage } from '../pages/reports-tab/reports-tab';
 import { InvoiceSelectedDetailPage } from '../pages/invoice-selected-detail/invoice-selected-detail';
+import { RequestsPage } from '../pages/requests/requests';
+import { RequestsSelectedPage } from '../pages/requests-selected/requests-selected';
+import { RequestsSelectedClientPage } from '../pages/requests-selected-client/requests-selected-client';
+import { RequestsSelectedInspectionPage } from '../pages/requests-selected-inspection/requests-selected-inspection';
+import { RequestsSelectedPropertyPage } from '../pages/requests-selected-property/requests-selected-property';
 
 
 @NgModule({
@@ -47,11 +52,11 @@ import { InvoiceSelectedDetailPage } from '../pages/invoice-selected-detail/invo
     ListPage,
     LoginPage,
     SignupPage,
-    ConfirmationCodePage,
+    ConfirmationCodePage,RequestsPage,
     InvoiceSelectedDetailPage,
     InvoiceSelectedLogPage,
     ConfirmationCodeSuccessPage,
-    SignupExperincePage,
+    SignupExperincePage,RequestsSelectedPage,RequestsSelectedClientPage,RequestsSelectedInspectionPage,RequestsSelectedPropertyPage,
     SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
 
   ],
@@ -68,19 +73,17 @@ import { InvoiceSelectedDetailPage } from '../pages/invoice-selected-detail/invo
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    HomePage,RequestsPage,
     ListPage,
     InvoiceSelectedPage,
     InvoiceSelectedDetailPage,
     InvoiceSelectedLogPage,
     LoginPage,
-    SignupPage,
+    SignupPage,RequestsSelectedPage,RequestsSelectedClientPage,RequestsSelectedInspectionPage,RequestsSelectedPropertyPage,
     ConfirmationCodePage,
     ConfirmationCodeSuccessPage,
     SignupExperincePage,
     SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
-
-
   ],
   providers: [
     StarRatingModule,

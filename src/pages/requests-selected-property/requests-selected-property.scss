@@ -1,0 +1,51 @@
+page-requests-selected-property {
+  .reject-button {
+    height: 4.6rem;
+    background-color:  map-get($colors,  reject-button-red)
+
+  }
+
+  .accept-button {
+    height: 4.6rem;
+    background-color:  map-get($colors,  accept-button-red)
+
+  }
+  .upload-license-image-word{
+    background: url(../assets/imgs/word.png) no-repeat center center;
+    display: block;
+    margin: 10px;
+    background-size: contain;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .text-filetype{
+    font-size: 1.0rem;
+
+  }
+  .list {
+    margin: 0px 0 0px !important;
+}
+// .label {
+//   margin: 0px 0px;
+// }
+.list-md > .item-block:last-child ion-label, .list-md > .item-block:last-child .item-inner, .list-md > .item-wrapper:last-child ion-label, .list-md > .item-wrapper:last-child .item-inner {
+  margin: 0px 0px !important;
+}
+  .text-filename{
+    font-weight: bold;
+  }
+  .file-item{
+      padding-left: 0px;
+      padding-right: 0;
+      position: relative;
+      font-size: 1.6rem;
+      font-weight: normal;
+      text-transform: none;
+      color: #000;
+      background-color: transparent;
+
+
+  }
+
+}

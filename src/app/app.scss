@@ -84,7 +84,7 @@ text-align: center;
   background-size: cover;
   background-color: #f7f8fc !important;
   padding-bottom: 0px !important;
-  display: inline-grid !important;
+  // display: inline-grid !important;
 }
 
 ion-alert {
@@ -408,6 +408,11 @@ margin-bottom: 30px;
   padding: 38%;
   background-size: contain;
 }
+.back-icon-img{
+  background: url(../assets/imgs/back-icon.png) no-repeat center center;
+  background-size: contain;
+}
+
 .drawer-hide-img{
   background: url(../assets/imgs/Stats.png) no-repeat right center;
   display: none;

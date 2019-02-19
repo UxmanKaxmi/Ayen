@@ -1,14 +1,4 @@
-page-invoice-selected {
-
-  // .drawer-notification-img{
-  //   background: url(../assets/imgs/Notification.png) no-repeat center center;
-  //   display: block;
-  //   background-size: contain;
-  //   margin: auto;
-  //   width: 50px;
-  //   padding: 36%;
-  //   background-size: contain;
-  // }
+page-requests-selected {
   .toolbar-background {
     background-color: #FFD059;
   }
@@ -37,6 +27,31 @@ page-invoice-selected {
 
     display: block !important;
   }
+  .header-button{
+    // position: absolute;
+    padding: 5px;
+
+
+  }
+.header-button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block !important;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  background-color: transparent !important;
+  text-align: center;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding: 0px !important;
+  box-shadow: none;
+  width: auto !important;
+  height: auto;
+  font-weight: 400;
+}
 
   .header::after {
     left: 0;
@@ -56,22 +71,7 @@ page-invoice-selected {
     border-color: rgba(0, 0, 0, 0);
   }
 
-  .button {
-    margin-left: auto;
-    margin-right: auto;
-    display: block !important;
-    color: white;
-    border-radius: 3px;
-    font-size: 14px;
-    background-color: map-get($colors, AppGreen);
-    text-align: center;
-    padding-left: 60px !important;
-    padding-right: 60px !important;
-    padding-top: 7vw;
-    padding-bottom: 7vw;
-    width: 100%;
-    font-weight: 400;
-  }
+
 
   ion-navbar.toolbar {
 
@@ -92,6 +92,10 @@ page-invoice-selected {
   super-tabs:not([no-shadow])>super-tabs-toolbar>ion-toolbar.toolbar {
     overflow: visible;
   }
+  super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button {
+
+    padding: 10px 12px 0px;
+}
 
   .item.item-textarea {
     -webkit-box-align: stretch;

@@ -14,6 +14,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { SignupPersonalInfoPage } from '../pages/signup-personal-info/signup-personal-info';
 import { InspectionsTabPage } from '../pages/inspections-tab/inspections-tab';
 import { ReportsTabPage } from '../pages/reports-tab/reports-tab';
+import { RequestsPage } from '../pages/requests/requests';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +29,7 @@ export class MyApp {
   urlIcon5 = "assets/imgs/settings.png";
 
 
-  rootPage: any = HomePage;
+  rootPage: any = RequestsPage;
 
   pages: Array<{icon: string,title: string, component: any}>;
 
@@ -38,7 +39,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { icon:this.urlIcon1 , title: 'Ayen', component: HomePage },
-      { icon:this.urlIcon2 , title: 'Requests', component: ListPage },
+      { icon:this.urlIcon2 , title: 'Requests', component: RequestsPage },
       { icon:this.urlIcon3 , title: 'Quotations', component: ListPage },
       { icon:this.urlIcon4 , title: 'Financials', component: ListPage },
       { icon:this.urlIcon5 , title: 'Settings', component: ListPage },
