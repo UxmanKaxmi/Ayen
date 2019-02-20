@@ -1,7 +1,8 @@
 import { InvoiceSelectedPage } from "./../invoice-selected/invoice-selected";
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, ModalController } from "ionic-angular";
 import { RequestsSelectedPage } from "../requests-selected/requests-selected";
+import { SortModalPage } from "../sort-modal/sort-modal";
 
 /**
  * Generated class for the RequestsPage page.
@@ -23,7 +24,7 @@ export class RequestsPage {
   public logoAnimation: string = "";
   public restAnimation: string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl:ModalController) {
     this.basicPackageArray = [
       {
         detail_page: {
@@ -236,5 +237,9 @@ export class RequestsPage {
   applyAnimation() {
     this.logoAnimation = "animated " + "fadeInLeft";
     this.restAnimation = "animated " + "fadeInUp";
+  }
+  presentSortModal() {
+    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{});
+    sortModal.present();
   }
 }

@@ -1,3 +1,4 @@
+import { SortModalPage } from './../pages/sort-modal/sort-modal';
 import { QuotationSelectedPage } from './../pages/quotation-selected/quotation-selected';
 import { QuotationPage } from './../pages/quotation/quotation';
 import { InvoiceSelectedLogPage } from './../pages/invoice-selected-log/invoice-selected-log';
@@ -51,7 +52,7 @@ import { RequestsSelectedPropertyPage } from '../pages/requests-selected-propert
     MyApp,
     HomePage,
     InvoiceSelectedPage,
-    ListPage,
+    ListPage,SortModalPage,
     LoginPage,
     SignupPage,
     ConfirmationCodePage,RequestsPage,
@@ -77,7 +78,7 @@ import { RequestsSelectedPropertyPage } from '../pages/requests-selected-propert
     MyApp,
     HomePage,RequestsPage,
     ListPage,
-    InvoiceSelectedPage,
+    InvoiceSelectedPage,SortModalPage,
     InvoiceSelectedDetailPage,
     InvoiceSelectedLogPage,
     LoginPage,

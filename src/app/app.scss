@@ -481,3 +481,29 @@ ion-icon {
 }
 
 //----------------------CUSTOM ICONS----------------//
+
+
+
+//----------------SORT MODAL----------------//
+.modal-wrapper {
+  z-index: 10;
+  height: 60%;
+  contain: strict;
+}
+ion-modal ion-backdrop {
+  // height: 50%;
+  visibility: visible;
+  z-index: initial !important;
+
+}
+ion-modal {
+
+  // height: 35%;
+
+}
+.modal-wrapper {
+  transform: translateY(70%) !important;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+//----------------SORT MODAL----------------//

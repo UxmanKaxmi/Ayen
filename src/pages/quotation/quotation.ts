@@ -1,6 +1,8 @@
+import { LoginPage } from './../login/login';
 import { QuotationSelectedPage } from './../quotation-selected/quotation-selected';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
+import { SortModalPage } from '../sort-modal/sort-modal';
 
 /**
  * Generated class for the QuotationPage page.
@@ -23,7 +25,7 @@ export class QuotationPage {
   public logoAnimation: string = "";
   public restAnimation: string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController) {
     this.approvedArray = [
       {
         detail_page: {
@@ -319,6 +321,11 @@ export class QuotationPage {
     this.openNewPageFromSuperTabs(QuotationSelectedPage, dataArray);
   }
 
+  presentSortModal() {
+    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{});
+    sortModal.present();
+  }
+
   ionViewDidLoad() {
   }
   openNewPageFromSuperTabs(pageName, dataToPush) {
@@ -329,6 +336,7 @@ export class QuotationPage {
   ionViewWillEnter() {
     this.applyAnimation();
   }
+
   applyAnimation() {
     this.logoAnimation = "animated " + "fadeInLeft";
     this.restAnimation = "animated " + "fadeInUp";

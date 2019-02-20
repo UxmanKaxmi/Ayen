@@ -64,8 +64,8 @@ export class HomePage {
   }
 
   applyAnimation() {
-    this.logoAnimation = "animated " + "fadeInDown";
-    this.restAnimation = "animated " + "fadeInUp";
+    this.logoAnimation = "animated " + "fadeInDown fast";
+    this.restAnimation = "animated " + "fadeInUp fast";
   }
 
 

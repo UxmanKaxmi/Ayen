@@ -1,7 +1,8 @@
 import { InvoiceSelectedPage } from "./../invoice-selected/invoice-selected";
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, ModalController } from "ionic-angular";
 import { InvoiceSelectedLogPage } from "../invoice-selected-log/invoice-selected-log";
+import { SortModalPage } from "../sort-modal/sort-modal";
 
 /**
  * Generated class for the InspectionsTabPage page.
@@ -20,7 +21,7 @@ export class InspectionsTabPage {
   completedArray:any=[];
   inProgressArray: any=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl:ModalController) {
     this.draftsArray = [
       {
         detail_page:{
@@ -373,5 +374,9 @@ export class InspectionsTabPage {
   //to open a new tab from superTabs
   openNewPageFromSuperTabs(pageName, dataToPush) {
     this.navParams.get("rootNavCtrl").push(pageName, { dataObject: dataToPush });
+  }
+  presentSortModal() {
+    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{});
+    sortModal.present();
   }
 }
