@@ -34,7 +34,6 @@ export class InspectionsTabPage {
             clientsComments:'Some comments for the client.',
             latLong:'24.0345000,25.533443',
           },
-
           log_page_array:[
                 {
                 date: '11.02.2014',
@@ -57,7 +56,6 @@ export class InspectionsTabPage {
                 mainTime:'(03:28:49)',
               }
           ]
-
       },
       {
         detail_page:{

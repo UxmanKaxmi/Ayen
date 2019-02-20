@@ -1,0 +1,121 @@
+page-quotation-selected {
+  .toolbar-background {
+    background-color: #FFD059;
+  }
+
+  .list-md .item-input:last-child {
+    border: 1px solid #DCDCDE;
+    background-color: #E7E5E8;
+  }
+
+  .label-md {
+    font-weight: bold !important;
+    color: rgb(142, 140, 163) !important;
+  }
+
+  .platform-mobile textarea.text-input {
+    border: 1px solid #DCDCDE;
+    background-color: #E7E5E8;
+    padding: 40px;
+  }
+
+  .list-md .item-input:last-child:focus {
+    border-bottom: #DCDCDE !important;
+  }
+
+  .scroll-content {
+
+    display: block !important;
+  }
+  .header-button{
+    // position: absolute;
+    padding: 5px;
+
+
+  }
+.header-button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block !important;
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  background-color: transparent !important;
+  text-align: center;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding: 0px !important;
+  box-shadow: none;
+  width: auto !important;
+  height: auto;
+  font-weight: 400;
+}
+
+  .header::after {
+    left: 0;
+    bottom: -5px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-image: none;
+    background-repeat: repeat-x;
+    content: "";
+  }
+
+  .header-ios .toolbar-background-ios,
+  .footer-ios .toolbar-background-ios {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+  }
+
+
+
+  ion-navbar.toolbar {
+
+    background-color: map-get($colors, AppYellow) !important;
+  }
+
+  super-tabs:not([no-shadow])>super-tabs-toolbar>ion-toolbar.toolbar {
+
+    display: inline-flex;
+
+  }
+
+  ion-header {
+    background-color: #ffd059 !important;
+
+  }
+
+  super-tabs:not([no-shadow])>super-tabs-toolbar>ion-toolbar.toolbar {
+    overflow: visible;
+  }
+  super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button {
+
+    padding: 10px 12px 0px;
+}
+
+  .item.item-textarea {
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    border: 1px solid #DCDCDE;
+    background-color: #E7E5E8;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  .reject-button {
+    height: 4.6rem;
+    background-color:  map-get($colors,  reject-button-red)
+
+  }
+
+  .accept-button {
+    height: 4.6rem;
+    background-color:  map-get($colors,  accept-button-red)
+
+  }
+}

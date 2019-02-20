@@ -1,3 +1,5 @@
+import { QuotationSelectedPage } from './../pages/quotation-selected/quotation-selected';
+import { QuotationPage } from './../pages/quotation/quotation';
 import { InvoiceSelectedLogPage } from './../pages/invoice-selected-log/invoice-selected-log';
 import { InvoiceSelectedPage } from './../pages/invoice-selected/invoice-selected';
 import { SignupPersonalInfoPage } from './../pages/signup-personal-info/signup-personal-info';
@@ -54,7 +56,7 @@ import { RequestsSelectedPropertyPage } from '../pages/requests-selected-propert
     SignupPage,
     ConfirmationCodePage,RequestsPage,
     InvoiceSelectedDetailPage,
-    InvoiceSelectedLogPage,
+    InvoiceSelectedLogPage,QuotationPage,QuotationSelectedPage,
     ConfirmationCodeSuccessPage,
     SignupExperincePage,RequestsSelectedPage,RequestsSelectedClientPage,RequestsSelectedInspectionPage,RequestsSelectedPropertyPage,
     SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
@@ -81,7 +83,7 @@ import { RequestsSelectedPropertyPage } from '../pages/requests-selected-propert
     LoginPage,
     SignupPage,RequestsSelectedPage,RequestsSelectedClientPage,RequestsSelectedInspectionPage,RequestsSelectedPropertyPage,
     ConfirmationCodePage,
-    ConfirmationCodeSuccessPage,
+    ConfirmationCodeSuccessPage,QuotationPage,QuotationSelectedPage,
     SignupExperincePage,
     SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
   ],
