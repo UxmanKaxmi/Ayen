@@ -1,3 +1,5 @@
+import { FinancialsPage } from './../pages/financials/financials';
+import { SortModalPage } from './../pages/sort-modal/sort-modal';
 import { QuotationPage } from './../pages/quotation/quotation';
 import { InvoiceSelectedLogPage } from './../pages/invoice-selected-log/invoice-selected-log';
 import { SignupExperincePage } from './../pages/signup-experince/signup-experince';
@@ -30,7 +32,7 @@ export class MyApp {
   urlIcon5 = "assets/imgs/settings.png";
 
 
-  rootPage: any = QuotationPage;
+  rootPage: any = FinancialsPage;
 
   pages: Array<{icon: string,title: string, component: any}>;
 
@@ -42,7 +44,7 @@ export class MyApp {
       { icon:this.urlIcon1 , title: 'Ayen', component: HomePage },
       { icon:this.urlIcon2 , title: 'Requests', component: RequestsPage },
       { icon:this.urlIcon3 , title: 'Quotations', component: QuotationPage },
-      { icon:this.urlIcon4 , title: 'Financials', component: ListPage },
+      { icon:this.urlIcon4 , title: 'Financials', component: FinancialsPage },
       { icon:this.urlIcon5 , title: 'Settings', component: ListPage },
     ];
 

@@ -66,7 +66,7 @@ page-sort-modal {
 .checkbox .checkbox-icon {
 
   border-color: transparent;
-
+  background-color:map-get($colors,sort-bg) !important;
 }
 .checkbox .checkbox-checked .checkbox-inner {
 
@@ -84,5 +84,9 @@ page-sort-modal {
   padding-left: 15px;
 
 }
+.checkbox-item{
+  background-color: map-get($colors,sort-bg) !important;
+
+  }
 
 }

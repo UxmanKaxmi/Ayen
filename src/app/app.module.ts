@@ -1,3 +1,4 @@
+import { FinancialsPage } from './../pages/financials/financials';
 import { SortModalPage } from './../pages/sort-modal/sort-modal';
 import { QuotationSelectedPage } from './../pages/quotation-selected/quotation-selected';
 import { QuotationPage } from './../pages/quotation/quotation';
@@ -54,7 +55,7 @@ import { RequestsSelectedPropertyPage } from '../pages/requests-selected-propert
     InvoiceSelectedPage,
     ListPage,SortModalPage,
     LoginPage,
-    SignupPage,
+    SignupPage,FinancialsPage,
     ConfirmationCodePage,RequestsPage,
     InvoiceSelectedDetailPage,
     InvoiceSelectedLogPage,QuotationPage,QuotationSelectedPage,
@@ -80,7 +81,7 @@ import { RequestsSelectedPropertyPage } from '../pages/requests-selected-propert
     ListPage,
     InvoiceSelectedPage,SortModalPage,
     InvoiceSelectedDetailPage,
-    InvoiceSelectedLogPage,
+    InvoiceSelectedLogPage,FinancialsPage,
     LoginPage,
     SignupPage,RequestsSelectedPage,RequestsSelectedClientPage,RequestsSelectedInspectionPage,RequestsSelectedPropertyPage,
     ConfirmationCodePage,

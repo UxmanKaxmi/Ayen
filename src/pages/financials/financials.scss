@@ -1,0 +1,289 @@
+page-financials {
+
+  .drawer-share-img{
+    background: url(../assets/imgs/share.png) no-repeat right center;
+    display: block;
+    background-size: contain;
+    margin: auto;
+    width: 47px;
+    min-width: 25px;
+    width: 30px;
+    padding: 45%;
+    min-height: 25px;
+  }
+  ion-header {
+
+    position: relative !important;
+
+}
+   ion-content {
+    position: relative !important;
+}
+
+  .scroll-content {
+    padding: 0vw !important;
+    margin-top: 0px !important;
+ display: inline-grid !important;
+
+}
+
+.filter-icon-row{
+  align-self: flex-end !important;
+  padding: 10px 10px 5px ;
+}
+// .item {
+//   padding: 10px;
+// }
+.filter-icon-item{
+  padding: 20px;
+}
+.date-text{
+  padding-top: 3px;
+ font-size: 1.1rem !important;
+ text-align: end;
+
+
+}
+.icon-filter{
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 25px;
+  min-width: 25px;
+  min-height: 20px;
+  background-size: contain;
+  background: url(../assets/imgs/filter.png) no-repeat center center !important;
+
+}
+.icon-sort{
+  background: url(../assets/imgs/sort.png) no-repeat center center !important;
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 25px;
+  min-width: 25px;
+  min-height: 20px;
+  background-size: contain;
+}
+
+.draft-text-row{
+  align-self: flex-start !important;
+  padding: 10px 20px 5px 10px;
+
+
+}
+.inprogress-text-row{
+  align-self: flex-start !important;
+  padding: 20px 20px 5px 10px;
+
+
+}
+.label-md {
+  margin: 0px;
+  font-weight: bold;
+  color: gray;
+
+}
+.label-ios {
+
+  margin: 0px;
+  font-weight: bold;
+  color: gray;
+
+}
+.list-md ion-item-options {
+   border-bottom: 0px solid #dedede !important;
+}
+.sliding-label{
+  color: white !important;
+}
+
+.draft-list{
+  width: -webkit-fill-available;
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, success), 0 3px 1px -2px map-get($colors, success);
+  background-color:white;
+  margin:  20px;
+  padding: 15px;
+
+}
+.pending-balance-list{
+  width: -webkit-fill-available;
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, AppYellow), 0 3px 1px -2px map-get($colors, success);
+  background-color:white;
+  margin: 0px 14px 0px 14px;
+  padding: 10px;
+}
+.border-width{
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  margin-left: -200px;
+  margin-right: -200px;
+  border-bottom: 1px solid map-get($colors,draftGrey)
+
+}
+
+.paid-balance-list{
+  width: -webkit-fill-available;
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, draftGrey), 0 3px 1px -2px map-get($colors, success);
+  background-color:white;
+  margin: 0px 14px 0px 14px;
+  padding: 10px;
+}
+.inprogress-list{
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, AppYellow), 0 3px 1px -2px map-get($colors, AppYellow);
+  background-color:white;
+  margin: 10px 15px;
+}
+.col-width{
+  width: 200px !important;
+  align-self: center;
+}
+
+.completed-list{
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, success), 0 3px 1px -2px map-get($colors, success);
+  background-color:white;
+  margin: 10px 15px;
+}
+.invoice-text{
+  overflow: unset;
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+
+
+}
+.transffered-text{
+  overflow: unset;
+  font-size: 1rem;
+  color: black;
+  font-weight: initial;
+  text-align: center;
+
+}
+.address-text{
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 7px 0px;
+  color: black;
+
+
+}
+.balance-text{
+  font-size: 2.1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 7px 0px;
+  color: black;
+}
+.icon-image-class{
+  margin: 5px;
+}
+.placeholder-image{
+  background: url(../assets/imgs/image-placeholder.gif) no-repeat center center !important;
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 25px;
+  min-width: 25px;
+  min-height: 20px;
+  background-size: contain;
+}
+.item {
+   padding-left: 0px !important;
+}
+.item-md.item-block .item-inner {
+  padding-right: 8px !important;
+  border-bottom: 0px solid #dedede !important;
+}
+
+.item-md ion-avatar ion-img, .item-md ion-avatar img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 65px;
+  height: auto;
+}
+
+.item-ios ion-avatar ion-img, .item-ios ion-avatar img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 65px;
+  height: auto;
+}
+.sliding-background-draft{
+  background-color:map-get($colors, draftGrey);
+  // padding: 10%;
+
+}
+.sliding-background-progress{
+  background-color:map-get($colors, AppYellow);
+
+}
+.sliding-background-completed{
+  background-color:map-get($colors, success);
+
+}
+
+
+  ion-item-sliding.active-slide .item {
+    // transform: translate3d(100px, 0px, 0px) !important;
+}
+.list-ios ion-item-sliding {
+  background-color:map-get($colors, draftGrey);
+
+}
+.list-md ion-item-sliding {
+  background-color:map-get($colors, draftGrey);
+
+}
+
+.transactions-list{
+  box-shadow: 0 2px 2px 0 map-get($colors, draftGrey), -7px 1px 0px 1px map-get($colors, draftGrey), 0 3px 1px -2px map-get($colors, draftGrey);
+  background-color:white;
+  margin: 10px 15px;
+
+}
+.transaction-invoice-text{
+  overflow: unset;
+padding: 0px 0px 5px;
+font-size: 1.7rem;
+color: black;
+font-weight: bold;
+}
+.transaction-invoice-end{
+  overflow: unset;
+padding: 0px 0px 5px;
+font-size: 1.7rem;
+color: black;
+font-weight: bold;
+text-align: end
+}
+.transaction-invoice-text-end{
+  overflow: unset;
+  padding: 0px 0px 5px;
+  text-align: end;
+  font-size: 1.7rem;
+  color: black;
+  font-weight: bold;
+}
+.transaction-address-text{
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+.transaction-address-end{
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-align: end;
+}
+.transaction-item{
+  padding-left: 0px;
+  margin-bottom: 100px;
+}
+.list-md {
+  border-bottom: 0px solid #dedede;
+  padding: 10px;
+
+}
+}
