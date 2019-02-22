@@ -13,25 +13,53 @@ import {  NavController, NavParams,MenuController } from 'ionic-angular';
   templateUrl: 'financials.html',
 })
 export class FinancialsPage {
+  transactionService:any=[];
 
   constructor(private menu: MenuController,public navCtrl: NavController, public navParams: NavParams) {
+    this.transactionService = [
+      {
+        availableBalance:'+6,084.00',
+        pendingBalance:'+2,028.00',
+        paidBalance:'20,280.00',
+        transactions:[
+          {
+            transactionName:'TA2390932',
+            orderId:'1213423101',
+            transactionAmount:'+1,014 SAR',
+            transactionData:"12.01.2018"
+          },
+          {
+            transactionName:'TA2390932',
+            orderId:'1213423101',
+            transactionAmount:'+1,014 SAR',
+            transactionData:"12.01.2018"
+          },
+
+        ],
+        transactionDetails:[
+          {
+            transactionID:'TA2390932',
+            requestId:'1213423101',
+            releaseDate:'28.02.2019',
+            requestDate:'15.02.2019',
+            transactionPackage:"Ayen Basic Package",
+            packageAmount:"+1,014 SAR",
+            subtotal:'1,690.00 SAR',
+            ayenComission:'-676.00 SAR',
+            vat:'0.00 SAR',
+            total:'1,014.00 SAR'
+
+
+
+          }
+        ]
+      },
+
+    ]
   }
 
   ionViewDidLoad() {
   }
-  ionViewDidEnter() {
-    this.menu.swipeEnable(false);
 
-    // If you have more than one side menu, use the id like below
-    // this.menu.swipeEnable(false, 'menu1');
-  }
-  ionViewWillLeave() {
-    // Don't forget to return the swipe to normal, otherwise
-    // the rest of the pages won't be able to swipe to open menu
-    this.menu.swipeEnable(true);
-
-    // If you have more than one side menu, use the id like below
-    // this.menu.swipeEnable(true, 'menu1');
-   }
 
 }

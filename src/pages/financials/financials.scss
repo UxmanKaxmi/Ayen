@@ -197,6 +197,8 @@ page-financials {
 .item-md.item-block .item-inner {
   padding-right: 8px !important;
   border-bottom: 0px solid #dedede !important;
+  padding-left: 8px !important;
+
 }
 
 .item-md ion-avatar ion-img, .item-md ion-avatar img {
@@ -278,8 +280,12 @@ text-align: end
   text-align: end;
 }
 .transaction-item{
-  padding-left: 0px;
-  margin-bottom: 100px;
+  width: -webkit-fill-available;
+  -webkit-box-shadow: 0 2px 2px 0 #b6b4bd, -7px 1px 0px 1px #ffd059, 0 3px 1px -2px #23ab50;
+  box-shadow: 0 2px 2px 0 #b6b4bd, -7px 1px 0px 1px #ffd059, 0 3px 1px -2px #23ab50;
+  background-color: white;
+  margin: 0px 14px 10px 14px;
+  padding: 10px;
 }
 .list-md {
   border-bottom: 0px solid #dedede;

@@ -32,7 +32,7 @@ export class MyApp {
   urlIcon5 = "assets/imgs/settings.png";
 
 
-  rootPage: any = FinancialsPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{icon: string,title: string, component: any}>;
 
