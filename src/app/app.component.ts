@@ -18,6 +18,7 @@ import { SignupPersonalInfoPage } from '../pages/signup-personal-info/signup-per
 import { InspectionsTabPage } from '../pages/inspections-tab/inspections-tab';
 import { ReportsTabPage } from '../pages/reports-tab/reports-tab';
 import { RequestsPage } from '../pages/requests/requests';
+import { FinancialsSelectedPage } from '../pages/financials-selected/financials-selected';
 
 @Component({
   templateUrl: 'app.html'
@@ -32,7 +33,7 @@ export class MyApp {
   urlIcon5 = "assets/imgs/settings.png";
 
 
-  rootPage: any = LoginPage;
+  rootPage: any = FinancialsSelectedPage;
 
   pages: Array<{icon: string,title: string, component: any}>;
 

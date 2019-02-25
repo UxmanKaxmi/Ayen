@@ -46,6 +46,7 @@ import { RequestsSelectedPage } from '../pages/requests-selected/requests-select
 import { RequestsSelectedClientPage } from '../pages/requests-selected-client/requests-selected-client';
 import { RequestsSelectedInspectionPage } from '../pages/requests-selected-inspection/requests-selected-inspection';
 import { RequestsSelectedPropertyPage } from '../pages/requests-selected-property/requests-selected-property';
+import { FinancialsSelectedPage } from '../pages/financials-selected/financials-selected';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { RequestsSelectedPropertyPage } from '../pages/requests-selected-propert
     InvoiceSelectedLogPage,QuotationPage,QuotationSelectedPage,
     ConfirmationCodeSuccessPage,
     SignupExperincePage,RequestsSelectedPage,RequestsSelectedClientPage,RequestsSelectedInspectionPage,RequestsSelectedPropertyPage,
-    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
+    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage,FinancialsSelectedPage
 
   ],
   imports: [
@@ -87,7 +88,7 @@ import { RequestsSelectedPropertyPage } from '../pages/requests-selected-propert
     ConfirmationCodePage,
     ConfirmationCodeSuccessPage,QuotationPage,QuotationSelectedPage,
     SignupExperincePage,
-    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage
+    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage,FinancialsSelectedPage
   ],
   providers: [
     StarRatingModule,

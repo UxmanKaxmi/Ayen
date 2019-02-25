@@ -1,0 +1,108 @@
+page-financials-selected {
+
+  .drawer-share-img {
+    background: url(../assets/imgs/share.png) no-repeat right center;
+    display: block;
+    background-size: contain;
+    margin: auto;
+    width: 47px;
+    min-width: 25px;
+    width: 30px;
+    padding: 45%;
+    min-height: 25px;
+  }
+
+  .col-all {
+    width: auto;
+    flex: 1;
+    max-width: -webkit-fill-available;
+  }
+
+  .label {
+    margin: 5px;
+  }
+
+  .transaction-text {
+    font-size: smaller !important;
+    margin: 0px 5px 5px 5px
+  }
+
+  .transaction-value {
+    font-weight: bold;
+    font-size: inherit !important;
+  }
+
+  .request-text {
+    font-size: smaller !important;
+    text-align: end;
+
+  }
+
+  .request-value {
+    font-weight: bold;
+    font-size: inherit !important;
+    text-align: end;
+  }
+
+  .transaction-text-row {
+    // display: inline-flex !important;
+    width: 100%;
+  }
+  .transaction-bot-row {
+    border-bottom: 1px solid red;
+    width: 100%;
+  }
+
+  .amount-text-row {
+    width: 100%;
+
+  }
+
+  .item-amount-row {
+    padding: 5px 10px 0px;
+    width: 100%;
+  }
+
+  .amount-text {
+    text-align: end;
+    font-size: smaller !important;
+
+  }
+
+  .items-text {
+    font-size: smaller !important;
+    text-align: start;
+  }
+
+  .transaction-id-row {
+    background-color: white;
+    padding: 0px 10px;
+
+    box-shadow: 0 2px 2px 0 #b6b4bd, 0 0 0px 0px #b6b4bd, -1px -1px 1px -2px #b6b4bd;
+  }
+  .ayen-basic-row {
+    background-color: white;
+    padding: 0px 10px;
+
+    box-shadow: 0 2px 2px 0 #b6b4bd, 0 0 0px 0px #b6b4bd, -1px -1px 1px -2px #b6b4bd;
+  }
+
+  .scroll-content {
+    padding: 0px !important;
+}
+.grid{
+  padding: 0px;
+
+}
+.col-bot{
+  align-self: center;
+
+}
+.amount-value{
+  // font-weight: unset !important;
+  text-align: end;
+  font-weight: 500;
+}
+
+
+}
