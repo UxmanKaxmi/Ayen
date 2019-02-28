@@ -1,3 +1,4 @@
+import { HomePage } from './../pages/home/home';
 import { FinancialsPage } from './../pages/financials/financials';
 import { SortModalPage } from './../pages/sort-modal/sort-modal';
 import { QuotationPage } from './../pages/quotation/quotation';
@@ -11,7 +12,6 @@ import { Nav, Platform,Keyboard } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SignupPage } from '../pages/signup/signup';
 import { SignupPersonalInfoPage } from '../pages/signup-personal-info/signup-personal-info';
@@ -19,6 +19,7 @@ import { InspectionsTabPage } from '../pages/inspections-tab/inspections-tab';
 import { ReportsTabPage } from '../pages/reports-tab/reports-tab';
 import { RequestsPage } from '../pages/requests/requests';
 import { FinancialsSelectedPage } from '../pages/financials-selected/financials-selected';
+import { NotificationPage } from '../pages/notification/notification';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,7 +34,7 @@ export class MyApp {
   urlIcon5 = "assets/imgs/settings.png";
 
 
-  rootPage: any = FinancialsSelectedPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{icon: string,title: string, component: any}>;
 

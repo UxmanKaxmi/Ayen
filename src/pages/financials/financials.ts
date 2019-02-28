@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams,MenuController } from 'ionic-angular';
 import { FinancialsSelectedPage } from '../financials-selected/financials-selected';
+import { NotificationPage } from '../notification/notification';
 
 /**
  * Generated class for the FinancialsPage page.
@@ -84,6 +85,11 @@ export class FinancialsPage {
   }
 
   ionViewDidLoad() {
+  }
+  openNotificationModal(){
+    // let NotificationModal = this.modalCtrl.create(NotificationPage, { userId: 8675309 },{});
+    // NotificationModal.present();
+    this.navCtrl.push(NotificationPage)
   }
 
 

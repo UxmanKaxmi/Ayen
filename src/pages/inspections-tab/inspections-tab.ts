@@ -376,7 +376,7 @@ export class InspectionsTabPage {
     this.navParams.get("rootNavCtrl").push(pageName, { dataObject: dataToPush });
   }
   presentSortModal() {
-    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{});
+    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{cssClass:'sort-modal'});
     sortModal.present();
   }
 }

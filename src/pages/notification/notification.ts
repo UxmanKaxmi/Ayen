@@ -1,35 +1,34 @@
-import { InspectionsTabPage } from './../inspections-tab/inspections-tab';
-import { ListPage } from './../list/list';
 import { Component, ViewChild } from '@angular/core';
-import { NavController, Events, AlertController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NotificationTabPage } from '../notification-tab/notification-tab';
+import { NotificationInboxTabPage } from '../notification-inbox-tab/notification-inbox-tab';
 import { SuperTabs } from 'ionic2-super-tabs';
-import { HelpersProvider } from '../../providers/helpers/helpers';
-import { ReportsTabPage } from '../reports-tab/reports-tab';
-import { SortModalPage } from '../sort-modal/sort-modal';
-import { NotificationPage } from '../notification/notification';
 
+/**
+ * Generated class for the NotificationPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-notification',
+  templateUrl: 'notification.html',
 })
-export class HomePage {
-
+export class NotificationPage {
   public effect: any;
   public logoAnimation: string = "";
   public restAnimation: string = "";
 
   pages = [
-    { pageName: InspectionsTabPage, title: 'Inspections', icon: 'ayen-inspectorIcon', id: 'inspectionTab'},
-    { pageName: ReportsTabPage, title: 'Reports', icon: 'ayen-reportIcon', id: 'reportTab'},
+    { pageName: NotificationTabPage, title: 'Notifications', icon: 'ayen-inspectorIcon', id: 'inspectionTab'},
+    { pageName: NotificationInboxTabPage, title: 'Inbox', icon: 'ayen-reportIcon', id: 'reportTab'},
   ];
 
   selectedTab = 0;
-
   @ViewChild(SuperTabs) superTabs: SuperTabs;
 
-  constructor(public navCtrl: NavController, public events: Events , public alertCtrl:AlertController,public helper:HelpersProvider,public modalCtrl:ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl:AlertController) {
 
-    events.subscribe('star-rating:changed', (starRating) => {console.log(starRating)});
   }
 
   ionViewWillEnter() {
@@ -69,11 +68,12 @@ export class HomePage {
     this.logoAnimation = "animated " + "fadeInDown fast";
     this.restAnimation = "animated " + "fadeInUp fast";
   }
-  openNotificationModal(){
-      // let NotificationModal = this.modalCtrl.create(NotificationPage, { userId: 8675309 },{});
-      // NotificationModal.present();
-      this.navCtrl.push(NotificationPage)
-    }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad NotificationPage');
+  }
+  goBack(){
+    this.navCtrl.pop();
+  }
 
 }

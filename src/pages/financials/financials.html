@@ -13,9 +13,11 @@
     <button ion-button end menuToggle>
       <ion-img class="drawer-share-img"> </ion-img>
     </button>
-    <button ion-button end menuToggle>
-      <ion-img class="drawer-notification-img"> </ion-img>
-    </button>
+    <ion-buttons end>
+        <button class='bg-transparent' tappable (click)=openNotificationModal()>
+          <ion-img class="drawer-notification-img"> </ion-img>
+        </button>
+      </ion-buttons>
 
   </ion-navbar>
 

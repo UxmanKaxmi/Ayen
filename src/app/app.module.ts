@@ -1,3 +1,4 @@
+import { NotificationPage } from './../pages/notification/notification';
 import { FinancialsPage } from './../pages/financials/financials';
 import { SortModalPage } from './../pages/sort-modal/sort-modal';
 import { QuotationSelectedPage } from './../pages/quotation-selected/quotation-selected';
@@ -47,6 +48,8 @@ import { RequestsSelectedClientPage } from '../pages/requests-selected-client/re
 import { RequestsSelectedInspectionPage } from '../pages/requests-selected-inspection/requests-selected-inspection';
 import { RequestsSelectedPropertyPage } from '../pages/requests-selected-property/requests-selected-property';
 import { FinancialsSelectedPage } from '../pages/financials-selected/financials-selected';
+import { NotificationTabPage } from '../pages/notification-tab/notification-tab';
+import { NotificationInboxTabPage } from '../pages/notification-inbox-tab/notification-inbox-tab';
 
 
 @NgModule({
@@ -62,7 +65,7 @@ import { FinancialsSelectedPage } from '../pages/financials-selected/financials-
     InvoiceSelectedLogPage,QuotationPage,QuotationSelectedPage,
     ConfirmationCodeSuccessPage,
     SignupExperincePage,RequestsSelectedPage,RequestsSelectedClientPage,RequestsSelectedInspectionPage,RequestsSelectedPropertyPage,
-    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage,FinancialsSelectedPage
+    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage,FinancialsSelectedPage,NotificationTabPage,NotificationInboxTabPage,NotificationPage
 
   ],
   imports: [
@@ -88,7 +91,7 @@ import { FinancialsSelectedPage } from '../pages/financials-selected/financials-
     ConfirmationCodePage,
     ConfirmationCodeSuccessPage,QuotationPage,QuotationSelectedPage,
     SignupExperincePage,
-    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage,FinancialsSelectedPage
+    SignupPersonalInfoPage,InspectionsTabPage,ReportsTabPage,FinancialsSelectedPage,NotificationTabPage,NotificationInboxTabPage,NotificationPage
   ],
   providers: [
     StarRatingModule,

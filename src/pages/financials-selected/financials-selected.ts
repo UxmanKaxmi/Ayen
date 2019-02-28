@@ -21,11 +21,11 @@ export class FinancialsSelectedPage {
 
 
   ionViewDidLoad() {
-    // this.dataFromFinancials =this.navParams.get('dataFromFinancials')
-    // console.log( 'Quotation selected page', this.dataFromFinancials)
+    this.dataFromFinancials =this.navParams.get('dataFromFinancials')
+    console.log( 'Quotation selected page', this.dataFromFinancials)
 
-    // // this.transactionName=this.dataFromFinancials.transactionName
-    // this.dataFromFinancials = this.dataFromFinancials.transactionDetails;
+    this.transactionName=this.dataFromFinancials.transactionName
+    this.dataFromFinancials = this.dataFromFinancials.transactionDetails;
 
   }
 

@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams, ModalController } from "ionic-angular";
 import { RequestsSelectedPage } from "../requests-selected/requests-selected";
 import { SortModalPage } from "../sort-modal/sort-modal";
+import { NotificationPage } from "../notification/notification";
 
 /**
  * Generated class for the RequestsPage page.
@@ -239,7 +240,12 @@ export class RequestsPage {
     this.restAnimation = "animated " + "fadeInUp";
   }
   presentSortModal() {
-    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{});
+    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{cssClass:'sort-modal'});
     sortModal.present();
+  }
+  openNotificationModal(){
+    // let NotificationModal = this.modalCtrl.create(NotificationPage, { userId: 8675309 },{});
+    // NotificationModal.present();
+    this.navCtrl.push(NotificationPage)
   }
 }

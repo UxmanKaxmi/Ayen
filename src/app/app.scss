@@ -436,6 +436,15 @@ margin-bottom: 30px;
   padding: 50%;
   background-size: contain;
 }
+.drawer-close-img{
+  background: url(../assets/imgs/close.png) no-repeat center right;
+  display: block;
+  background-size: contain;
+  margin: auto;
+  width: 33px;
+  padding: 50%;
+  background-size: contain;
+}
 .drawer-button-text{
   margin:auto;
   padding-left: 20px;
@@ -485,25 +494,27 @@ ion-icon {
 
 
 //----------------SORT MODAL----------------//
-.modal-wrapper {
-  z-index: 10;
-  height: 60%;
-  contain: strict;
-}
-ion-modal ion-backdrop {
-  // height: 50%;
-  visibility: visible;
-  z-index: initial !important;
 
-}
-ion-modal {
+.sort-modal{
+      .modal-wrapper {
+        z-index: 10;
+        height: 60%;
+        contain: strict;
+      }
+      ion-backdrop {
+        // height: 50%;
+        visibility: visible;
+        z-index: initial !important;
 
-  // height: 35%;
+      }
 
-}
-.modal-wrapper {
-  transform: translateY(70%) !important;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+      .modal-wrapper {
+        transform: translateY(70%) !important;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
 }
 //----------------SORT MODAL----------------//
+.bg-transparent{
+  background-color: transparent;
+}

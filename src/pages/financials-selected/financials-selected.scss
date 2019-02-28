@@ -15,7 +15,14 @@ page-financials-selected {
   .col-all {
     width: auto;
     flex: 1;
+    padding: 0px;
     max-width: -webkit-fill-available;
+  }
+  .col-new{
+    width: auto;
+    flex: 1;
+    max-width: -webkit-fill-available;
+    padding: 0px !important;
   }
 
   .label {
@@ -24,10 +31,17 @@ page-financials-selected {
 
   .transaction-text {
     font-size: smaller !important;
-    margin: 0px 5px 5px 5px
+    margin: 5px 0px 5px 0px;
   }
+  .subtotal-text {
+    font-size: smaller !important;
+    // margin: 2vw 0px 0px 0px;
+    text-align: end;
 
+  }
   .transaction-value {
+    margin: 5px 0px !important;
+
     font-weight: bold;
     font-size: inherit !important;
   }
@@ -49,8 +63,17 @@ page-financials-selected {
     width: 100%;
   }
   .transaction-bot-row {
-    border-bottom: 1px solid red;
     width: 100%;
+    padding: 0px 20px;
+
+  }
+  .transaction-bot-border {
+    border-bottom: 1px solid #b7b5be;
+    width: 100%;
+    margin: 0px 20px;
+    padding: 10px 0px;
+
+
   }
 
   .amount-text-row {
@@ -76,15 +99,16 @@ page-financials-selected {
 
   .transaction-id-row {
     background-color: white;
-    padding: 0px 10px;
+    padding: 10px 15px;
 
-    box-shadow: 0 2px 2px 0 #b6b4bd, 0 0 0px 0px #b6b4bd, -1px -1px 1px -2px #b6b4bd;
+    box-shadow: -1px 1px 14px 0px #b6b4bd, 0 0 0px 0px #f4f4f4, -1px -1px 1px -2px #b6b4bd;
   }
   .ayen-basic-row {
     background-color: white;
-    padding: 0px 10px;
+    // padding: 0px 10px;
+    padding: 10px 0px;
 
-    box-shadow: 0 2px 2px 0 #b6b4bd, 0 0 0px 0px #b6b4bd, -1px -1px 1px -2px #b6b4bd;
+    box-shadow: -1px 1px 14px 0px #b6b4bd, 0 0 0px 0px #f4f4f4, -1px -1px 1px -2px #b6b4bd;
   }
 
   .scroll-content {
@@ -96,10 +120,13 @@ page-financials-selected {
 }
 .col-bot{
   align-self: center;
+  padding:0;
 
 }
 .amount-value{
   // font-weight: unset !important;
+  margin: 0px;
+
   text-align: end;
   font-weight: 500;
 }

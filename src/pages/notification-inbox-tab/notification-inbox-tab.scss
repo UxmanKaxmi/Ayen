@@ -1,0 +1,39 @@
+page-notification-inbox-tab {
+  .label {
+    margin: 0px;
+}
+  .grid {
+    padding: 15px 0px;
+  }
+
+  .notification-time {
+    text-align: end;
+    font-size: smaller;
+    color:map-get($colors , draftGrey)
+  }
+
+  .notification-details {
+    text-align: end;
+    font-size: smaller;
+    font-weight: lighter;
+
+
+  }
+
+  .notification-name {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: initial;
+    text-align: start;
+
+  }
+  .row{
+    width: -webkit-fill-available;
+  }
+  .main-row{
+    padding: 7px 0px 7px 10px;
+    border-bottom: 1px solid map-get($colors , border-color);
+    border-top: 1px solid map-get($colors , border-color);
+
+  }
+}

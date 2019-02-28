@@ -3,6 +3,7 @@ import { QuotationSelectedPage } from './../quotation-selected/quotation-selecte
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { SortModalPage } from '../sort-modal/sort-modal';
+import { NotificationPage } from '../notification/notification';
 
 /**
  * Generated class for the QuotationPage page.
@@ -322,7 +323,7 @@ export class QuotationPage {
   }
 
   presentSortModal() {
-    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{});
+    let sortModal = this.modalCtrl.create(SortModalPage, { userId: 8675309 },{cssClass:'sort-modal'});
     sortModal.present();
   }
 
@@ -340,5 +341,10 @@ export class QuotationPage {
   applyAnimation() {
     this.logoAnimation = "animated " + "fadeInLeft";
     this.restAnimation = "animated " + "fadeInUp";
+  }
+  openNotificationModal(){
+    // let NotificationModal = this.modalCtrl.create(NotificationPage, { userId: 8675309 },{});
+    // NotificationModal.present();
+    this.navCtrl.push(NotificationPage)
   }
 }

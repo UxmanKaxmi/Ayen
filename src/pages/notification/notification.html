@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+
+
+      <ion-title style="padding: 0 15vw 0px 0px;">MESSAGES</ion-title>
+
+      <ion-buttons end>
+        <button class='bg-transparent' tappable (click)="goBack()"  >
+          <ion-img class="drawer-close-img"> </ion-img>
+        </button>
+      </ion-buttons>
+
+    </ion-navbar>
+
+  </ion-header>
+
+  <ion-content padding >
+      <super-tabs [ngClass]="logoAnimation" [config]="{sideMenu:'left'}" tabsPlacement="top" toolbarBackground="AppYellow" toolbarColor="dark" indicatorColor="dark"
+      (tabSelect)="onTabSelect($event)">
+      <super-tab *ngFor="let page of pages"  [title]="page.title" [root]="page.pageName"  [icon]="page.icon" [id]="page.id"></super-tab>
+    </super-tabs>
+  </ion-content>
